@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bianca | Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <a href="index.html" class="logo">Bianca Ngobeni<span>.</span></a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#work">My Work</a>
+            <a href="mailto:yourname@example.com">Contact</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+            ☰
+        </button>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+
+            <div class="hero-content" id="about">
+                <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+
+                <h1>Hi, I'm <span>Bianca.</span></h1>
+
+                <h2>Final-year student at the
+                    University of Cape Town
+                </h2>
+
+                <p class="hero-description">
+                    I'm studying Information Systems and
+                    Film & Television Studies, with interests
+                    in technology, problem-solving, storytelling
+                    and understanding the world around us.
+                </p>
+
+                <a href="#work" class="primary-btn">
+                    Explore My Work <span>↗</span>
+                </a>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-circle">
+                    <img src="images/profile.jpeg"
+                         alt="Portrait of Bianca"
+                         onerror="this.style.display='none'">
+                    <span class="photo-placeholder">Photo</span>
+                </div>
+                <div class="circle-decoration"></div>
+            </div>
+
+        </section>
+
+        <!-- EXPLORE MY WORK -->
+        <section class="work-section" id="work">
+
+            <div class="section-heading">
+                <p class="eyebrow">WHAT I DO</p>
+                <h2>Explore My Work<span>.</span></h2>
+                <p>
+                    A collection of my projects, experiences
+                    and interests across technology and film.
+                </p>
+            </div>
+
+            <div class="work-grid">
+
+                <!-- INFORMATION SYSTEMS -->
+                <div class="work-card information-card">
+
+                    <div class="card-icon">⌘</div>
+
+                    <h3>Information Systems</h3>
+
+                    <p class="card-description">
+                        Exploring how technology and data can
+                        solve problems and improve the way
+                        people and organisations work.
+                    </p>
+
+                    <div class="specialisations">
+                        <a href="business-analysis.html">
+                            Business Analysis <span>↗</span>
+                        </a>
+
+                        <a href="data-analysis.html">
+                            Data Analysis <span>↗</span>
+                        </a>
+
+                        <a href="ui-ux.html">
+                            UI/UX Design <span>↗</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- FILM AND TELEVISION -->
+                <div class="work-card film-card">
+
+                    <div class="card-icon">✦</div>
+
+                    <h3>Film & Television Studies</h3>
+
+                    <p class="card-description">
+                        Exploring storytelling, cinema,
+                        culture and the ways stories
+                        shape our understanding of society.
+                    </p>
+
+                    <div class="specialisations">
+                        <a href="film.html">
+                            Explore Film & Television Studies <span>↗</span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© <span id="year"></span> Bianca. Made with care ♡</p>
+
+        <div class="footer-links">
+            <a href="mailto:yourname@example.com">Email</a>
+            <a href="https://www.linkedin.com/" target="_blank"
+               rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/" target="_blank"
+               rel="noopener noreferrer">GitHub</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
