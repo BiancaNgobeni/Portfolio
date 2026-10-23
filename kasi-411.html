@@ -4,246 +4,584 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Kasi 411 | Bianca Ngobeni</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================
+           KASI 411 - PROJECT GALLERY
+           Uses the same soft style as ERPS
+        ===================================== */
+
+        .kasi-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 24px 0 30px;
+        }
+
+        .kasi-prototype-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 22px;
+            border-radius: 9px;
+            background: #7185a2;
+            color: #fff !important;
+            text-decoration: none;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .kasi-prototype-link:hover {
+            background: #586d8b;
+        }
+
+        .kasi-main-preview {
+            width: 100%;
+            min-height: 290px;
+            background: #e3eaf3;
+            border: 1px dashed #b9c8db;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .kasi-main-preview img {
+            width: 100%;
+            max-height: 520px;
+            object-fit: contain;
+            border-radius: 9px;
+        }
+
+        .kasi-placeholder {
+            color: #7185a2;
+            text-align: center;
+        }
+
+        .kasi-placeholder strong {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .kasi-placeholder small {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            color: #8193a8;
+        }
+
+        .kasi-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 26px;
+        }
+
+        .kasi-gallery-card {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #dfe5ed;
+            border-radius: 16px;
+        }
+
+        .kasi-image-area {
+            width: 100%;
+            height: 225px;
+            padding: 18px;
+            background: #e3eaf3;
+            border: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .kasi-gallery-card:nth-child(even) .kasi-image-area {
+            background: #f2e6ec;
+        }
+
+        button.kasi-image-area {
+            cursor: pointer;
+        }
+
+        button.kasi-image-area:disabled {
+            cursor: default;
+        }
+
+        .kasi-image-area img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .kasi-gallery-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 22px;
+        }
+
+        .kasi-gallery-content h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 21px;
+            margin: 0 0 9px;
+        }
+
+        .kasi-gallery-content p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: #68788c;
+            margin: 0 0 14px;
+        }
+
+        .kasi-gallery-bottom {
+            margin-top: auto;
+        }
+
+        .kasi-status {
+            display: inline-block;
+            padding: 6px 11px;
+            border-radius: 20px;
+            background: #edf1f7;
+            color: #657f9e;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .kasi-status.pending {
+            background: #f5e9ee;
+            color: #866d7c;
+        }
+
+        .kasi-view-image {
+            display: block;
+            margin-top: 13px;
+            padding: 0;
+            background: none;
+            border: 0;
+            color: #5d7c9d;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            cursor: pointer;
+        }
+
+        .kasi-prototype-card-link {
+            display: inline-block;
+            margin-top: 13px;
+            color: #5d7c9d !important;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* Image viewer */
+
+        .kasi-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            padding: 28px;
+            background: rgba(27, 36, 50, 0.94);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .kasi-lightbox.open {
+            display: flex;
+        }
+
+        .kasi-lightbox img {
+            max-width: 95vw;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        .kasi-lightbox p {
+            margin-top: 15px;
+            color: #fff;
+            font-size: 13px;
+        }
+
+        .kasi-lightbox-close {
+            position: absolute;
+            top: 14px;
+            right: 25px;
+            border: 0;
+            background: transparent;
+            color: #fff;
+            font-size: 35px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 700px) {
+            .kasi-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .kasi-main-preview {
+                min-height: 220px;
+            }
+
+            .kasi-image-area {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 
 <body class="case-study-page">
 
+    <!-- NAVIGATION -->
+
     <header class="navbar">
-        <a href="index.html" class="logo">Bianca Ngobeni<span>.</span></a>
+        <a href="index.html" class="logo">
+            Bianca's Portfolio<span>.</span>
+        </a>
+
         <nav class="nav-links" id="navLinks">
             <a href="index.html">Home</a>
             <a href="index.html#about">About Me</a>
             <a href="index.html#work">My Work</a>
             <a href="mailto:yourname@example.com">Contact</a>
         </nav>
-        <button class="menu-toggle" id="menuToggle"
-                aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false">
+            ☰
+        </button>
     </header>
 
     <main>
 
+        <!-- INTRODUCTION -->
+
         <section class="case-hero">
-            <a href="business-analysis.html" class="case-back">← Back to Business Analysis</a>
-            <p class="eyebrow">BUSINESS ANALYSIS / UI/UX DESIGN / PERSONAL PROJECT</p>
-            <h1>Kasi <span>411.</span></h1>
-            <p class="case-lead">
-                Exploring how a digital platform could make it easier for
-                township residents to discover local businesses, services
-                and useful community information.
+
+            <a href="business-analysis.html" class="case-back">
+                ← Back to Business Analysis
+            </a>
+
+            <p class="eyebrow">
+                BUSINESS ANALYSIS / UI/UX DESIGN / PERSONAL PROJECT
             </p>
 
-            <div class="case-meta">
-                <div><span>PROJECT TYPE</span><strong>Independent Project</strong></div>
-                <div><span>MY ROLE</span><strong>Business Analysis & UI/UX</strong></div>
-                <div><span>STATUS</span><strong>In Development</strong></div>
-                <div><span>FOCUS</span><strong>Local Commerce & Community</strong></div>
+            <h1>Kasi <span>411.</span></h1>
+
+            <p class="case-lead">
+                Exploring how a digital platform could make it easier
+                for township residents to discover local businesses,
+                services and useful community information.
+            </p>
+
+            <div class="kasi-actions">
+                <a
+                    class="kasi-prototype-link prototype-url"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View Website Prototype ↗
+                </a>
             </div>
+
+            <div class="case-meta">
+                <div>
+                    <span>PROJECT TYPE</span>
+                    <strong>Independent Project</strong>
+                </div>
+
+                <div>
+                    <span>MY ROLE</span>
+                    <strong>Business Analysis & UI/UX</strong>
+                </div>
+
+                <div>
+                    <span>STATUS</span>
+                    <strong>In Development</strong>
+                </div>
+
+                <div>
+                    <span>FOCUS</span>
+                    <strong>Local Commerce & Community</strong>
+                </div>
+            </div>
+
         </section>
+
+        <!-- MAIN PROJECT PREVIEW -->
 
         <section class="case-visual-band">
             <div class="case-container">
-                <div class="case-image-placeholder">
-                    <span>01 / PROJECT OVERVIEW</span>
-                    <strong>Kasi 411</strong>
-                    <p>Replace this area with your application prototype or main interface screenshot.</p>
+
+                <div class="kasi-main-preview" id="kasiMainPreview">
+                    <div class="kasi-placeholder">
+                        <strong>Kasi 411</strong>
+                        <small>Main website prototype screenshot</small>
+                    </div>
                 </div>
+
             </div>
         </section>
 
+        <!-- 01: CONTEXT -->
+
         <section class="case-section">
             <div class="case-container case-two-column">
+
                 <div class="case-section-label">
                     <span>01</span>
                     <h2>The Context</h2>
                 </div>
+
                 <div class="case-section-body">
                     <p>
-                        Township communities have local businesses, informal
-                        traders and service providers offering a wide range
-                        of products and services. However, discovering these
-                        businesses or finding reliable information about
-                        available services is not always straightforward.
+                        Township communities have local businesses,
+                        informal traders and service providers offering
+                        a wide range of products and services. However,
+                        discovering these businesses or finding reliable
+                        information about available services is not
+                        always straightforward.
                     </p>
+
                     <p>
-                        Kasi 411 is an independent project exploring a
-                        digital space where residents could find local
-                        businesses, discover services and access community
-                        information in one place.
+                        Kasi 411 is an independent project exploring
+                        a digital space where residents could find
+                        local businesses, discover services and access
+                        community information in one place.
                     </p>
                 </div>
+
             </div>
         </section>
 
+        <!-- 02: PROBLEM -->
+
         <section class="case-section case-tinted">
             <div class="case-container case-two-column">
+
                 <div class="case-section-label">
                     <span>02</span>
                     <h2>The Problem</h2>
                 </div>
+
                 <div class="case-section-body">
-                    <h3>How can local businesses become easier to discover?</h3>
+
+                    <h3>
+                        How can local businesses become easier to discover?
+                    </h3>
+
                     <p>
-                        The problem Kasi 411 aims to address is fragmented
-                        access to information about local products, businesses
-                        and services. Residents may depend on word of mouth
-                        or scattered online information, while smaller
-                        businesses may have limited digital visibility.
+                        The problem Kasi 411 aims to address is
+                        fragmented access to information about
+                        local products, businesses and services.
+                        Residents may depend on word of mouth
+                        or scattered online information, while
+                        smaller businesses may have limited
+                        digital visibility.
                     </p>
+
                     <div class="case-insight">
                         <span>DESIGN CHALLENGE</span>
                         <p>
-                            Create a simple, accessible way for residents
-                            to discover what is available in their communities,
-                            while giving local businesses greater visibility.
+                            Create a simple, accessible way for
+                            residents to discover what is available
+                            in their communities, while giving
+                            local businesses greater visibility.
                         </p>
                     </div>
+
                 </div>
             </div>
         </section>
 
+        <!-- 03: PROPOSED SOLUTION -->
+
         <section class="case-section">
             <div class="case-container case-two-column">
+
                 <div class="case-section-label">
                     <span>03</span>
                     <h2>Proposed Solution</h2>
                 </div>
+
                 <div class="case-section-body">
+
                     <p>
-                        Kasi 411 is envisioned as a hyperlocal e-commerce
-                        and community information platform connecting
-                        residents with businesses and service providers
+                        Kasi 411 is envisioned as a hyperlocal
+                        e-commerce and community information
+                        platform connecting residents with
+                        businesses and service providers
                         in their area.
                     </p>
+
                     <div class="case-feature-grid">
+
                         <div class="case-feature">
                             <span>01</span>
                             <h4>Business Discovery</h4>
-                            <p>Help residents find local businesses and available services.</p>
+                            <p>
+                                Help residents find local
+                                businesses and available services.
+                            </p>
                         </div>
+
                         <div class="case-feature">
                             <span>02</span>
                             <h4>Local Marketplace</h4>
-                            <p>Explore how products and services could be presented digitally.</p>
+                            <p>
+                                Explore how products and services
+                                could be presented digitally.
+                            </p>
                         </div>
+
                         <div class="case-feature">
                             <span>03</span>
                             <h4>Community Information</h4>
-                            <p>Bring useful local information into one accessible space.</p>
+                            <p>
+                                Bring useful local information
+                                into one accessible space.
+                            </p>
                         </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- 04: DESIGN PROCESS -->
+
         <section class="case-section case-tinted">
             <div class="case-container">
+
                 <div class="case-section-label">
                     <span>04</span>
                     <h2>My Design & Analysis Process</h2>
                 </div>
 
                 <div class="case-process-grid">
+
                     <article class="case-process-card">
                         <span>01 / UNDERSTAND</span>
                         <h3>Business Modelling</h3>
                         <p>
-                            Exploring the platform's purpose, intended
-                            users and how it could create value for
-                            residents and local businesses.
+                            Exploring the platform's purpose,
+                            intended users and how it could
+                            create value for residents
+                            and local businesses.
                         </p>
                     </article>
+
                     <article class="case-process-card">
                         <span>02 / DEFINE</span>
                         <h3>User Personas</h3>
                         <p>
-                            Developing representative user profiles
-                            to consider different needs, motivations
-                            and possible barriers.
+                            Developing representative user
+                            profiles to consider different needs,
+                            motivations and possible barriers.
                         </p>
                     </article>
+
                     <article class="case-process-card">
                         <span>03 / STRUCTURE</span>
                         <h3>Task Analysis</h3>
                         <p>
-                            Breaking down the steps users would take
-                            to complete important activities within
-                            the proposed platform.
+                            Breaking down the steps users
+                            would take to complete important
+                            activities within the platform.
                         </p>
                     </article>
+
                     <article class="case-process-card">
                         <span>04 / DESIGN</span>
                         <h3>Wireframes & Prototype</h3>
                         <p>
-                            Translating the proposed user journeys
-                            into screen layouts and an application
-                            prototype.
+                            Translating proposed user journeys
+                            into screen layouts and an
+                            application prototype.
                         </p>
                     </article>
+
                 </div>
             </div>
         </section>
 
+        <!-- 05: DESIGN DOCUMENTATION -->
+
         <section class="case-section">
             <div class="case-container">
+
                 <div class="case-section-label">
                     <span>05</span>
                     <h2>Design Documentation</h2>
                 </div>
+
                 <p class="case-gallery-intro">
-                    These spaces will showcase the actual design work
-                    behind Kasi 411.
+                    A selection of the design and analysis work
+                    supporting Kasi 411. The project is still
+                    developing, so some artefacts will be added
+                    as they become available.
                 </p>
 
-                <div class="case-gallery">
-                    <div class="case-gallery-item">
-                        <div class="case-gallery-placeholder">USER PERSONAS</div>
-                        <h3>User Personas</h3>
-                        <p>Profiles representing the platform's intended users.</p>
-                    </div>
-                    <div class="case-gallery-item">
-                        <div class="case-gallery-placeholder">TASK ANALYSIS</div>
-                        <h3>Hierarchical Task Analysis</h3>
-                        <p>Breaking down key tasks and user interactions.</p>
-                    </div>
-                    <div class="case-gallery-item">
-                        <div class="case-gallery-placeholder">WIREFRAMES</div>
-                        <h3>Wireframes & Screens</h3>
-                        <p>Exploring interface structure and navigation.</p>
-                    </div>
-                    <div class="case-gallery-item">
-                        <div class="case-gallery-placeholder">PROTOTYPE</div>
-                        <h3>Application Prototype</h3>
-                        <p>Visualising the proposed platform experience.</p>
-                    </div>
-                </div>
+                <div class="kasi-gallery-grid" id="kasiGallery"></div>
+
             </div>
         </section>
 
+        <!-- 06: PROGRESS -->
+
         <section class="case-section case-tinted">
             <div class="case-container case-two-column">
+
                 <div class="case-section-label">
                     <span>06</span>
                     <h2>Current Progress & Next Steps</h2>
                 </div>
+
                 <div class="case-section-body">
                     <p>
                         Kasi 411 is still in development. The project
-                        has given me an opportunity to explore the
-                        relationship between identifying a business
-                        problem, understanding potential users and
-                        translating an idea into a digital product.
+                        has given me an opportunity to explore
+                        the relationship between identifying
+                        a business problem, understanding potential
+                        users and translating an idea into
+                        a digital product.
                     </p>
+
                     <p>
-                        The next stages include refining the prototype,
-                        validating assumptions with potential users
-                        and continuing application development.
+                        The next stages include refining the
+                        prototype, validating assumptions with
+                        potential users and continuing
+                        application development.
                     </p>
+
                     <div class="ba-tags">
                         <span>Business Analysis</span>
                         <span>User Personas</span>
@@ -252,27 +590,327 @@
                         <span>Prototyping</span>
                     </div>
                 </div>
+
             </div>
         </section>
 
+        <!-- NEXT PROJECT -->
+
         <section class="case-next">
             <p class="eyebrow">EXPLORE ANOTHER PROJECT</p>
-            <h2>Educational Reporting System<span>.</span></h2>
-            <p>A sponsor-driven system development project focused on simplifying educational reporting.</p>
-            <a href="erps.html" class="primary-btn">View ERPS Case Study ↗</a>
+
+            <h2>
+                Educational Reporting System<span>.</span>
+            </h2>
+
+            <p>
+                A sponsor-driven system development project
+                focused on simplifying educational reporting.
+            </p>
+
+            <a href="erps.html" class="primary-btn">
+                View ERPS Case Study ↗
+            </a>
         </section>
 
     </main>
 
+    <!-- FOOTER -->
+
     <footer class="footer">
-        <p>© <span id="year"></span> Bianca. Made with care ♡</p>
+        <p>
+            © <span id="year"></span> Bianca. Made with care ♡
+        </p>
+
         <div class="footer-links">
             <a href="mailto:yourname@example.com">Email</a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/"
+               target="_blank"
+               rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/"
+               target="_blank"
+               rel="noopener noreferrer">GitHub</a>
         </div>
     </footer>
 
+    <!-- IMAGE VIEWER -->
+
+    <div class="kasi-lightbox"
+         id="kasiLightbox"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Kasi 411 image preview">
+
+        <button
+            class="kasi-lightbox-close"
+            id="kasiLightboxClose"
+            type="button"
+            aria-label="Close image">
+            &times;
+        </button>
+
+        <img id="kasiLightboxImage" alt="">
+
+        <p id="kasiLightboxCaption"></p>
+    </div>
+
     <script src="script.js"></script>
+
+    <script>
+        /* =====================================
+           CHANGE THIS URL ONLY
+           Paste your published Kasi 411 site URL
+        ===================================== */
+
+        const KASI_PROTOTYPE_URL = "";
+
+        /* =====================================
+           PROTOTYPE LINKS
+        ===================================== */
+
+        document.querySelectorAll(".prototype-url").forEach(link => {
+            if (KASI_PROTOTYPE_URL) {
+                link.href = KASI_PROTOTYPE_URL;
+            } else {
+                link.removeAttribute("href");
+                link.setAttribute("aria-disabled", "true");
+                link.title = "Add the published prototype URL";
+                link.addEventListener("click", event => {
+                    event.preventDefault();
+                });
+            }
+        });
+
+        /* =====================================
+           DOCUMENTATION
+           Change filenames when images are ready
+        ===================================== */
+
+        const kasiDocuments = [
+            {
+                title: "User Personas",
+                description: "Profiles representing the platform's intended users.",
+                image: "images/kasi-411/user-personas.png",
+                status: "Design Artefact"
+            },
+            {
+                title: "Hierarchical Task Analysis",
+                description: "Breaking down key user tasks and interactions.",
+                image: "images/kasi-411/task-analysis.png",
+                status: "Design Artefact"
+            },
+            {
+                title: "Wireframes & Screens",
+                description: "Exploring interface structure, layouts and navigation.",
+                image: "images/kasi-411/wireframes.png",
+                status: "Design Artefact"
+            },
+            {
+                title: "Application Prototype",
+                description: "Explore the interactive website prototype and the proposed user experience.",
+                image: "images/kasi-411/prototype.png",
+                status: "Website Prototype",
+                prototype: true
+            }
+        ];
+
+        const kasiGallery = document.getElementById("kasiGallery");
+
+        const kasiLightbox = document.getElementById("kasiLightbox");
+        const kasiLightboxImage = document.getElementById("kasiLightboxImage");
+        const kasiLightboxCaption = document.getElementById("kasiLightboxCaption");
+        const kasiLightboxClose = document.getElementById("kasiLightboxClose");
+
+        let kasiPreviousFocus = null;
+
+        function openKasiLightbox(src, title) {
+            kasiPreviousFocus = document.activeElement;
+
+            kasiLightboxImage.src = src;
+            kasiLightboxImage.alt = title;
+            kasiLightboxCaption.textContent = title;
+
+            kasiLightbox.classList.add("open");
+            document.body.style.overflow = "hidden";
+            kasiLightboxClose.focus();
+        }
+
+        function closeKasiLightbox() {
+            kasiLightbox.classList.remove("open");
+            kasiLightboxImage.removeAttribute("src");
+            document.body.style.overflow = "";
+
+            if (kasiPreviousFocus) {
+                kasiPreviousFocus.focus();
+            }
+        }
+
+        kasiLightboxClose.addEventListener("click", closeKasiLightbox);
+
+        kasiLightbox.addEventListener("click", event => {
+            if (event.target === kasiLightbox) {
+                closeKasiLightbox();
+            }
+        });
+
+        document.addEventListener("keydown", event => {
+            if (!kasiLightbox.classList.contains("open")) return;
+
+            if (event.key === "Escape") {
+                closeKasiLightbox();
+            }
+
+            if (event.key === "Tab") {
+                event.preventDefault();
+                kasiLightboxClose.focus();
+            }
+        });
+
+        /* =====================================
+           IMAGE WITH FALLBACK
+        ===================================== */
+
+        function addKasiImage(container, src, title) {
+            const placeholder = document.createElement("div");
+            placeholder.className = "kasi-placeholder";
+
+            const label = document.createElement("strong");
+            label.textContent = title;
+
+            const note = document.createElement("small");
+            note.textContent = "Image preview";
+
+            placeholder.append(label, note);
+
+            const image = document.createElement("img");
+            image.alt = title;
+            image.loading = "lazy";
+            image.style.display = "none";
+
+            image.addEventListener("load", () => {
+                placeholder.style.display = "none";
+                image.style.display = "block";
+            });
+
+            image.addEventListener("error", () => {
+                image.style.display = "none";
+                placeholder.style.display = "block";
+            });
+
+            container.append(placeholder, image);
+            image.src = src;
+
+            return image;
+        }
+
+        /* =====================================
+           BUILD DOCUMENTATION CARDS
+        ===================================== */
+
+        kasiDocuments.forEach(doc => {
+            const card = document.createElement("article");
+            card.className = "kasi-gallery-card";
+
+            const imageArea = document.createElement("button");
+            imageArea.type = "button";
+            imageArea.className = "kasi-image-area";
+            imageArea.setAttribute(
+                "aria-label",
+                "Preview " + doc.title
+            );
+
+            const image = addKasiImage(
+                imageArea,
+                doc.image,
+                doc.title
+            );
+
+            imageArea.addEventListener("click", () => {
+                if (image.naturalWidth > 0) {
+                    openKasiLightbox(doc.image, doc.title);
+                }
+            });
+
+            const content = document.createElement("div");
+            content.className = "kasi-gallery-content";
+
+            const title = document.createElement("h3");
+            title.textContent = doc.title;
+
+            const description = document.createElement("p");
+            description.textContent = doc.description;
+
+            const bottom = document.createElement("div");
+            bottom.className = "kasi-gallery-bottom";
+
+            const status = document.createElement("span");
+            status.className = "kasi-status";
+            status.textContent = doc.status;
+
+            bottom.appendChild(status);
+
+            if (doc.prototype) {
+                const link = document.createElement("a");
+                link.className = "kasi-prototype-card-link";
+                link.textContent = "View Prototype ↗";
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+
+                if (KASI_PROTOTYPE_URL) {
+                    link.href = KASI_PROTOTYPE_URL;
+                } else {
+                    link.setAttribute("aria-disabled", "true");
+                    link.title = "Add the published prototype URL";
+                    link.addEventListener("click", event => {
+                        event.preventDefault();
+                    });
+                }
+
+                bottom.appendChild(link);
+            } else {
+                const viewButton = document.createElement("button");
+                viewButton.className = "kasi-view-image";
+                viewButton.type = "button";
+                viewButton.textContent = "View Image";
+
+                viewButton.addEventListener("click", () => {
+                    if (image.naturalWidth > 0) {
+                        openKasiLightbox(doc.image, doc.title);
+                    } else {
+                        alert("Add the image first: " + doc.image);
+                    }
+                });
+
+                bottom.appendChild(viewButton);
+            }
+
+            content.append(title, description, bottom);
+            card.append(imageArea, content);
+            kasiGallery.appendChild(card);
+        });
+
+        /* =====================================
+           MAIN PROJECT IMAGE
+        ===================================== */
+
+        const kasiMainPreview = document.getElementById("kasiMainPreview");
+
+        addKasiImage(
+            kasiMainPreview,
+            "images/kasi-411/main-preview.png",
+            "Kasi 411"
+        );
+
+        /* =====================================
+           FOOTER YEAR FALLBACK
+        ===================================== */
+
+        const yearElement = document.getElementById("year");
+
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+    </script>
+
 </body>
 </html>

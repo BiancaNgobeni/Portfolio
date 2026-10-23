@@ -1,13 +1,13 @@
 
 /* COLOUR PALETTE */
 :root {
-    --background: #FAF8F6;
-    --pink: #EBCDD7;
-    --pink-light: #F2E1E7;
-    --navy: #65758E;
-    --navy-light: #E8EAF0;
-    --charcoal: #343943;
-    --grey: #777B83;
+    --background: #F8F8F5;
+    --pink: #DDA8BD;
+    --pink-light: #F5E6ED;
+    --navy: #253653;
+    --navy-light: #DEE8F4;
+    --charcoal: #253653;
+    --grey: #667080;
     --white: #FFFFFF;
 }
 
@@ -47,14 +47,14 @@ h1, h2, h3 {
     margin: 0;
     padding: 22px 6%;
 
-    background-color: #E4E8EF;
+    background-color: #DEE8F4;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     box-shadow: none;
-    border-bottom: 1px solid #D8DEE8;
+    border-bottom: 1px solid #CFDDED;
 
     position: sticky;
     top: 0;
@@ -264,7 +264,7 @@ h1, h2, h3 {
 
 .card-description {
     font-size: 14px;
-    color: #626772;
+    color: #667080;
     margin-bottom: 30px;
     max-width: 390px;
 }
@@ -312,7 +312,7 @@ h1, h2, h3 {
     max-width: 1200px;
     margin: auto;
     padding: 30px 6%;
-    border-top: 1px solid #EAE6E3;
+    border-top: 1px solid #D8E2EF;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -434,7 +434,7 @@ h1, h2, h3 {
 
 /* KASI 411 */
 .kasi-image {
-    background: #E4E8EF;
+    background: #DEE8F4;
 }
 
 .project-status {
@@ -443,8 +443,8 @@ h1, h2, h3 {
     gap: 8px;
     font-size: 12px;
     font-weight: 600;
-    color: #65758E;
-    background: #EDF0F5;
+    color: #496990;
+    background: #E8EFF7;
     padding: 6px 12px;
     border-radius: 20px;
     margin-bottom: 15px;
@@ -453,7 +453,7 @@ h1, h2, h3 {
 .status-dot {
     width: 7px;
     height: 7px;
-    background: #65758E;
+    background: #496990;
     border-radius: 50%;
 }
 
@@ -462,12 +462,12 @@ h1, h2, h3 {
 ================================== */
 
 .education-section {
-    background: #F0F3F8;
+    background: #EEF3F9;
     padding: 100px 0;
 }
 
 .degree-card {
-    background: #E4E8EF;
+    background: #DEE8F4;
     border-radius: 22px;
     padding: 35px;
     display: flex;
@@ -484,7 +484,7 @@ h1, h2, h3 {
 
 .degree-card p {
     font-size: 14px;
-    color: #626772;
+    color: #667080;
 }
 
 .degree-majors {
@@ -493,8 +493,8 @@ h1, h2, h3 {
 }
 
 .degree-label {
-    background: #F5F7FA;
-    color: #65758E;
+    background: #F8FAFD;
+    color: #496990;
     padding: 8px 16px;
     border-radius: 30px;
     font-size: 12px;
@@ -516,7 +516,7 @@ h1, h2, h3 {
 
 .course-card {
     background: #FFFFFF;
-    border: 1px solid #E2E6ED;
+    border: 1px solid #D8E2EF;
     border-radius: 18px;
     padding: 28px;
     display: flex;
@@ -527,11 +527,11 @@ h1, h2, h3 {
 
 .course-card:hover {
     transform: translateY(-4px);
-    border-color: #BBC7D8;
+    border-color: #BFD0E5;
 }
 
 .course-year {
-    color: #65758E;
+    color: #496990;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -546,14 +546,14 @@ h1, h2, h3 {
 }
 
 .course-card p {
-    color: #777B83;
+    color: #667080;
     font-size: 14px;
     line-height: 1.8;
     margin-bottom: 22px;
 }
 
 .course-code {
-    color: #65758E;
+    color: #496990;
     font-size: 12px;
     font-weight: 600;
     margin-top: auto;
@@ -572,7 +572,7 @@ h1, h2, h3 {
 
 .highlight-icon {
     font-size: 32px;
-    color: #65758E;
+    color: #496990;
 }
 
 .academic-highlight h4 {
@@ -582,7 +582,7 @@ h1, h2, h3 {
 
 .academic-highlight p {
     font-size: 13px;
-    color: #626772;
+    color: #667080;
 }
 
 /* ==================================
@@ -599,12 +599,12 @@ h1, h2, h3 {
 }
 
 .certifications-section h2 span {
-    color: #65758E;
+    color: #496990;
 }
 
 .certification-card {
     background: #FFFFFF;
-    border: 1px solid #E2E6ED;
+    border: 1px solid #D8E2EF;
     border-radius: 22px;
     padding: 35px;
     display: flex;
@@ -616,17 +616,17 @@ h1, h2, h3 {
     width: 65px;
     height: 65px;
     min-width: 65px;
-    background: #E4E8EF;
+    background: #DEE8F4;
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 30px;
-    color: #65758E;
+    color: #496990;
 }
 
 .cert-provider {
-    color: #65758E;
+    color: #496990;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -639,7 +639,7 @@ h1, h2, h3 {
 }
 
 .cert-details > p:not(.cert-provider) {
-    color: #777B83;
+    color: #667080;
     font-size: 14px;
     line-height: 1.8;
     margin-bottom: 20px;
@@ -647,7 +647,7 @@ h1, h2, h3 {
 
 .cert-credits {
     font-weight: 600;
-    color: #65758E !important;
+    color: #496990 !important;
 }
 
 /* ==================================
@@ -724,12 +724,12 @@ h1, h2, h3 {
 }
 
 .ba-hero h1 span {
-    color: #65758E;
+    color: #496990;
 }
 
 .ba-intro {
     max-width: 700px;
-    color: #777B83;
+    color: #667080;
     font-size: 16px;
     line-height: 2;
     margin-bottom: 35px;
@@ -737,7 +737,7 @@ h1, h2, h3 {
 
 /* Skills section */
 .ba-skills {
-    background: #E4E8EF;
+    background: #DEE8F4;
     padding: 90px 0;
 }
 
@@ -754,12 +754,12 @@ h1, h2, h3 {
 
 .ba-skill-list span {
     display: inline-block;
-    background: #F5F7FA;
+    background: #F8FAFD;
     padding: 12px 20px;
     border-radius: 30px;
     font-size: 13px;
     font-weight: 500;
-    border: 1px solid #D8DEE8;
+    border: 1px solid #CFDDED;
 }
 
 /* Projects section */
@@ -778,13 +778,13 @@ h1, h2, h3 {
 }
 
 .ba-section-heading h2 span {
-    color: #65758E;
+    color: #496990;
 }
 
 .ba-section-heading > p:last-child {
     font-size: 15px;
     line-height: 1.9;
-    color: #777B83;
+    color: #667080;
 }
 
 /* Horizontal project cards */
@@ -792,7 +792,7 @@ h1, h2, h3 {
     display: grid;
     grid-template-columns: 42% 58%;
     background: #FFFFFF;
-    border: 1px solid #E2E6ED;
+    border: 1px solid #D8E2EF;
     border-radius: 24px;
     overflow: hidden;
     margin-bottom: 40px;
@@ -807,7 +807,7 @@ h1, h2, h3 {
 .ba-project-image {
     position: relative;
     min-height: 390px;
-    background: #E4E8EF;
+    background: #DEE8F4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -827,7 +827,7 @@ h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     font-weight: 600;
-    color: #65758E;
+    color: #496990;
 }
 
 .ba-project-content {
@@ -841,7 +841,7 @@ h1, h2, h3 {
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.3px;
-    color: #65758E;
+    color: #496990;
     margin-bottom: 15px;
 }
 
@@ -852,7 +852,7 @@ h1, h2, h3 {
 
 .ba-project-content > p:not(.ba-project-type) {
     font-size: 14px;
-    color: #777B83;
+    color: #667080;
     line-height: 1.9;
     margin-bottom: 20px;
 }
@@ -866,8 +866,8 @@ h1, h2, h3 {
 }
 
 .ba-tags span {
-    background: #F2F4F8;
-    color: #65758E;
+    background: #EEF3F9;
+    color: #496990;
     padding: 8px 13px;
     border-radius: 20px;
     font-size: 12px;
@@ -876,7 +876,7 @@ h1, h2, h3 {
 /* Project links */
 .ba-project-link {
     margin-top: auto;
-    color: #65758E;
+    color: #496990;
     font-size: 14px;
     font-weight: 700;
     display: inline-flex;
@@ -963,7 +963,7 @@ h1, h2, h3 {
 
 /* SKILLS - Compact but still spacious */
 .ba-skills {
-    background: #E4E8EF;
+    background: #DEE8F4;
     padding: 35px 0;
 }
 
@@ -985,7 +985,7 @@ h1, h2, h3 {
 .ba-skill-list span {
     padding: 9px 15px;
     font-size: 12px;
-    background: #F5F7FA;
+    background: #F8FAFD;
     border-radius: 25px;
 }
 
@@ -1076,7 +1076,7 @@ h1, h2, h3 {
     border-radius: 18px;
     overflow: hidden;
     background: #FFFFFF;
-    border: 1px solid #E2E6ED;
+    border: 1px solid #D8E2EF;
 }
 
 /* Image area */
@@ -1086,7 +1086,7 @@ h1, h2, h3 {
     min-height: 0;
     height: 160px;
     flex-shrink: 0;
-    background: #E4E8EF;
+    background: #DEE8F4;
 }
 
 .ba-project-image img {
@@ -1405,7 +1405,7 @@ h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     font-size: 23px;
     margin-bottom: 12px;
-    color: #343943;
+    color: #253653;
 }
 
 .ba-hero-skills .ba-skill-list {
@@ -1416,8 +1416,8 @@ h1, h2, h3 {
 }
 
 .ba-hero-skills .ba-skill-list span {
-    background: #E4E8EF;
-    color: #343943;
+    background: #DEE8F4;
+    color: #253653;
     border-radius: 25px;
     padding: 7px 13px;
     font-size: 12px;
@@ -1476,7 +1476,7 @@ h1, h2, h3 {
 }
 
 .ba-hero h1 span {
-    color: #65758E;
+    color: #496990;
 }
 
 /* Introduction */
@@ -1507,14 +1507,14 @@ h1, h2, h3 {
 ===================================== */
 
 .ba-projects {
-    background-color: #E8EDF4;
+    background-color: #EEF3F9;
     padding: 45px 0 50px;
 }
 
 /* Keep project cards white */
 .ba-project-card {
     background: #FFFFFF;
-    border: 1px solid #DDE3EC;
+    border: 1px solid #D8E2EF;
 }
 
 /* Section heading */
@@ -1558,7 +1558,7 @@ h1, h2, h3 {
 
 /* Shorter section */
 .ba-projects {
-    background-color: #E8EDF4;
+    background-color: #EEF3F9;
     padding: 25px 0 30px;
 }
 
@@ -1708,7 +1708,7 @@ h1, h2, h3 {
 .course-grid .academic-highlight p {
     font-size: 12px;
     line-height: 1.6;
-    color: #626772;
+    color: #667080;
 }
 
 /* =====================================
@@ -1753,7 +1753,7 @@ h1, h2, h3 {
 
 .portfolio-intro .ba-skill-list span {
     padding: 7px 13px;
-    background: #E4E8EF;
+    background: #DEE8F4;
     border: none;
     border-radius: 25px;
     font-size: 12px;
@@ -1761,7 +1761,7 @@ h1, h2, h3 {
 
 /* Featured projects */
 .portfolio-projects {
-    background: #E8EDF4;
+    background: #EEF3F9;
     padding: 30px 0 35px;
 }
 
@@ -1829,8 +1829,8 @@ h1, h2, h3 {
     margin-top: auto;
     font-size: 12px;
     font-weight: 600;
-    color: #65758E;
-    background: #F0F3F8;
+    color: #496990;
+    background: #EEF3F9;
     padding: 8px 13px;
     border-radius: 20px;
 }
@@ -1889,15 +1889,15 @@ h1, h2, h3 {
 
 /* UI/UX-specific colour accents */
 .ux-page .portfolio-projects {
-    background: #F1E8ED;
+    background: #EEF3F9;
 }
 
 .ux-page .portfolio-intro .ba-skill-list span {
-    background: #F2E1E7;
+    background: #DEE8F4;
 }
 
 .ux-page .ux-placeholder {
-    background: #F2E1E7;
+    background: #DEE8F4;
 }
 
 /* Tablet */
@@ -1946,7 +1946,7 @@ h1, h2, h3 {
 
 /* Film page background */
 .film-page {
-    background: #FAF9F8;
+    background: #F8F8F5;
 }
 
 /* Main introduction */
@@ -1968,12 +1968,12 @@ h1, h2, h3 {
 }
 
 .film-page .ba-skill-list span {
-    background: #F1E5E9;
+    background: #DEE8F4;
 }
 
 /* Featured work */
 .film-page .portfolio-projects {
-    background: #EEE8EC;
+    background: #EEF3F9;
     padding: 30px 0 35px;
 }
 
@@ -1991,18 +1991,18 @@ h1, h2, h3 {
 /* Film cards */
 .film-page .ba-project-card {
     background: #FFFFFF;
-    border: 1px solid #E6DFE4;
+    border: 1px solid #D8E2EF;
 }
 
 /* Film image placeholders */
 .film-page .film-image {
     height: 115px;
     min-height: 115px;
-    background: #DDD6DF;
+    background: #CFDDED;
 }
 
 .film-page .film-image .ba-image-label {
-    color: #65758E;
+    color: #496990;
     letter-spacing: 2px;
     font-size: 20px;
 }
@@ -2013,7 +2013,7 @@ h1, h2, h3 {
 
 .film-experience {
     padding: 35px 0;
-    background: #FAF9F8;
+    background: #F8F8F5;
 }
 
 .film-experience .ba-container {
@@ -2032,7 +2032,7 @@ h1, h2, h3 {
 
     padding: 25px 30px;
     background: #FFFFFF;
-    border: 1px solid #E6DFE4;
+    border: 1px solid #D8E2EF;
     border-radius: 16px;
 }
 
@@ -2046,13 +2046,13 @@ h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     font-size: 28px;
     font-weight: 600;
-    color: #343943;
+    color: #253653;
 }
 
 .film-experience-date span:last-child {
     font-size: 10px;
     letter-spacing: 1.5px;
-    color: #65758E;
+    color: #496990;
     font-weight: 700;
 }
 
@@ -2060,20 +2060,20 @@ h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     font-size: 25px;
     margin-bottom: 12px;
-    color: #343943;
+    color: #253653;
 }
 
 .film-experience-details p {
     font-size: 13px;
     line-height: 1.7;
-    color: #777B83;
+    color: #667080;
     max-width: 850px;
     margin-bottom: 15px;
 }
 
 /* Education */
 .film-page .portfolio-education {
-    background: #F2F4F8;
+    background: #EEF3F9;
     padding: 35px 0;
 }
 
@@ -2120,8 +2120,8 @@ h1, h2, h3 {
 ===================================== */
 
 .case-study-page {
-    background: #F5F7FA;
-    color: #343943;
+    background: #F8FAFD;
+    color: #253653;
 }
 
 .case-container,
@@ -2139,7 +2139,7 @@ h1, h2, h3 {
 .case-back {
     display: inline-block;
     margin-bottom: 25px;
-    color: #65758E;
+    color: #496990;
     font-size: 13px;
     text-decoration: none;
 }
@@ -2158,14 +2158,14 @@ h1, h2, h3 {
 
 .case-hero h1 span,
 .case-next h2 span {
-    color: #65758E;
+    color: #496990;
 }
 
 .case-lead {
     max-width: 950px;
     font-size: 16px;
     line-height: 1.7;
-    color: #656D79;
+    color: #667080;
     margin-bottom: 28px;
 }
 
@@ -2174,7 +2174,7 @@ h1, h2, h3 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
     padding-top: 20px;
-    border-top: 1px solid #DCE2EA;
+    border-top: 1px solid #D8E2EF;
 }
 
 .case-meta > div {
@@ -2188,26 +2188,26 @@ h1, h2, h3 {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1.4px;
-    color: #8490A1;
+    color: #6D89B2;
 }
 
 .case-meta strong {
     font-size: 13px;
     font-weight: 600;
-    color: #343943;
+    color: #253653;
 }
 
 /* MAIN IMAGE */
 .case-visual-band {
-    background: #E8EDF4;
+    background: #EEF3F9;
     padding: 22px 0;
 }
 
 .case-image-placeholder {
     min-height: 240px;
-    border: 1px dashed #A8B4C6;
+    border: 1px dashed #9CB1CC;
     border-radius: 16px;
-    background: #DFE6F0;
+    background: #DEE8F4;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2220,19 +2220,19 @@ h1, h2, h3 {
 .case-image-placeholder > span {
     font-size: 10px;
     letter-spacing: 2px;
-    color: #65758E;
+    color: #496990;
 }
 
 .case-image-placeholder strong {
     font-family: 'Playfair Display', serif;
     font-size: clamp(36px, 5vw, 62px);
-    color: #65758E;
+    color: #496990;
 }
 
 .case-image-placeholder p {
     max-width: 460px;
     font-size: 12px;
-    color: #6E7C90;
+    color: #667080;
     line-height: 1.6;
 }
 
@@ -2242,7 +2242,7 @@ h1, h2, h3 {
 }
 
 .case-tinted {
-    background: #E8EDF4;
+    background: #EEF3F9;
 }
 
 .case-two-column {
@@ -2254,7 +2254,7 @@ h1, h2, h3 {
 
 .case-section-label > span {
     display: block;
-    color: #65758E;
+    color: #496990;
     font-size: 12px;
     font-weight: 700;
     margin-bottom: 8px;
@@ -2281,7 +2281,7 @@ h1, h2, h3 {
 .case-section-body > p {
     font-size: 14px;
     line-height: 1.8;
-    color: #646C78;
+    color: #667080;
     margin: 0 0 14px;
 }
 
@@ -2316,7 +2316,7 @@ h1, h2, h3 {
 }
 
 .case-feature > span {
-    color: #8797AD;
+    color: #6D89B2;
     font-size: 11px;
     font-weight: 700;
 }
@@ -2327,7 +2327,7 @@ h1, h2, h3 {
 }
 
 .case-feature p {
-    color: #6E7580;
+    color: #667080;
     font-size: 12px;
     line-height: 1.65;
     margin: 0;
@@ -2349,7 +2349,7 @@ h1, h2, h3 {
 
 .case-process-card > span {
     font-size: 10px;
-    color: #65758E;
+    color: #496990;
     letter-spacing: 1px;
     font-weight: 700;
 }
@@ -2364,13 +2364,13 @@ h1, h2, h3 {
 .case-process-card p {
     font-size: 12px;
     line-height: 1.7;
-    color: #6E7580;
+    color: #667080;
     margin: 0;
 }
 
 /* SCREENSHOTS AND DIAGRAMS */
 .case-gallery-intro {
-    color: #6E7580;
+    color: #667080;
     font-size: 14px;
     margin-bottom: 20px;
 }
@@ -2391,11 +2391,11 @@ h1, h2, h3 {
 .case-gallery-placeholder {
     height: 180px;
     border-radius: 10px;
-    background: #E4E8EF;
+    background: #DEE8F4;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #65758E;
+    color: #496990;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -2411,7 +2411,7 @@ h1, h2, h3 {
 .case-gallery-item p {
     font-size: 12px;
     line-height: 1.6;
-    color: #6E7580;
+    color: #667080;
     margin: 0 8px;
 }
 
@@ -2419,7 +2419,7 @@ h1, h2, h3 {
 .case-next {
     padding: 42px 3%;
     text-align: center;
-    background: #F1E5E9;
+    background: #DEE8F4;
 }
 
 .case-next h2 {
@@ -2429,7 +2429,7 @@ h1, h2, h3 {
 }
 
 .case-next > p:not(.eyebrow) {
-    color: #646C78;
+    color: #667080;
     font-size: 14px;
     margin: 0 auto 20px;
     max-width: 650px;
@@ -2437,7 +2437,7 @@ h1, h2, h3 {
 
 /* ERPS VARIATION */
 .erps-case .case-visual-band {
-    background: #E2EAF2;
+    background: #DEE8F4;
 }
 
 /* RESPONSIVE */
@@ -2489,4 +2489,74 @@ h1, h2, h3 {
     .case-gallery-placeholder {
         height: 150px;
     }
+}
+
+
+/* =========================================
+   SITE-WIDE COLOUR FINISH
+   Landing-page palette; Dean's Merit List remains pink
+========================================= */
+:root {
+    --background: #F8F8F5;
+    --pink: #DDA8BD;
+    --pink-light: #F5E6ED;
+    --navy: #253653;
+    --steel-blue: #496990;
+    --blue: #6D89B2;
+    --powder-blue: #BFD0E5;
+    --navy-light: #DEE8F4;
+    --charcoal: #253653;
+    --grey: #667080;
+    --white: #FFFFFF;
+}
+
+.navbar {
+    background: #F8F8F5;
+    border-bottom: 1px solid #DFE5ED;
+    padding: 17px 6%;
+}
+.logo, .nav-links a { color: #253653; }
+.logo span { color: #6D89B2; }
+.nav-links a:hover { color: #496990; }
+
+/* Primary actions are navy, rather than pink */
+.primary-btn { background: #253653; color: #FFFFFF; }
+.primary-btn:hover { background: #496990; color: #FFFFFF; }
+
+/* Shared footer is edge-to-edge, including inner pages */
+.footer {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 28px 6%;
+    background: #253653;
+    border-top: none;
+    border-radius: 0;
+}
+.footer p, .footer-links a { color: #E3EBF5; }
+.footer-links a:hover { color: #DDA8BD; }
+
+/* Pink reserved for the academic achievement */
+.academic-highlight,
+.course-grid .academic-highlight,
+.portfolio-education .academic-highlight {
+    background: #F2E1E7;
+}
+.academic-highlight .highlight-icon { color: #A65D7A; }
+
+/* Make film and UI/UX sections consistent with the site palette */
+.ux-page .portfolio-projects,
+.film-page .portfolio-projects { background: #EEF3F9; }
+.ux-page .portfolio-intro .ba-skill-list span,
+.ux-page .ux-placeholder,
+.film-page .ba-skill-list span { background: #DEE8F4; }
+
+/* Consistent case-study backgrounds */
+.case-study-page { background: #F8F8F5; color: #253653; }
+.case-next { background: #DEE8F4; }
+
+@media (max-width: 650px) {
+    .navbar { padding: 17px 5%; }
+    .nav-links { top: 100%; background: #F8F8F5; }
+    .footer { padding: 25px 5%; }
 }

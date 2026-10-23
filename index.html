@@ -4,156 +4,1217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bianca | Portfolio</title>
 
-    <!-- Google Fonts -->
+    <meta name="description"
+          content="Bianca Ngobeni's portfolio exploring business analysis, data analysis, UI/UX design and film.">
+
+    <title>Bianca Ngobeni | Portfolio</title>
+
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- EXISTING STYLESHEET -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- ICONS -->
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+
+    <style>
+
+        /* =========================================
+           COLOUR PALETTE
+        ========================================= */
+
+        body.home-page {
+            --navy: #253653;
+            --steel: #496990;
+            --blue: #6D89B2;
+            --powder: #BFD0E5;
+            --pale-blue: #DEE8F4;
+            --ivory: #F8F8F5;
+            --ink: #292E39;
+            --muted: #667080;
+            --pink: #DDA8BD;
+
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: none;
+            overflow-x: hidden;
+
+            background: var(--ivory);
+            color: var(--ink);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .home-page *,
+        .home-page *::before,
+        .home-page *::after {
+            box-sizing: border-box;
+        }
+
+        .home-page main {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .home-container {
+            width: min(90%, 1250px);
+            margin: 0 auto;
+        }
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        .home-page .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            width: 100%;
+            max-width: none;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 17px 6%;
+            background: var(--ivory);
+            border-bottom: 1px solid #DFE5ED;
+        }
+
+        .home-page .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .home-page .logo span {
+            color: var(--blue);
+        }
+
+        .home-page .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .home-page .nav-links a {
+            color: var(--navy);
+            font-size: 13px;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .home-page .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .home-page .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--navy);
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        /* =========================================
+           COMPACT HERO
+        ========================================= */
+
+        .home-hero {
+            width: 100%;
+            background: var(--ivory);
+            padding: 42px 0 55px;
+        }
+
+        .home-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .home-hero-content {
+            min-width: 0;
+        }
+
+        .home-hello {
+            display: inline-block;
+            background: #E8EFF7;
+            color: var(--navy);
+
+            padding: 8px 15px;
+            border-radius: 30px;
+
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+
+            margin-bottom: 18px;
+        }
+
+        .home-hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(42px, 4.6vw, 65px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+
+            color: var(--navy);
+            margin: 0 0 18px;
+        }
+
+        .home-hero h1 .highlight-text {
+            color: var(--blue);
+        }
+
+        .home-hero-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.6;
+
+            color: var(--navy);
+            max-width: 600px;
+            margin: 0 0 12px;
+        }
+
+        .home-hero-description {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            line-height: 1.85;
+            color: var(--muted);
+
+            max-width: 610px;
+            margin: 0;
+        }
+
+        .home-hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 11px;
+            margin-top: 23px;
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            padding: 12px 19px;
+            border-radius: 9px;
+
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+
+            transition: transform 0.2s ease,
+                        background 0.2s ease;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .home-btn-primary {
+            background: var(--navy);
+            color: #FFFFFF !important;
+        }
+
+        .home-btn-primary:hover {
+            background: #344A6C;
+        }
+
+        .home-btn-secondary {
+            background: var(--powder);
+            color: var(--navy) !important;
+        }
+
+        /* =========================================
+           ORIGINAL CIRCULAR PORTRAIT
+        ========================================= */
+
+        .home-photo-wrap {
+            position: relative;
+
+            width: 100%;
+            max-width: 355px;
+            height: 355px;
+
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-image-circle {
+            position: relative;
+            z-index: 2;
+
+            width: 315px;
+            height: 315px;
+
+            border-radius: 50%;
+            background: #CFDDED;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home-image-circle img {
+            position: relative;
+            z-index: 2;
+
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+        }
+
+        .home-circle-placeholder {
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            color: var(--navy);
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .home-circle-placeholder svg {
+            width: 43px;
+            height: 43px;
+            stroke-width: 1.5;
+        }
+
+        .home-circle-decoration {
+            position: absolute;
+            z-index: 1;
+
+            width: 330px;
+            height: 330px;
+
+            border: 2px solid var(--powder);
+            border-radius: 50%;
+
+            transform: translate(17px, 14px);
+        }
+
+        /* =========================================
+           EXPLORE MY WORK
+        ========================================= */
+
+        .home-work {
+            width: 100%;
+            padding: 55px 0 70px;
+            background: #EEF3F9;
+            scroll-margin-top: 75px;
+        }
+
+        .home-work-heading {
+            margin-bottom: 27px;
+        }
+
+        .home-work-eyebrow {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--blue);
+            margin: 0 0 8px;
+        }
+
+        .home-work-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 3.5vw, 45px);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--navy);
+            margin: 0 0 10px;
+        }
+
+        .home-work-heading > p:last-child {
+            color: var(--muted);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* FOUR COLOURED CARDS */
+
+        .home-work-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .home-work-card {
+            min-height: 270px;
+            padding: 25px 22px;
+            border-radius: 16px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            text-decoration: none;
+
+            transition: transform 0.25s ease,
+                        box-shadow 0.25s ease;
+        }
+
+        .home-work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(37, 54, 83, 0.12);
+        }
+
+        /* BUSINESS ANALYSIS */
+
+        .home-work-card:nth-child(1) {
+            background: #253653;
+            color: #FFFFFF;
+        }
+
+        /* DATA ANALYSIS */
+
+        .home-work-card:nth-child(2) {
+            background: #496990;
+            color: #FFFFFF;
+        }
+
+        /* UI/UX */
+
+        .home-work-card:nth-child(3) {
+            background: #BFD0E5;
+            color: #253653;
+        }
+
+        /* FILM */
+
+        .home-work-card:nth-child(4) {
+            background: #DEE8F4;
+            color: #253653;
+        }
+
+        .home-work-icon {
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 29px;
+        }
+
+        .home-work-icon svg {
+            width: 29px;
+            height: 29px;
+            stroke-width: 1.9;
+        }
+
+        .home-work-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            font-weight: 700;
+            line-height: 1.16;
+
+            color: inherit;
+            margin: 0 0 14px;
+        }
+
+        .home-work-card p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            line-height: 1.85;
+
+            color: inherit;
+            margin: 0 0 20px;
+        }
+
+        .home-work-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 100%;
+            margin-top: auto;
+
+            font-size: 11px;
+            font-weight: 700;
+            color: inherit;
+        }
+
+        .home-work-link svg {
+            width: 17px;
+            height: 17px;
+            transition: transform 0.2s ease;
+        }
+
+        .home-work-card:hover .home-work-link svg {
+            transform: translate(3px, -3px);
+        }
+
+        /* =========================================
+           FULL-WIDTH FOOTER
+        ========================================= */
+
+        body.home-page .footer {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding: 28px 6%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            background: var(--navy);
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        body.home-page .footer p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            color: #E3EBF5;
+            margin: 0;
+        }
+
+        body.home-page .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        body.home-page .footer-links a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            color: #E3EBF5;
+            text-decoration: none;
+        }
+
+        body.home-page .footer-links a:hover {
+            color: var(--pink);
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 1050px) {
+
+            .home-work-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .home-hero-grid {
+                gap: 30px;
+            }
+
+        }
+
+        @media (max-width: 760px) {
+
+            .home-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .home-hero {
+                padding: 40px 0 55px;
+            }
+
+            .home-photo-wrap {
+                max-width: 300px;
+                height: 300px;
+            }
+
+            .home-image-circle {
+                width: 270px;
+                height: 270px;
+            }
+
+            .home-circle-decoration {
+                width: 285px;
+                height: 285px;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            .home-page .navbar {
+                padding: 17px 5%;
+            }
+
+            .home-page .logo {
+                font-size: 23px;
+            }
+
+            .home-page .menu-toggle {
+                display: block;
+            }
+
+            .home-page .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+
+                padding: 22px 5%;
+                background: var(--ivory);
+                border-bottom: 1px solid #DFE5ED;
+            }
+
+            .home-page .nav-links.active {
+                display: flex;
+            }
+
+            .home-hero h1 {
+                font-size: clamp(40px, 10vw, 54px);
+                letter-spacing: -1px;
+            }
+
+            .home-hero-subtitle {
+                font-size: 15px;
+            }
+
+            .home-work {
+                padding: 50px 0 60px;
+            }
+
+            .home-work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-work-card {
+                min-height: 215px;
+            }
+
+            .home-work-icon {
+                margin-bottom: 20px;
+            }
+
+            body.home-page .footer {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 5%;
+            }
+
+            body.home-page .footer-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .home-btn,
+            .home-work-card,
+            .home-work-link svg {
+                transition: none;
+            }
+
+        }
+        
+/* =========================================
+   HAND-DRAWN HERO ILLUSTRATIONS
+========================================= */
+
+.home-photo-wrap {
+    position: relative;
+    overflow: visible;
+    isolation: isolate;
+}
+
+.home-doodle {
+    position: absolute;
+    z-index: 4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+
+    color: #496990;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    pointer-events: none;
+}
+
+.home-doodle svg {
+    width: 25px;
+    height: 25px;
+    stroke-width: 1.4;
+}
+
+.doodle-data {
+    top: 17%;
+    left: -12%;
+    transform: rotate(-12deg);
+}
+
+.doodle-story {
+    top: 6%;
+    right: -15%;
+    transform: rotate(9deg);
+}
+
+.doodle-ideas {
+    top: 47%;
+    right: -20%;
+    transform: rotate(-8deg);
+}
+
+.doodle-design {
+    bottom: 5%;
+    right: -14%;
+    transform: rotate(8deg);
+}
+
+.doodle-camera {
+    top: 42%;
+    left: -17%;
+    transform: rotate(-15deg);
+}
+
+.doodle-sparkle {
+    bottom: 8%;
+    left: -8%;
+    transform: rotate(12deg);
+}
+
+.doodle-camera svg {
+    width: 29px;
+    height: 29px;
+}
+
+.doodle-sparkle svg {
+    width: 31px;
+    height: 31px;
+    color: #6D89B2;
+}
+
+/* Keep the portrait above the decoration ring */
+.home-image-circle {
+    z-index: 2;
+}
+
+.home-circle-decoration {
+    z-index: 1;
+}
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+    .doodle-data {
+        left: -5%;
+    }
+
+    .doodle-story {
+        right: -6%;
+    }
+
+    .doodle-ideas {
+        right: -9%;
+    }
+
+    .doodle-design {
+        right: -5%;
+    }
+
+    .doodle-camera {
+        left: -7%;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .home-doodle {
+        font-size: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .home-doodle svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .doodle-data {
+        top: 12%;
+        left: -3%;
+    }
+
+    .doodle-story {
+        top: 0;
+        right: -3%;
+    }
+
+    .doodle-ideas {
+        top: 45%;
+        right: -5%;
+    }
+
+    .doodle-design {
+        bottom: 0;
+        right: 0;
+    }
+
+    .doodle-camera {
+        top: 48%;
+        left: -5%;
+    }
+
+    .doodle-sparkle {
+        bottom: 3%;
+        left: 0;
+    }
+}
+
+
+    </style>
 </head>
 
-<body>
+<body class="home-page">
 
-    <!-- NAVIGATION -->
+    <!-- =====================================
+         NAVIGATION
+    ===================================== -->
+
     <header class="navbar">
-        <a href="index.html" class="logo">Bianca Ngobeni<span>.</span></a>
+
+        <a href="index.html" class="logo">
+            Bianca's Portfolio<span>.</span>
+        </a>
 
         <nav class="nav-links" id="navLinks">
             <a href="#home">Home</a>
-            <a href="#about">About Me</a>
+            <a href="about.html">About Me</a>
             <a href="#work">My Work</a>
             <a href="mailto:yourname@example.com">Contact</a>
         </nav>
 
-        <button class="menu-toggle" id="menuToggle"
+        <button class="menu-toggle"
+                id="menuToggle"
+                type="button"
                 aria-label="Toggle navigation"
                 aria-expanded="false">
             ☰
         </button>
+
     </header>
 
     <main>
 
-        <!-- HERO SECTION -->
-        <section class="hero" id="home">
+        <!-- =====================================
+             HERO
+        ===================================== -->
 
-            <div class="hero-content" id="about">
-                <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+        <section class="home-hero" id="home">
 
-                <h1>Hi, I'm <span>Bianca.</span></h1>
+            <div class="home-container home-hero-grid">
 
-                <h2>Final-year student at the
-                    University of Cape Town
-                </h2>
+                <div class="home-hero-content">
 
-                <p class="hero-description">
-                    I'm studying Information Systems and
-                    Film & Television Studies, with interests
-                    in technology, problem-solving, storytelling
-                    and understanding the world around us.
-                </p>
+                    <div class="home-hello">
+                        ✳ HELLO, NICE TO MEET YOU!
+                    </div>
 
-                <a href="#work" class="primary-btn">
-                    Explore My Work <span>↗</span>
-                </a>
-            </div>
+                    <h1>
+                        Technology,<br>
+                        Creativity &<br>
+                        <span class="highlight-text">Everything</span><br>
+                        In Between.
+                    </h1>
 
-            <div class="hero-image">
-                <div class="image-circle">
-                    <img src="images/profile.jpeg"
-                         alt="Portrait of Bianca"
-                         onerror="this.style.display='none'">
-                    <span class="photo-placeholder">Photo</span>
+                    <h2 class="home-hero-subtitle">
+                        An interdisciplinary thinker with a love for
+                        technology, people and storytelling.
+                    </h2>
+
+                    <p class="home-hero-description">
+                        I'm Bianca Ngobeni, a final-year Bachelor of Arts
+                        student at the University of Cape Town, majoring
+                        in Information Systems and Film & Television Studies.
+                        My interests sit at the intersection of business,
+                        data, design and creativity. I enjoy understanding
+                        problems, exploring ideas and finding practical
+                        ways to make things better.
+                    </p>
+
+                    <div class="home-hero-buttons">
+
+                        <a href="#work"
+                           class="home-btn home-btn-primary">
+                            Explore My Work ↗
+                        </a>
+
+                        <a href="about.html"
+                           class="home-btn home-btn-secondary">
+                            More About Me
+                        </a>
+
+                    </div>
+
                 </div>
-                <div class="circle-decoration"></div>
+
+                <!-- ORIGINAL CIRCULAR PORTRAIT -->
+
+               
+<div class="home-photo-wrap">
+
+    <!-- Small illustrations around the portrait -->
+    <div class="home-doodle doodle-data">
+        <i data-lucide="chart-no-axes-column-increasing"></i>
+        <span>DATA</span>
+    </div>
+
+    <div class="home-doodle doodle-story">
+        <i data-lucide="clapperboard"></i>
+        <span>STORYTELLING</span>
+    </div>
+
+    <div class="home-doodle doodle-ideas">
+        <i data-lucide="lightbulb"></i>
+        <span>IDEAS</span>
+    </div>
+
+    <div class="home-doodle doodle-design">
+        <i data-lucide="pencil-ruler"></i>
+        <span>DESIGN</span>
+    </div>
+
+    <div class="home-doodle doodle-camera">
+        <i data-lucide="camera"></i>
+    </div>
+
+    <div class="home-doodle doodle-sparkle">
+        <i data-lucide="sparkles"></i>
+    </div>
+
+    <!-- Keep your original circular portrait -->
+    <div class="home-image-circle">
+
+        <div class="home-circle-placeholder"
+             id="homePhotoPlaceholder">
+            <i data-lucide="user-round"></i>
+            <span>Your portrait goes here</span>
+        </div>
+
+        <img src="images/profile.jpeg"
+             alt="Portrait of Bianca Ngobeni"
+             id="homeProfilePhoto">
+
+    </div>
+
+    <div class="home-circle-decoration"></div>
+
+</div>
+
+
             </div>
 
         </section>
 
-        <!-- EXPLORE MY WORK -->
-        <section class="work-section" id="work">
+        <!-- =====================================
+             EXPLORE MY WORK
+        ===================================== -->
 
-            <div class="section-heading">
-                <p class="eyebrow">WHAT I DO</p>
-                <h2>Explore My Work<span>.</span></h2>
-                <p>
-                    A collection of my projects, experiences
-                    and interests across technology and film.
-                </p>
-            </div>
+        <section class="home-work" id="work">
 
-            <div class="work-grid">
+            <div class="home-container">
 
-                <!-- INFORMATION SYSTEMS -->
-                <div class="work-card information-card">
+                <div class="home-work-heading">
 
-                    <div class="card-icon">⌘</div>
-
-                    <h3>Information Systems</h3>
-
-                    <p class="card-description">
-                        Exploring how technology and data can
-                        solve problems and improve the way
-                        people and organisations work.
+                    <p class="home-work-eyebrow">
+                        SELECT A DISCIPLINE
                     </p>
 
-                    <div class="specialisations">
-                        <a href="business-analysis.html">
-                            Business Analysis <span>↗</span>
-                        </a>
+                    <h2>Explore My Work</h2>
 
-                        <a href="data-analysis.html">
-                            Data Analysis <span>↗</span>
-                        </a>
-
-                        <a href="ui-ux.html">
-                            UI/UX Design <span>↗</span>
-                        </a>
-                    </div>
+                    <p>
+                        Four areas of interest. Choose where
+                        you'd like to begin.
+                    </p>
 
                 </div>
 
-                <!-- FILM AND TELEVISION -->
-                <div class="work-card film-card">
+                <div class="home-work-grid">
 
-                    <div class="card-icon">✦</div>
+                    <!-- BUSINESS ANALYSIS -->
 
-                    <h3>Film & Television Studies</h3>
+                    <a href="business-analysis.html"
+                       class="home-work-card">
 
-                    <p class="card-description">
-                        Exploring storytelling, cinema,
-                        culture and the ways stories
-                        shape our understanding of society.
-                    </p>
+                        <div class="home-work-icon">
+                            <i data-lucide="workflow"></i>
+                        </div>
 
-                    <div class="specialisations">
-                        <a href="film.html">
-                            Explore Film & Television Studies <span>↗</span>
-                        </a>
-                    </div>
+                        <h3>Business<br>Analysis</h3>
+
+                        <p>
+                            Understanding business needs, analysing
+                            processes and translating problems into
+                            practical system requirements.
+                        </p>
+
+                        <div class="home-work-link">
+                            <span>View portfolio</span>
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+
+                    </a>
+
+                    <!-- DATA ANALYSIS -->
+
+                    <a href="data-analysis.html"
+                       class="home-work-card">
+
+                        <div class="home-work-icon">
+                            <i data-lucide="chart-no-axes-column-increasing"></i>
+                        </div>
+
+                        <h3>Data<br>Analysis</h3>
+
+                        <p>
+                            Working with data to identify patterns,
+                            create reports and support informed
+                            decision-making.
+                        </p>
+
+                        <div class="home-work-link">
+                            <span>View portfolio</span>
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+
+                    </a>
+
+                    <!-- UI/UX DESIGN -->
+
+                    <a href="ui-ux.html"
+                       class="home-work-card">
+
+                        <div class="home-work-icon">
+                            <i data-lucide="panels-top-left"></i>
+                        </div>
+
+                        <h3>UI/UX<br>Design</h3>
+
+                        <p>
+                            Thinking about users, organising
+                            information and creating interfaces
+                            that are clear and easy to navigate.
+                        </p>
+
+                        <div class="home-work-link">
+                            <span>View portfolio</span>
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+
+                    </a>
+
+                    <!-- FILM & TELEVISION -->
+
+                    <a href="film.html"
+                       class="home-work-card">
+
+                        <div class="home-work-icon">
+                            <i data-lucide="clapperboard"></i>
+                        </div>
+
+                        <h3>Film &<br>Television</h3>
+
+                        <p>
+                            Bringing research, visual communication,
+                            writing and storytelling together through
+                            academic and creative projects.
+                        </p>
+
+                        <div class="home-work-link">
+                            <span>View portfolio</span>
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+
+                    </a>
 
                 </div>
 
             </div>
+
         </section>
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- =====================================
+         FULL-WIDTH FOOTER
+    ===================================== -->
+
     <footer class="footer">
-        <p>© <span id="year"></span> Bianca. Made with care ♡</p>
+
+        <p>
+            © <span id="year"></span> Bianca.
+            Made with care ♡
+        </p>
 
         <div class="footer-links">
-            <a href="mailto:yourname@example.com">Email</a>
-            <a href="https://www.linkedin.com/" target="_blank"
-               rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/" target="_blank"
-               rel="noopener noreferrer">GitHub</a>
+
+            <a href="mailto:yourname@example.com">
+                Email
+            </a>
+
+            <a href="https://www.linkedin.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+            <a href="https://github.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+
         </div>
+
     </footer>
 
-    <script src="script.js"></script>
+    <!-- =====================================
+         JAVASCRIPT
+    ===================================== -->
+
+    <script>
+
+        // COPYRIGHT YEAR
+
+        const yearElement = document.getElementById("year");
+
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+
+
+        // MOBILE NAVIGATION
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        if (menuToggle && navLinks) {
+
+            menuToggle.addEventListener("click", () => {
+
+                const isOpen = navLinks.classList.toggle("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+            });
+
+            navLinks.querySelectorAll("a").forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navLinks.classList.remove("active");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                });
+
+            });
+
+        }
+
+
+        // PORTRAIT PLACEHOLDER
+
+        const profilePhoto =
+            document.getElementById("homeProfilePhoto");
+
+        const photoPlaceholder =
+            document.getElementById("homePhotoPlaceholder");
+
+        if (profilePhoto && photoPlaceholder) {
+
+            function updatePhoto() {
+
+                if (
+                    profilePhoto.complete &&
+                    profilePhoto.naturalWidth > 0
+                ) {
+
+                    photoPlaceholder.style.display = "none";
+                    profilePhoto.style.display = "block";
+
+                } else if (profilePhoto.complete) {
+
+                    profilePhoto.style.display = "none";
+                    photoPlaceholder.style.display = "flex";
+
+                }
+
+            }
+
+            profilePhoto.addEventListener("load", updatePhoto);
+            profilePhoto.addEventListener("error", updatePhoto);
+
+            updatePhoto();
+
+        }
+
+
+        // LUCIDE ICONS
+
+        window.addEventListener("load", () => {
+
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+        });
+
+    </script>
+
 </body>
 </html>

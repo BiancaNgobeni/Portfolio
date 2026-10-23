@@ -12,13 +12,227 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* FILM PORTFOLIO GALLERY */
+
+        .film-page .film-gallery-wrap {
+            grid-column: 1 / -1;
+            min-width: 0;
+        }
+
+        .film-page .film-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0 24px;
+        }
+
+        .film-page .film-filter {
+            font: 600 12px 'DM Sans', sans-serif;
+            padding: 10px 17px;
+            border: 1px solid #D8DFE8;
+            border-radius: 30px;
+            background: white;
+            color: #65758E;
+            cursor: pointer;
+        }
+
+        .film-page .film-filter.active {
+            background: #65758E;
+            color: white;
+        }
+
+        .film-page .film-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .film-page .film-gallery-card {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            background: #FFFFFF;
+            border: 1px solid #E6DFE4;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .film-page .film-gallery-card[hidden] {
+            display: none !important;
+        }
+
+        .film-page .film-card-image {
+            width: 100%;
+            height: 190px;
+            border: 0;
+            padding: 15px;
+            background: #E5EAF2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .film-page .film-gallery-card:nth-child(even) .film-card-image {
+            background: #F2E1E7;
+        }
+
+        .film-page .film-card-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .film-page .film-card-image img[hidden],
+        .film-page .film-placeholder[hidden] {
+            display: none !important;
+        }
+
+        .film-page .film-placeholder {
+            text-align: center;
+            color: #65758E;
+        }
+
+        .film-page .film-placeholder strong {
+            display: block;
+            font: 600 22px 'Playfair Display', serif;
+            margin-bottom: 6px;
+        }
+
+        .film-page .film-placeholder small {
+            font-size: 11px;
+        }
+
+        .film-page .film-card-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 21px;
+        }
+
+        .film-page .film-card-body h3 {
+            font: 600 21px 'Playfair Display', serif;
+            margin: 8px 0;
+        }
+
+        .film-page .film-card-body p {
+            color: #777B83;
+            font-size: 13px;
+            line-height: 1.7;
+            margin: 0 0 14px;
+        }
+
+        .film-page .film-card-type {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            color: #65758E;
+            text-transform: uppercase;
+        }
+
+        .film-page .film-card-bottom {
+            margin-top: auto;
+        }
+
+        .film-page .film-card-badge {
+            display: inline-block;
+            background: #EDF1F7;
+            color: #65758E;
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .film-page .film-card-badge.independent {
+            background: #F2E1E7;
+            color: #866D7C;
+        }
+
+        .film-page .film-card-link {
+            display: block;
+            width: fit-content;
+            margin-top: 13px;
+            color: #5D7C9D;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .film-page .film-card-link:not([href]) {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+        /* IMAGE VIEWER */
+
+        .film-page .film-viewer {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            padding: 30px;
+            background: rgba(27, 36, 50, 0.94);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .film-page .film-viewer.open {
+            display: flex;
+        }
+
+        .film-page .film-viewer img {
+            max-width: 95vw;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        .film-page .film-viewer p {
+            color: white;
+            font-size: 13px;
+        }
+
+        .film-page .film-viewer-close {
+            position: absolute;
+            right: 22px;
+            top: 12px;
+            background: transparent;
+            border: 0;
+            color: white;
+            font-size: 36px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 950px) {
+            .film-page .film-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 650px) {
+            .film-page .film-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .film-page .film-card-image {
+                height: 205px;
+            }
+        }
+    </style>
 </head>
 
 <body class="film-page">
 
     <!-- NAVIGATION -->
+
     <header class="navbar">
-        <a href="index.html" class="logo">Bianca<span>.</span></a>
+        <a href="index.html" class="logo">Bianca's Portfolio<span>.</span></a>
 
         <nav class="nav-links" id="navLinks">
             <a href="index.html">Home</a>
@@ -27,16 +241,21 @@
             <a href="mailto:yourname@example.com">Contact</a>
         </nav>
 
-        <button class="menu-toggle" id="menuToggle"
-                aria-label="Toggle navigation"
-                aria-expanded="false">☰</button>
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false">
+            ☰
+        </button>
     </header>
 
     <main>
 
         <!-- INTRODUCTION -->
-        <section class="ba-hero portfolio-intro">
 
+        <section class="ba-hero portfolio-intro">
             <div class="ba-hero-content">
 
                 <p class="eyebrow">
@@ -58,9 +277,7 @@
                     my own ideas through writing and production.
                 </p>
 
-                <!-- SKILLS -->
                 <div class="ba-hero-skills">
-
                     <h2>Skills & Competencies</h2>
 
                     <div class="ba-skill-list">
@@ -75,7 +292,6 @@
                         <span>Creative Writing</span>
                         <span>Production Assistance</span>
                     </div>
-
                 </div>
 
                 <a href="#projects" class="primary-btn">
@@ -86,140 +302,71 @@
         </section>
 
         <!-- FEATURED WORK -->
-        <section class="ba-projects portfolio-projects" id="projects">
 
+        <section class="ba-projects portfolio-projects" id="projects">
             <div class="ba-container">
 
                 <div class="ba-section-heading">
-                    <p class="eyebrow">SELECTED CREATIVE WORK</p>
-
+                    <p class="eyebrow">SELECTED CREATIVE & ACADEMIC WORK</p>
                     <h2>Featured Work<span>.</span></h2>
 
                     <p>
-                        A collection of creative projects,
-                        written work and experiences exploring
-                        film, storytelling and visual culture.
+                        One short film, two scripts and five academic
+                        writing and research pieces. Select a category
+                        to explore the work.
                     </p>
                 </div>
 
-                <!-- FILM PROJECT -->
-                <article class="ba-project-card">
+                <!-- CATEGORY FILTERS -->
 
-                    <div class="ba-project-image film-image">
-                        <div class="ba-image-label">
-                            SHORT FILM
-                        </div>
-                    </div>
+                <div class="film-gallery-wrap">
 
-                    <div class="ba-project-content">
+                    <div class="film-filters" aria-label="Filter film work">
 
-                        <p class="ba-project-type">
-                            FILMMAKING · VISUAL STORYTELLING
-                        </p>
+                        <button
+                            class="film-filter active"
+                            type="button"
+                            data-filter="all"
+                            aria-pressed="true">
+                            All Work (8)
+                        </button>
 
-                        <h3>Short Film Projects</h3>
+                        <button
+                            class="film-filter"
+                            type="button"
+                            data-filter="film"
+                            aria-pressed="false">
+                            Short Film (1)
+                        </button>
 
-                        <p>
-                            A collection of short films and
-                            visual storytelling projects,
-                            exploring narrative development,
-                            visual composition and creative
-                            expression.
-                        </p>
+                        <button
+                            class="film-filter"
+                            type="button"
+                            data-filter="script"
+                            aria-pressed="false">
+                            Scripts (2)
+                        </button>
 
-                        <div class="ba-tags">
-                            <span>Storytelling</span>
-                            <span>Film Production</span>
-                            <span>Visual Narrative</span>
-                        </div>
-
-                        <span class="portfolio-coming-soon">
-                            Work Coming Soon
-                        </span>
-
-                    </div>
-                </article>
-
-                <!-- SCREENWRITING -->
-                <article class="ba-project-card">
-
-                    <div class="ba-project-image film-image">
-                        <div class="ba-image-label">
-                            WRITING
-                        </div>
-                    </div>
-
-                    <div class="ba-project-content">
-
-                        <p class="ba-project-type">
-                            CREATIVE WRITING · SCREENWRITING
-                        </p>
-
-                        <h3>Scripts & Creative Writing</h3>
-
-                        <p>
-                            A selection of original scripts
-                            and creative writing exploring
-                            characters, narrative structure,
-                            dialogue and storytelling.
-                        </p>
-
-                        <div class="ba-tags">
-                            <span>Screenwriting</span>
-                            <span>Story Development</span>
-                            <span>Creative Writing</span>
-                        </div>
-
-                        <span class="portfolio-coming-soon">
-                            Work Coming Soon
-                        </span>
+                        <button
+                            class="film-filter"
+                            type="button"
+                            data-filter="research"
+                            aria-pressed="false">
+                            Writing & Research (5)
+                        </button>
 
                     </div>
-                </article>
 
-                <!-- FILM RESEARCH -->
-                <article class="ba-project-card">
+                    <div class="film-gallery" id="filmGallery"></div>
 
-                    <div class="ba-project-image film-image">
-                        <div class="ba-image-label">
-                            RESEARCH
-                        </div>
-                    </div>
-
-                    <div class="ba-project-content">
-
-                        <p class="ba-project-type">
-                            FILM STUDIES · CRITICAL ANALYSIS
-                        </p>
-
-                        <h3>Film Essays & Research</h3>
-
-                        <p>
-                            Academic writing examining
-                            cinema, identity, representation,
-                            visual culture and the social
-                            significance of film.
-                        </p>
-
-                        <div class="ba-tags">
-                            <span>Film Analysis</span>
-                            <span>Research</span>
-                            <span>Critical Writing</span>
-                        </div>
-
-                        <span class="portfolio-coming-soon">
-                            Work Coming Soon
-                        </span>
-
-                    </div>
-                </article>
+                </div>
 
             </div>
         </section>
 
         <!-- PRODUCTION EXPERIENCE -->
-        <section class="film-experience">
 
+        <section class="film-experience">
             <div class="ba-container">
 
                 <div class="ba-section-heading">
@@ -259,8 +406,8 @@
         </section>
 
         <!-- EDUCATION -->
-        <section class="education-section portfolio-education">
 
+        <section class="education-section portfolio-education">
             <div class="ba-container">
 
                 <div class="ba-section-heading">
@@ -298,10 +445,9 @@
                         <span class="course-year">2024</span>
                         <h4>Analysing Film & TV</h4>
                         <p>
-                            Introduction to analysing
-                            cinematic language, narrative,
-                            visual style and meaning
-                            in film and television.
+                            Introduction to analysing cinematic
+                            language, narrative, visual style
+                            and meaning in film and television.
                         </p>
                         <span class="course-code">FAM1005S</span>
                     </article>
@@ -310,9 +456,8 @@
                         <span class="course-year">2024</span>
                         <h4>Media and Society</h4>
                         <p>
-                            Exploring relationships between
-                            media, society, culture
-                            and representation.
+                            Exploring relationships between media,
+                            society, culture and representation.
                         </p>
                         <span class="course-code">FAM1001F</span>
                     </article>
@@ -322,8 +467,8 @@
                         <h4>Cinema Histories & Movements</h4>
                         <p>
                             Studying film history, cinematic
-                            movements and the development
-                            of different filmmaking traditions.
+                            movements and the development of
+                            different filmmaking traditions.
                         </p>
                         <span class="course-code">FAM2004S</span>
                     </article>
@@ -332,10 +477,10 @@
                         <span class="course-year">2025</span>
                         <h4>Introduction to Screen Genres</h4>
                         <p>
-                            Examining screen genres,
-                            their conventions and how
-                            they develop across different
-                            social and cultural contexts.
+                            Examining screen genres, their
+                            conventions and how they develop
+                            across different social and
+                            cultural contexts.
                         </p>
                         <span class="course-code">FAM2013F</span>
                     </article>
@@ -344,9 +489,9 @@
                         <span class="course-year">2025</span>
                         <h4>Commercial Programming</h4>
                         <p>
-                            Exploring commercial screen
-                            content, programming practices
-                            and television culture.
+                            Exploring commercial screen content,
+                            programming practices and
+                            television culture.
                         </p>
                         <span class="course-code">FAM2003F</span>
                     </article>
@@ -356,15 +501,15 @@
                         <h4>Advanced Film Studies</h4>
                         <p>
                             Advanced analysis of cinema,
-                            including representation,
-                            memory, trauma, genre
-                            and streaming culture.
+                            including representation, memory,
+                            trauma, genre and streaming culture.
                         </p>
                         <span class="course-code">FAM3003S</span>
                     </article>
 
                     <div class="academic-highlight">
                         <div class="highlight-icon">✦</div>
+
                         <div>
                             <h4>Dean's Merit List · 2025</h4>
                             <p>
@@ -379,43 +524,374 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section class="ba-closing">
-
-            <p class="eyebrow">LET'S CONNECT</p>
-
-            <h2>Let's tell meaningful stories.</h2>
-
-            <p>
-                I'm interested in opportunities to explore
-                storytelling, creative collaboration,
-                research and film production.
-            </p>
-
-            <a href="mailto:yourname@example.com"
-               class="primary-btn">
-                Get in Touch <span>↗</span>
-            </a>
-
-        </section>
+       
 
     </main>
 
+    <!-- FOOTER -->
+
     <footer class="footer">
 
-        <p>© <span id="year"></span> Bianca. Made with care ♡</p>
+        <p>
+            © <span id="year"></span> Bianca. Made with care ♡
+        </p>
 
         <div class="footer-links">
             <a href="mailto:yourname@example.com">Email</a>
+
             <a href="https://www.linkedin.com/"
-               target="_blank" rel="noopener noreferrer">LinkedIn</a>
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
             <a href="https://github.com/"
-               target="_blank" rel="noopener noreferrer">GitHub</a>
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
         </div>
 
     </footer>
 
+    <!-- FULL-SIZE IMAGE VIEWER -->
+
+    <div
+        class="film-viewer"
+        id="filmViewer"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Image preview">
+
+        <button
+            type="button"
+            class="film-viewer-close"
+            id="filmViewerClose"
+            aria-label="Close preview">
+            &times;
+        </button>
+
+        <img id="filmViewerImage" alt="">
+        <p id="filmViewerCaption"></p>
+
+    </div>
+
     <script src="script.js"></script>
+
+    <script>
+        /* =========================================
+           EDIT YOUR PORTFOLIO ITEMS HERE
+
+           For the short film:
+           Paste your unlisted YouTube URL into url.
+
+           For scripts and essays:
+           Use a PDF path such as:
+           documents/film/script-1.pdf
+
+           For images:
+           Add them to images/film/
+        ========================================= */
+
+        const filmItems = [
+            {
+                title: "Short Film Title",
+                category: "film",
+                type: "Academic Work",
+                description: "A short film exploring visual storytelling and narrative development.",
+                image: "images/film/short-film.png",
+                url: "",
+                action: "Watch Short Film ↗"
+            },
+            {
+                title: "Script 1",
+                category: "script",
+                type: "Independent Project",
+                description: "An original screenplay developed independently.",
+                image: "images/film/script-1.png",
+                url: "",
+                action: "Read Script ↗"
+            },
+            {
+                title: "Script 2",
+                category: "script",
+                type: "Academic Work",
+                description: "A screenplay developed for Film and Television Studies coursework.",
+                image: "images/film/script-2.png",
+                url: "",
+                action: "Read Script ↗"
+            },
+            {
+                title: "Writing & Research 1",
+                category: "research",
+                type: "Academic Work",
+                description: "A film studies essay or research paper.",
+                image: "images/film/research-1.png",
+                url: "",
+                action: "Read Paper ↗"
+            },
+            {
+                title: "Writing & Research 2",
+                category: "research",
+                type: "Academic Work",
+                description: "A film studies essay or research paper.",
+                image: "images/film/research-2.png",
+                url: "",
+                action: "Read Paper ↗"
+            },
+            {
+                title: "Writing & Research 3",
+                category: "research",
+                type: "Academic Work",
+                description: "A film studies essay or research paper.",
+                image: "images/film/research-3.png",
+                url: "",
+                action: "Read Paper ↗"
+            },
+            {
+                title: "Writing & Research 4",
+                category: "research",
+                type: "Academic Work",
+                description: "A film studies essay or research paper.",
+                image: "images/film/research-4.png",
+                url: "",
+                action: "Read Paper ↗"
+            },
+            {
+                title: "Writing & Research 5",
+                category: "research",
+                type: "Academic Work",
+                description: "A film studies essay or research paper.",
+                image: "images/film/research-5.png",
+                url: "",
+                action: "Read Paper ↗"
+            }
+        ];
+
+        /* =========================================
+           IMAGE VIEWER
+        ========================================= */
+
+        const gallery = document.getElementById("filmGallery");
+
+        const viewer = document.getElementById("filmViewer");
+        const viewerImage = document.getElementById("filmViewerImage");
+        const viewerCaption = document.getElementById("filmViewerCaption");
+        const viewerClose = document.getElementById("filmViewerClose");
+
+        let previousFocus = null;
+
+        function closeViewer() {
+            viewer.classList.remove("open");
+            viewerImage.removeAttribute("src");
+            document.body.style.overflow = "";
+
+            if (previousFocus) {
+                previousFocus.focus();
+            }
+        }
+
+        viewerClose.addEventListener("click", closeViewer);
+
+        viewer.addEventListener("click", event => {
+            if (event.target === viewer) {
+                closeViewer();
+            }
+        });
+
+        document.addEventListener("keydown", event => {
+            if (!viewer.classList.contains("open")) return;
+
+            if (event.key === "Escape") {
+                closeViewer();
+            }
+
+            if (event.key === "Tab") {
+                event.preventDefault();
+                viewerClose.focus();
+            }
+        });
+
+        /* =========================================
+           GENERATE PORTFOLIO CARDS
+        ========================================= */
+
+        filmItems.forEach(item => {
+
+            const card = document.createElement("article");
+            card.className = "film-gallery-card";
+            card.dataset.category = item.category;
+
+            /* Image area */
+
+            const preview = document.createElement("button");
+            preview.className = "film-card-image";
+            preview.type = "button";
+
+            preview.setAttribute(
+                "aria-label",
+                "Enlarge image for " + item.title
+            );
+
+            /* Image placeholder */
+
+            const fallback = document.createElement("div");
+            fallback.className = "film-placeholder";
+
+            const fallbackTitle = document.createElement("strong");
+            fallbackTitle.textContent = item.title;
+
+            const fallbackNote = document.createElement("small");
+            fallbackNote.textContent = "Image preview";
+
+            fallback.append(fallbackTitle, fallbackNote);
+
+            /* Actual image */
+
+            const img = document.createElement("img");
+            img.alt = item.title;
+            img.loading = "lazy";
+            img.hidden = true;
+
+            img.addEventListener("load", () => {
+                img.hidden = false;
+                fallback.hidden = true;
+            });
+
+            img.addEventListener("error", () => {
+                img.hidden = true;
+                fallback.hidden = false;
+            });
+
+            preview.append(fallback, img);
+            img.src = item.image;
+
+            /* Enlarge image when clicked */
+
+            preview.addEventListener("click", () => {
+
+                if (!img.naturalWidth) return;
+
+                previousFocus = document.activeElement;
+
+                viewerImage.src = item.image;
+                viewerImage.alt = item.title;
+                viewerCaption.textContent = item.title;
+
+                viewer.classList.add("open");
+                document.body.style.overflow = "hidden";
+                viewerClose.focus();
+            });
+
+            /* Card information */
+
+            const body = document.createElement("div");
+            body.className = "film-card-body";
+
+            const kind = document.createElement("span");
+            kind.className = "film-card-type";
+
+            if (item.category === "film") {
+                kind.textContent = "Short Film";
+            } else if (item.category === "script") {
+                kind.textContent = "Screenwriting";
+            } else {
+                kind.textContent = "Writing & Research";
+            }
+
+            const title = document.createElement("h3");
+            title.textContent = item.title;
+
+            const description = document.createElement("p");
+            description.textContent = item.description;
+
+            const bottom = document.createElement("div");
+            bottom.className = "film-card-bottom";
+
+            /* Academic or independent label */
+
+            const badge = document.createElement("span");
+
+            badge.className =
+                "film-card-badge" +
+                (item.type === "Independent Project" ? " independent" : "");
+
+            badge.textContent = item.type;
+
+            /* Link to video or PDF */
+
+            const link = document.createElement("a");
+            link.className = "film-card-link";
+            link.textContent = item.action;
+
+            if (item.url) {
+                link.href = item.url;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+            } else {
+                link.setAttribute("aria-disabled", "true");
+                link.title = "Add the URL or PDF path in filmItems";
+
+                link.addEventListener("click", event => {
+                    event.preventDefault();
+                });
+            }
+
+            bottom.append(badge, link);
+            body.append(kind, title, description, bottom);
+            card.append(preview, body);
+
+            gallery.appendChild(card);
+        });
+
+        /* =========================================
+           WORKING CATEGORY FILTERS
+        ========================================= */
+
+        const filterButtons = document.querySelectorAll(".film-filter");
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const selectedFilter = button.dataset.filter;
+
+                filterButtons.forEach(filterButton => {
+
+                    const isActive = filterButton === button;
+
+                    filterButton.classList.toggle(
+                        "active",
+                        isActive
+                    );
+
+                    filterButton.setAttribute(
+                        "aria-pressed",
+                        String(isActive)
+                    );
+                });
+
+                document.querySelectorAll(".film-gallery-card")
+                    .forEach(card => {
+
+                        card.hidden =
+                            selectedFilter !== "all" &&
+                            card.dataset.category !== selectedFilter;
+                    });
+            });
+        });
+
+        /* =========================================
+           FOOTER YEAR
+        ========================================= */
+
+        const year = document.getElementById("year");
+
+        if (year) {
+            year.textContent = new Date().getFullYear();
+        }
+
+    </script>
 
 </body>
 </html>

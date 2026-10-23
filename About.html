@@ -1,0 +1,2179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Me | Bianca Ngobeni</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* ==========================================
+   ABOUT ME — CREATIVE CV
+   MIDNIGHT BLUE & POWDER PALETTE
+========================================== */
+
+body.about-cv {
+    --midnight: #253653;
+    --steel: #6D89B2;
+    --powder: #BFD0E5;
+    --pale-blue: #E8EFF7;
+    --ivory: #F8F8F5;
+    --white: #FFFFFF;
+    --ink: #292E39;
+    --muted: #667080;
+    --border: #DCE4EE;
+
+    margin: 0;
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+.about-cv *,
+.about-cv *::before,
+.about-cv *::after {
+    box-sizing: border-box;
+}
+
+.about-cv h1,
+.about-cv h2,
+.about-cv h3,
+.about-cv h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.about-cv a {
+    text-decoration: none;
+}
+
+.about-cv .cv-container {
+    width: min(92%, 1240px);
+    margin: 0 auto;
+}
+
+.about-cv .cv-section {
+    padding: 78px 0;
+}
+
+.about-cv .cv-eyebrow {
+    color: var(--steel);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+}
+
+.about-cv .cv-section-heading {
+    color: var(--midnight);
+    font-size: clamp(34px, 4vw, 54px);
+    line-height: 1.16;
+    letter-spacing: -1px;
+    margin: 0 0 20px;
+}
+
+.about-cv .cv-section-intro {
+    max-width: 770px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 0 0 30px;
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.about-cv .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 6%;
+    background: var(--ivory);
+    border-bottom: 1px solid var(--border);
+}
+
+.about-cv .navbar .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--midnight);
+    text-decoration: none;
+}
+
+.about-cv .navbar .logo span {
+    color: var(--steel);
+}
+
+.about-cv .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.about-cv .nav-links a {
+    color: var(--midnight);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.about-cv .nav-links a:hover {
+    color: var(--steel);
+}
+
+.about-cv .menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--midnight);
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.cv-hero {
+    padding: 72px 0 85px;
+    overflow: hidden;
+    background: var(--ivory);
+}
+
+.cv-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.cv-hello {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 17px;
+    border-radius: 30px;
+    background: var(--pale-blue);
+    color: var(--midnight);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.cv-hero h1 {
+    color: var(--midnight);
+    font-size: clamp(60px, 7vw, 100px);
+    letter-spacing: -3px;
+    line-height: 1.05;
+    margin: 0 0 24px;
+}
+
+.cv-hero h1 span {
+    color: var(--steel);
+}
+
+.cv-hero-subtitle {
+    max-width: 660px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    margin: 0 0 18px;
+}
+
+.cv-hero-description {
+    max-width: 650px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.95;
+    margin: 0;
+}
+
+.cv-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.cv-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 22px;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.cv-btn:hover {
+    transform: translateY(-3px);
+}
+
+.cv-btn-primary {
+    background: var(--midnight);
+    color: var(--white) !important;
+}
+
+.cv-btn-primary:hover {
+    background: #344C70;
+}
+
+.cv-btn-secondary {
+    background: var(--powder);
+    color: var(--midnight) !important;
+}
+
+/* PROFILE PHOTO */
+
+.cv-photo-wrap {
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.cv-photo {
+    aspect-ratio: 4 / 5;
+    background: #CFDDED;
+    border-radius: 160px 160px 18px 18px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cv-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cv-photo-placeholder {
+    text-align: center;
+    color: var(--midnight);
+    padding: 25px;
+}
+
+.cv-photo-placeholder svg {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 10px;
+}
+
+.cv-photo-placeholder p {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.cv-photo-sticker {
+    position: absolute;
+    right: -20px;
+    bottom: 40px;
+    width: 125px;
+    height: 125px;
+    background: var(--midnight);
+    color: var(--white);
+    border: 5px solid var(--ivory);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: rotate(12deg);
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 8px 25px #25365320;
+}
+
+/* ==========================================
+   QUICK INFORMATION
+========================================== */
+
+.cv-info-strip {
+    background: var(--midnight);
+    color: white;
+    padding: 23px 0;
+}
+
+.cv-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.cv-info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+}
+
+.cv-info-item svg {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+    stroke: var(--powder);
+}
+
+.cv-info-item strong {
+    display: block;
+    font-size: 12px;
+    color: white;
+}
+
+.cv-info-item span {
+    display: block;
+    font-size: 11px;
+    color: #C9D7E9;
+}
+
+.cv-info-item a {
+    color: white;
+}
+
+/* ==========================================
+   INTERDISCIPLINARY ROLES
+========================================== */
+
+.cv-disciplines {
+    background: #EEF2F7;
+}
+
+.cv-discipline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 34px;
+}
+
+.cv-discipline-card {
+    min-height: 230px;
+    border-radius: 16px;
+    padding: 27px 23px;
+    transition: transform 0.2s;
+}
+
+.cv-discipline-card:hover {
+    transform: translateY(-5px);
+}
+
+.cv-discipline-card svg {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 25px;
+    stroke-width: 1.8;
+}
+
+.cv-discipline-card h3 {
+    font-size: 23px;
+    line-height: 1.2;
+    margin: 0 0 12px;
+}
+
+.cv-discipline-card p {
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.cv-discipline-card:nth-child(1) {
+    background: var(--midnight);
+    color: white;
+}
+
+.cv-discipline-card:nth-child(2) {
+    background: #46648C;
+    color: white;
+}
+
+.cv-discipline-card:nth-child(3) {
+    background: var(--powder);
+    color: var(--midnight);
+}
+
+.cv-discipline-card:nth-child(4) {
+    background: #DCE6F2;
+    color: var(--midnight);
+}
+
+/* ==========================================
+   SKILLS
+========================================== */
+
+.cv-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.cv-skill-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 27px;
+}
+
+.cv-skill-box h3 {
+    color: var(--midnight);
+    font-size: 23px;
+    margin: 0 0 20px;
+}
+
+.cv-skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.cv-skill-tags span {
+    padding: 8px 11px;
+    border-radius: 7px;
+    background: var(--pale-blue);
+    color: #405A7C;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* ==========================================
+   PROFESSIONAL EXPERIENCE
+========================================== */
+
+.cv-experience {
+    background: #EFF3F8;
+}
+
+.cv-timeline {
+    border-left: 2px solid #B4C7DE;
+    margin-left: 10px;
+    padding-left: 32px;
+}
+
+.cv-timeline-item {
+    position: relative;
+    margin-bottom: 38px;
+}
+
+.cv-timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.cv-timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -40px;
+    top: 9px;
+    width: 14px;
+    height: 14px;
+    background: var(--powder);
+    border: 3px solid var(--midnight);
+    border-radius: 50%;
+}
+
+.cv-experience-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 230px;
+    gap: 26px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+}
+
+.cv-experience-card.no-photo {
+    grid-template-columns: 1fr;
+}
+
+.cv-date {
+    color: var(--steel);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.cv-experience-card h3 {
+    color: var(--midnight);
+    font-size: 26px;
+    margin: 7px 0 5px;
+}
+
+.cv-company {
+    color: #49698F;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.cv-experience-card p,
+.cv-experience-card li {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.cv-experience-card ul {
+    padding-left: 18px;
+}
+
+.cv-experience-photo {
+    min-height: 235px;
+    background: #DCE7F4;
+    border-radius: 11px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--midnight);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.cv-experience-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cv-achievement-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--powder);
+    color: var(--midnight);
+    border-radius: 8px;
+    padding: 10px 13px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* ==========================================
+   EDUCATION & ACHIEVEMENTS
+========================================== */
+
+.cv-education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 23px;
+}
+
+.cv-education-card {
+    background: var(--midnight);
+    color: white;
+    border-radius: 17px;
+    padding: 34px;
+}
+
+.cv-education-card h3 {
+    font-size: 30px;
+    margin: 12px 0;
+}
+
+.cv-education-card p {
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.cv-education-card .cv-date {
+    color: var(--powder);
+}
+
+.cv-awards-card {
+    background: #DCE7F4;
+    color: var(--midnight);
+    border-radius: 17px;
+    padding: 34px;
+}
+
+.cv-awards-card h3 {
+    font-size: 29px;
+    margin: 0 0 18px;
+}
+
+.cv-award-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid #B8C9DE;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.cv-award-item:last-child {
+    border-bottom: 0;
+}
+
+.cv-award-item svg {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   PROJECTS
+========================================== */
+
+.cv-projects {
+    background: #F4F6FA;
+}
+
+.cv-project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.cv-project-card {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    border-radius: 16px;
+    background: #E0E9F5;
+}
+
+.cv-project-card:nth-child(2) {
+    background: #CEDDEF;
+}
+
+.cv-project-card:nth-child(3) {
+    background: #E9EEF5;
+}
+
+.cv-project-card h3 {
+    color: var(--midnight);
+    font-size: 27px;
+    margin: 10px 0;
+}
+
+.cv-project-card p {
+    color: #58697F;
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.cv-project-card a {
+    color: var(--midnight);
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+/* ==========================================
+   PERSONAL INTERESTS
+========================================== */
+
+.cv-personal {
+    background: var(--midnight);
+    color: white;
+}
+
+.cv-personal .cv-eyebrow {
+    color: var(--powder);
+}
+
+.cv-personal .cv-section-heading {
+    color: white;
+}
+
+.cv-personal .cv-section-intro {
+    color: #D1DEEE;
+}
+
+.cv-hobby-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 32px;
+}
+
+.cv-hobby-card {
+    background: var(--ivory);
+    color: var(--ink);
+    padding: 17px;
+    border-radius: 17px;
+}
+
+.cv-hobby-image {
+    height: 245px;
+    border-radius: 11px;
+    background: #C8D9ED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.cv-hobby-card:nth-child(2) .cv-hobby-image {
+    background: #AFC5DE;
+}
+
+.cv-hobby-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cv-hobby-image .placeholder {
+    color: var(--midnight);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.cv-hobby-image svg {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 12px;
+}
+
+.cv-hobby-card h3 {
+    color: var(--midnight);
+    font-size: 28px;
+    margin: 18px 5px 8px;
+}
+
+.cv-hobby-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.85;
+    margin: 0 5px 10px;
+}
+
+/* ==========================================
+   READING SHELF
+========================================== */
+
+.cv-books {
+    background: #EDF2F8;
+}
+
+.cv-books-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.cv-book {
+    min-height: 180px;
+    border-radius: 12px;
+    padding: 22px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    transition: transform 0.2s;
+}
+
+.cv-book:hover {
+    transform: translateY(-5px) rotate(-1deg);
+}
+
+.cv-book:nth-child(4n+1) {
+    background: #253653;
+}
+
+.cv-book:nth-child(4n+2) {
+    background: #47658C;
+}
+
+.cv-book:nth-child(4n+3) {
+    background: #607FA7;
+}
+
+.cv-book:nth-child(4n+4) {
+    background: #344D70;
+}
+
+.cv-book small {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.cv-book h3 {
+    font-size: 21px;
+    line-height: 1.25;
+    margin: 18px 0 0;
+}
+
+.cv-book.current {
+    outline: 4px solid #A8BEDA;
+    outline-offset: 3px;
+}
+
+/* ==========================================
+   FUN FACT
+========================================== */
+
+.cv-fun-fact {
+    background: #C8D9ED;
+    text-align: center;
+    padding: 70px 0;
+}
+
+.cv-fun-fact .cv-eyebrow {
+    color: #49698F;
+}
+
+.cv-fun-fact h2 {
+    color: var(--midnight);
+    font-size: clamp(35px, 4vw, 53px);
+    margin: 12px 0 18px;
+}
+
+.cv-fun-fact p {
+    max-width: 670px;
+    margin: auto;
+    color: #435671;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.cv-fun-fact .cv-code {
+    display: inline-block;
+    background: white;
+    border: 1px solid #B2C7E0;
+    border-radius: 12px;
+    padding: 16px 23px;
+    margin-top: 24px;
+    font-family: monospace;
+    font-size: 12px;
+    color: var(--midnight);
+}
+
+/* ==========================================
+   CONTACT & FOOTER
+========================================== */
+
+.cv-contact {
+    background: var(--ivory);
+    text-align: center;
+}
+
+.cv-contact h2 {
+    color: var(--midnight);
+    font-size: clamp(40px, 5vw, 65px);
+    margin: 0 0 20px;
+}
+
+.cv-contact p {
+    max-width: 650px;
+    margin: 0 auto 27px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.about-cv .footer {
+    background: var(--midnight);
+    color: #D1DEEE;
+    padding: 30px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.about-cv .footer p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.about-cv .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.about-cv .footer-links a {
+    color: #D1DEEE;
+    font-size: 12px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 950px) {
+
+    .cv-hero-grid,
+    .cv-education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cv-discipline-grid,
+    .cv-skills-grid,
+    .cv-project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cv-info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cv-photo-wrap {
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .about-cv .navbar {
+        padding: 18px 5%;
+    }
+
+    .about-cv .navbar .logo {
+        font-size: 22px;
+    }
+
+    .about-cv .menu-toggle {
+        display: block;
+    }
+
+    .about-cv .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--ivory);
+        padding: 22px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .about-cv .nav-links.active {
+        display: flex;
+    }
+
+    .about-cv .cv-section {
+        padding: 50px 0;
+    }
+
+    .cv-hero {
+        padding: 42px 0 55px;
+    }
+
+    .cv-hero-grid {
+        gap: 40px;
+    }
+
+    .cv-hero h1 {
+        font-size: 55px;
+    }
+
+    .cv-hero-subtitle {
+        font-size: 18px;
+    }
+
+    .cv-discipline-grid,
+    .cv-skills-grid,
+    .cv-project-grid,
+    .cv-hobby-grid,
+    .cv-education-grid,
+    .cv-experience-card {
+        grid-template-columns: 1fr;
+    }
+
+    .cv-books-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cv-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cv-photo-sticker {
+        right: 0;
+        width: 108px;
+        height: 108px;
+        font-size: 11px;
+    }
+
+    .cv-experience-photo {
+        height: 260px;
+    }
+
+    .cv-timeline {
+        padding-left: 23px;
+    }
+
+    .cv-timeline-item::before {
+        left: -31px;
+    }
+
+    .about-cv .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+</style>
+</head>
+
+<body class="about-cv">
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        Bianca's Portfolio<span>.</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="index.html#work">My Work</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false">
+        ☰
+    </button>
+
+</header>
+
+<main>
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="cv-hero">
+
+    <div class="cv-container cv-hero-grid">
+
+        <div>
+
+            <h1>
+                Bianca<br>
+                <span>Ngobeni.</span>
+            </h1>
+
+            <p class="cv-hero-subtitle">
+                An interdisciplinary thinker with a love
+                for technology, people and storytelling.
+            </p>
+
+            <p class="cv-hero-description">
+                I'm a final-year Bachelor of Arts student at
+                the University of Cape Town, majoring in
+                Information Systems and Film & Television Studies.
+
+                My interests sit at the intersection of business,
+                data, design and creativity. I enjoy understanding
+                how things work, identifying problems and finding
+                practical ways to make them better.
+
+                Whether I'm analysing a business process,
+                working with data, designing an interface or
+                developing a creative idea, I bring curiosity,
+                attention to detail and a willingness to learn.
+            </p>
+
+            <div class="cv-hero-actions">
+
+                <a href="#experience"
+                   class="cv-btn cv-btn-primary">
+                    Explore My CV ↗
+                </a>
+
+                <a href="#personal"
+                   class="cv-btn cv-btn-secondary">
+                    Beyond the CV ♡
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="cv-photo-wrap">
+
+            <div class="cv-photo">
+
+                <!-- PROFILE PHOTO -->
+                <!--
+                <img
+                    src="images/about/profile.jpg"
+                    alt="Bianca Ngobeni">
+                -->
+
+                <div class="cv-photo-placeholder">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.5">
+
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 21c0-5 3-8 8-8s8 3 8 8"/>
+
+                    </svg>
+
+                    <p>Your portrait goes here</p>
+
+                </div>
+
+            </div>
+
+            <div class="cv-photo-sticker">
+                MANY<br>
+                INTERESTS.<br>
+                ONE ME. ✳
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     QUICK INFORMATION
+========================================== -->
+
+<section class="cv-info-strip">
+
+    <div class="cv-container cv-info-grid">
+
+        <div class="cv-info-item">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.8">
+
+                <path d="M3 10l9-7 9 7v11H3z"/>
+                <path d="M9 21v-7h6v7"/>
+
+            </svg>
+
+            <div>
+                <strong>South African</strong>
+                <span>Nationality</span>
+            </div>
+
+        </div>
+
+        <div class="cv-info-item">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.8">
+
+                <path d="M3 7l9 6 9-6"/>
+                <rect x="3" y="5"
+                      width="18" height="14" rx="2"/>
+
+            </svg>
+
+            <div>
+                <strong>Email Address</strong>
+                <span>Add your email</span>
+            </div>
+
+        </div>
+
+        <div class="cv-info-item">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.8">
+
+                <path d="M6 3h4l2 5-3 2c1 3 3 5 6 6l2-3 4 2v4c0 2-2 3-4 2C9 19 5 15 3 7c-1-2 1-4 3-4z"/>
+
+            </svg>
+
+            <div>
+                <strong>Contact Number</strong>
+                <span>Add your number</span>
+            </div>
+
+        </div>
+
+        <div class="cv-info-item">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.8">
+
+                <path d="M2 9l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c4 3 8 3 12 0v-5"/>
+
+            </svg>
+
+            <div>
+                <strong>Final-Year Student</strong>
+                <span>University of Cape Town</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     INTERDISCIPLINARY ROLES
+========================================== -->
+
+<section class="cv-section cv-disciplines">
+
+    <div class="cv-container">
+
+        <p class="cv-eyebrow">
+            WHAT I BRING TO THE TABLE
+        </p>
+
+        <h2 class="cv-section-heading">
+            I don't fit into just one box.
+        </h2>
+
+        <p class="cv-section-intro">
+            My academic background has equipped me with skills
+            that translate across different industries and roles.
+            These are four areas where I can apply what I've learned.
+        </p>
+
+        <div class="cv-discipline-grid">
+
+            <!-- BUSINESS ANALYSIS -->
+
+            <article class="cv-discipline-card">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor">
+
+                    <rect x="3" y="3"
+                          width="7" height="7" rx="1"/>
+
+                    <rect x="14" y="3"
+                          width="7" height="7" rx="1"/>
+
+                    <rect x="8" y="14"
+                          width="8" height="7" rx="1"/>
+
+                    <path d="M6.5 10v2h11v-2M12 12v2"/>
+
+                </svg>
+
+                <h3>
+                    Business<br>Analysis
+                </h3>
+
+                <p>
+                    Understanding business needs, analysing
+                    processes and translating problems into
+                    practical system requirements.
+                </p>
+
+            </article>
+
+            <!-- DATA ANALYSIS -->
+
+            <article class="cv-discipline-card">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor">
+
+                    <path d="M4 20V11M10 20V5M16 20v-8M22 20V3"/>
+                    <path d="M2 21h21"/>
+
+                </svg>
+
+                <h3>
+                    Data<br>Analysis
+                </h3>
+
+                <p>
+                    Working with data to identify patterns,
+                    create reports and support informed
+                    decision-making.
+                </p>
+
+            </article>
+
+            <!-- UI/UX -->
+
+            <article class="cv-discipline-card">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor">
+
+                    <rect x="2" y="3"
+                          width="20" height="18" rx="2"/>
+
+                    <path d="M2 9h20M8 9v12"/>
+                    <circle cx="5" cy="6" r="1"/>
+
+                </svg>
+
+                <h3>
+                    UI/UX<br>Design
+                </h3>
+
+                <p>
+                    Thinking about users, organising information
+                    and creating interfaces that are clear
+                    and easy to navigate.
+                </p>
+
+            </article>
+
+            <!-- CREATIVE -->
+
+            <article class="cv-discipline-card">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor">
+
+                    <path d="M4 4h16v16H4z"/>
+                    <path d="M4 9h16M9 4l4 5M15 4l4 5"/>
+                    <path d="M10 12l6 3-6 3z"/>
+
+                </svg>
+
+                <h3>
+                    Creative<br>Work
+                </h3>
+
+                <p>
+                    Bringing research, visual communication,
+                    writing and storytelling into creative
+                    projects and content.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     SKILLS
+========================================== -->
+
+<section class="cv-section">
+
+    <div class="cv-container">
+
+        <p class="cv-eyebrow">MY TOOLKIT</p>
+
+        <h2 class="cv-section-heading">
+            Skills I've picked up along the way.
+        </h2>
+
+        <div class="cv-skills-grid">
+
+            <div class="cv-skill-box">
+
+                <h3>Technical & Data</h3>
+
+                <div class="cv-skill-tags">
+                    <span>SQL</span>
+                    <span>Python</span>
+                    <span>C#</span>
+                    <span>Blazor</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Power BI</span>
+                    <span>Advanced Excel</span>
+                    <span>Database Design</span>
+                </div>
+
+            </div>
+
+            <div class="cv-skill-box">
+
+                <h3>Business & Design</h3>
+
+                <div class="cv-skill-tags">
+                    <span>Business Analysis</span>
+                    <span>Requirements Analysis</span>
+                    <span>Process Modelling</span>
+                    <span>UML</span>
+                    <span>SDLC</span>
+                    <span>Agile</span>
+                    <span>Wireframing</span>
+                    <span>UI Design</span>
+                    <span>Documentation</span>
+                </div>
+
+            </div>
+
+            <div class="cv-skill-box">
+
+                <h3>Creative & Professional</h3>
+
+                <div class="cv-skill-tags">
+                    <span>Research</span>
+                    <span>Screenwriting</span>
+                    <span>Critical Writing</span>
+                    <span>Visual Storytelling</span>
+                    <span>Communication</span>
+                    <span>Teamwork</span>
+                    <span>Problem Solving</span>
+                    <span>Time Management</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     PROFESSIONAL EXPERIENCE
+========================================== -->
+
+<section class="cv-section cv-experience" id="experience">
+
+    <div class="cv-container">
+
+        <p class="cv-eyebrow">
+            THE EXPERIENCE
+        </p>
+
+        <h2 class="cv-section-heading">
+            My professional journey.
+        </h2>
+
+        <p class="cv-section-intro">
+            My experience spans customer service, hospitality,
+            tutoring and technical learning. Each opportunity
+            has taught me something different.
+        </p>
+
+        <div class="cv-timeline">
+
+            <!-- MCDONALD'S -->
+
+            <div class="cv-timeline-item">
+
+                <div class="cv-experience-card">
+
+                    <div>
+
+                        <span class="cv-date">
+                            MARCH 2025 - OCTOBER 2025
+                        </span>
+
+                        <h3>Flexi-Crew</h3>
+
+                        <div class="cv-company">
+                            McDonald's South Africa
+                        </div>
+
+                        <p>
+                            Worked across cashier, waiter and barista
+                            responsibilities in a fast-paced,
+                            customer-facing environment.
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                Managed POS transactions and customer
+                                orders during busy service periods.
+                            </li>
+
+                            <li>
+                                Adapted to different stations,
+                                including front-of-house and
+                                beverage preparation.
+                            </li>
+
+                            <li>
+                                Supported inventory rotation,
+                                cleanliness and opening and
+                                closing procedures.
+                            </li>
+
+                        </ul>
+
+                        <div class="cv-achievement-pill">
+                            ★ Fastest trainee to certify in barista operations
+                        </div>
+
+                        <p style="margin-top:14px;">
+                            One of my favourite achievements was
+                            completing my barista training. I enjoyed
+                            learning how to prepare different coffees
+                            and developing my latte art skills.
+                        </p>
+
+                    </div>
+
+                    <div class="cv-experience-photo">
+
+                        <!-- MCDONALD'S PHOTO -->
+                        <!--
+                        <img
+                            src="images/about/mcdonalds.jpg"
+                            alt="Bianca at McDonald's">
+                        -->
+
+                        <span>
+                            ☕<br><br>
+                            My McDonald's /<br>
+                            Barista Photo
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FNB -->
+
+            <div class="cv-timeline-item">
+
+                <div class="cv-experience-card no-photo">
+
+                    <div>
+
+                        <span class="cv-date">
+                            MAY 2025 - JULY 2025
+                        </span>
+
+                        <h3>Full Stack Developer Programme</h3>
+
+                        <div class="cv-company">
+                            FNB App Academy
+                        </div>
+
+                        <p>
+                            Completed a 32-credit Full Stack
+                            Developer programme covering web
+                            development fundamentals and
+                            programming concepts.
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                Developed practical HTML, CSS
+                                and JavaScript skills.
+                            </li>
+
+                            <li>
+                                Strengthened Python and
+                                programming fundamentals.
+                            </li>
+
+                            <li>
+                                Completed hands-on coding tasks
+                                and assessments.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PEER TUTOR -->
+
+            <div class="cv-timeline-item">
+
+                <div class="cv-experience-card no-photo">
+
+                    <div>
+
+                        <span class="cv-date">
+                            JUNE 2023 - NOVEMBER 2023
+                        </span>
+
+                        <h3>Peer Tutor</h3>
+
+                        <div class="cv-company">
+                            Nkumbulo Secondary School
+                        </div>
+
+                        <p>
+                            Supported fellow learners through
+                            individual and group tutoring in
+                            preparation for their Matric examinations.
+                        </p>
+
+                        <ul>
+
+                            <li>
+                                Helped learners improve their
+                                academic performance, with some
+                                improving by up to 50 percentage points.
+                            </li>
+
+                            <li>
+                                Simplified difficult concepts
+                                and adapted explanations to
+                                individual learning needs.
+                            </li>
+
+                            <li>
+                                Recognised as a top-performing
+                                peer tutor.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     EDUCATION AND ACHIEVEMENTS
+========================================== -->
+
+<section class="cv-section">
+
+    <div class="cv-container">
+
+        <p class="cv-eyebrow">
+            THE ACADEMIC SIDE
+        </p>
+
+        <h2 class="cv-section-heading">
+            Education & achievements.
+        </h2>
+
+        <div class="cv-education-grid">
+
+            <div class="cv-education-card">
+
+                <span class="cv-date">
+                    2024 - 2026
+                </span>
+
+                <h3>
+                    University of Cape Town
+                </h3>
+
+                <p>
+                    <strong>Bachelor of Arts</strong>
+                </p>
+
+                <p>
+                    Majors:<br>
+                    Information Systems<br>
+                    Film & Television Studies
+                </p>
+
+                <p>
+                    <strong>Academic highlight:</strong><br>
+                    72% average across second-year
+                    Information Systems courses.
+                </p>
+
+            </div>
+
+            <div class="cv-awards-card">
+
+                <h3>
+                    A little recognition ✦
+                </h3>
+
+                <div class="cv-award-item">
+                    <span>✦</span>
+                    <span>
+                        Dean's Merit List — UCT (2025)
+                    </span>
+                </div>
+
+                <div class="cv-award-item">
+                    <span>✦</span>
+                    <span>
+                        Top Academic Achiever —
+                        Nkumbulo Secondary School (2023)
+                    </span>
+                </div>
+
+                <div class="cv-award-item">
+                    <span>✦</span>
+                    <span>
+                        Top 10 Academic Achiever —
+                        Gauteng East District (Matric)
+                    </span>
+                </div>
+
+                <div class="cv-award-item">
+                    <span>✦</span>
+                    <span>
+                        FNB App Academy —
+                        32-Credit Full Stack Developer Certificate
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     PROJECTS
+========================================== -->
+
+<section class="cv-section cv-projects">
+
+    <div class="cv-container">
+
+        <p class="cv-eyebrow">
+            THINGS I'VE WORKED ON
+        </p>
+
+        <h2 class="cv-section-heading">
+            Projects that tell my story.
+        </h2>
+
+        <div class="cv-project-grid">
+
+            <article class="cv-project-card">
+
+                <p class="cv-eyebrow">
+                    TEAM PROJECT · 2026
+                </p>
+
+                <h3>
+                    Educational Reporting System
+                </h3>
+
+                <p>
+                    A system developed for the Western Cape
+                    Government to improve educational data
+                    capture and reporting. My contributions
+                    included business analysis, modelling,
+                    UI design and documentation.
+                </p>
+
+                <a href="erps.html">
+                    Explore Project ↗
+                </a>
+
+            </article>
+
+            <article class="cv-project-card">
+
+                <p class="cv-eyebrow">
+                    PERSONAL PROJECT
+                </p>
+
+                <h3>Kasi 411</h3>
+
+                <p>
+                    A platform concept exploring how township
+                    residents can discover local businesses,
+                    services and community information.
+                </p>
+
+                <a href="kasi-411.html">
+                    Explore Project ↗
+                </a>
+
+            </article>
+
+            <article class="cv-project-card">
+
+                <p class="cv-eyebrow">
+                    CREATIVE & ACADEMIC WORK
+                </p>
+
+                <h3>
+                    Film & Storytelling
+                </h3>
+
+                <p>
+                    A collection of screenwriting, filmmaking,
+                    research and critical analysis developed
+                    through my Film & Television Studies degree.
+                </p>
+
+                <a href="film.html">
+                    Explore My Work ↗
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     PERSONAL INTERESTS
+========================================== -->
+
+<section class="cv-section cv-personal" id="personal">
+
+    <div class="cv-container">
+
+        <p class="cv-eyebrow">
+            OFF THE CLOCK
+        </p>
+
+        <h2 class="cv-section-heading">
+            There's more to me than my CV.
+        </h2>
+
+        <p class="cv-section-intro">
+            When I'm not studying, coding or working on a
+            project, you'll probably find me reading a book
+            or exploring a hiking trail.
+        </p>
+
+        <div class="cv-hobby-grid">
+
+            <!-- READING -->
+
+            <div class="cv-hobby-card">
+
+                <div class="cv-hobby-image">
+
+                    <!-- READING PHOTO -->
+                    <!--
+                    <img
+                        src="images/about/reading.jpg"
+                        alt="My reading corner">
+                    -->
+
+                    <div class="placeholder">
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.6">
+
+                            <path d="M12 6c-3-2-6-2-10-1v14c4-1 7-1 10 1"/>
+                            <path d="M12 6c3-2 6-2 10-1v14c-4-1-7-1-10 1"/>
+                            <path d="M12 6v14"/>
+
+                        </svg>
+
+                        Reading Photo Placeholder
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Between the pages 📖
+                </h3>
+
+                <p>
+                    I love reading, particularly African literature.
+                    I'm drawn to stories that explore identity,
+                    culture, history and the complexities
+                    of everyday life.
+                </p>
+
+            </div>
+
+            <!-- HIKING -->
+
+            <div class="cv-hobby-card">
+
+                <div class="cv-hobby-image">
+
+                    <!-- HIKING PHOTO -->
+                    <!--
+                    <img
+                        src="images/about/hiking.jpg"
+                        alt="A photograph from one of my hikes">
+                    -->
+
+                    <div class="placeholder">
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.6">
+
+                            <path d="M2 20L9 7l4 7 3-5 6 11z"/>
+                            <circle cx="18" cy="5" r="2"/>
+
+                        </svg>
+
+                        Hiking Photo Placeholder
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Taking the scenic route ⛰
+                </h3>
+
+                <p>
+                    Hiking gives me a chance to disconnect,
+                    appreciate nature and explore new places.
+                    Some of my favourite experiences have
+                    been on Cape Town's mountain trails.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     BOOKSHELF
+========================================== -->
+
+<section class="cv-section cv-books">
+
+    <div class="cv-container">
+
+        <p class="cv-eyebrow">
+            THE BOOKSHELF
+        </p>
+
+        <h2 class="cv-section-heading">
+            Stories I've spent time with.
+        </h2>
+
+        <p class="cv-section-intro">
+            A little glimpse into my reading life.
+            These are some of the books I've read,
+            along with my current read.
+        </p>
+
+        <div class="cv-books-grid">
+
+            <div class="cv-book">
+                <small>Read ✓</small>
+                <h3>The African Trilogy</h3>
+            </div>
+
+            <div class="cv-book">
+                <small>Read ✓</small>
+                <h3>Dancing in the Dust</h3>
+            </div>
+
+            <div class="cv-book">
+                <small>Read ✓</small>
+                <h3>My Voice Is Under Control</h3>
+            </div>
+
+            <div class="cv-book">
+                <small>Read ✓</small>
+                <h3>The Girl with the Louding Voice</h3>
+            </div>
+
+            <div class="cv-book">
+                <small>Read ✓</small>
+                <h3>Nervous Conditions</h3>
+            </div>
+
+            <div class="cv-book">
+                <small>Read ✓</small>
+                <h3>Purple Hibiscus</h3>
+            </div>
+
+            <div class="cv-book current">
+                <small>Currently Reading ✳</small>
+                <h3>Half of a Yellow Sun</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     FUN FACT
+========================================== -->
+
+<section class="cv-fun-fact">
+
+    <div class="cv-container">
+
+        <p class="cv-eyebrow">
+            A LITTLE FUN FACT
+        </p>
+
+        <h2>
+            Oh, and I built this website myself! ✳
+        </h2>
+
+        <p>
+            This portfolio is one of my personal projects.
+            I designed and coded it using HTML, CSS and
+            JavaScript, bringing together my interest
+            in development, design and storytelling.
+        </p>
+
+        <div class="cv-code">
+            &lt;made with curiosity, creativity & code /&gt;
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     CONTACT
+========================================== -->
+
+<section class="cv-section cv-contact" id="contact">
+
+    <div class="cv-container">
+
+        <p class="cv-eyebrow">
+            WHAT'S NEXT?
+        </p>
+
+        <h2>
+            Let's make something meaningful.
+        </h2>
+
+        <p>
+            I'm interested in opportunities where I can
+            contribute, learn and grow, whether that's
+            through business analysis, data, design,
+            technology or creative work.
+        </p>
+
+        <a
+            href="mailto:yourname@example.com"
+            class="cv-btn cv-btn-primary">
+            Get in Touch ↗
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="footer">
+
+    <p>
+        © <span id="year"></span> Bianca.
+        Made with care ♡
+    </p>
+
+    <div class="footer-links">
+
+        <a href="mailto:yourname@example.com">
+            Email
+        </a>
+
+        <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn
+        </a>
+
+        <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            GitHub
+        </a>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+    /* FOOTER YEAR */
+
+    const aboutYear = document.getElementById("year");
+
+    if (aboutYear) {
+        aboutYear.textContent = new Date().getFullYear();
+    }
+
+    /* MOBILE NAVIGATION */
+
+    const aboutMenuToggle = document.getElementById("menuToggle");
+    const aboutNavLinks = document.getElementById("navLinks");
+
+    if (aboutMenuToggle && aboutNavLinks) {
+
+        aboutMenuToggle.addEventListener("click", () => {
+
+            const isOpen =
+                aboutNavLinks.classList.toggle("active");
+
+            aboutMenuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+        });
+
+    }
+</script>
+
+</body>
+</html>
