@@ -9,12 +9,17 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* FILM PORTFOLIO GALLERY */
+
+        /* =========================================
+           FILM PORTFOLIO GALLERY
+        ========================================= */
 
         .film-page .film-gallery-wrap {
             grid-column: 1 / -1;
@@ -31,17 +36,24 @@
         .film-page .film-filter {
             font: 600 12px 'DM Sans', sans-serif;
             padding: 10px 17px;
-            border: 1px solid #D8DFE8;
+            border: 1px solid #BFD0E5;
             border-radius: 30px;
-            background: white;
-            color: #65758E;
+            background: #FFFFFF;
+            color: #496990;
             cursor: pointer;
         }
 
-        .film-page .film-filter.active {
-            background: #65758E;
-            color: white;
+        .film-page .film-filter:hover {
+            background: #DEE8F4;
         }
+
+        .film-page .film-filter.active {
+            background: #253653;
+            border-color: #253653;
+            color: #FFFFFF;
+        }
+
+        /* GALLERY */
 
         .film-page .film-gallery {
             display: grid;
@@ -54,7 +66,7 @@
             display: flex;
             flex-direction: column;
             background: #FFFFFF;
-            border: 1px solid #E6DFE4;
+            border: 1px solid #D8E2EE;
             border-radius: 16px;
             overflow: hidden;
         }
@@ -63,18 +75,24 @@
             display: none !important;
         }
 
+        /* =========================================
+           ACTUAL IMAGE PREVIEWS
+        ========================================= */
+
         .film-page .film-card-image {
+            position: relative;
+            display: block;
             width: 100%;
-            height: 190px;
+            height: 220px;
             border: 0;
-            padding: 15px;
+            padding: 0;
+            margin: 0;
             background: #E5EAF2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            cursor: pointer;
+            cursor: zoom-in;
         }
+
+        /* Keep alternating pink sections */
 
         .film-page .film-gallery-card:nth-child(even) .film-card-image {
             background: #F2E1E7;
@@ -84,17 +102,27 @@
             display: block;
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
         }
 
-        .film-page .film-card-image img[hidden],
-        .film-page .film-placeholder[hidden] {
-            display: none !important;
+        .film-page .film-card-image:hover img {
+            transform: scale(1.04);
         }
+
+        /* Placeholder only when image fails */
 
         .film-page .film-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            color: #65758E;
+            color: #496990;
+            padding: 20px;
         }
 
         .film-page .film-placeholder strong {
@@ -107,6 +135,10 @@
             font-size: 11px;
         }
 
+        /* =========================================
+           CARD CONTENT
+        ========================================= */
+
         .film-page .film-card-body {
             display: flex;
             flex-direction: column;
@@ -116,11 +148,12 @@
 
         .film-page .film-card-body h3 {
             font: 600 21px 'Playfair Display', serif;
+            color: #253653;
             margin: 8px 0;
         }
 
         .film-page .film-card-body p {
-            color: #777B83;
+            color: #667080;
             font-size: 13px;
             line-height: 1.7;
             margin: 0 0 14px;
@@ -130,7 +163,7 @@
             font-size: 10px;
             font-weight: 700;
             letter-spacing: 1.2px;
-            color: #65758E;
+            color: #496990;
             text-transform: uppercase;
         }
 
@@ -141,12 +174,14 @@
         .film-page .film-card-badge {
             display: inline-block;
             background: #EDF1F7;
-            color: #65758E;
+            color: #496990;
             border-radius: 20px;
             padding: 5px 10px;
             font-size: 11px;
             font-weight: 600;
         }
+
+        /* KEEP INDEPENDENT PROJECT LABELS PINK */
 
         .film-page .film-card-badge.independent {
             background: #F2E1E7;
@@ -157,7 +192,7 @@
             display: block;
             width: fit-content;
             margin-top: 13px;
-            color: #5D7C9D;
+            color: #496990;
             font-size: 12px;
             font-weight: 700;
             text-decoration: underline;
@@ -169,7 +204,9 @@
             cursor: default;
         }
 
-        /* IMAGE VIEWER */
+        /* =========================================
+           FULL-SIZE IMAGE VIEWER
+        ========================================= */
 
         .film-page .film-viewer {
             display: none;
@@ -188,14 +225,19 @@
         }
 
         .film-page .film-viewer img {
+            display: block;
             max-width: 95vw;
             max-height: 80vh;
+            width: auto;
+            height: auto;
             object-fit: contain;
         }
 
         .film-page .film-viewer p {
-            color: white;
+            color: #FFFFFF;
             font-size: 13px;
+            margin-top: 15px;
+            text-align: center;
         }
 
         .film-page .film-viewer-close {
@@ -204,10 +246,14 @@
             top: 12px;
             background: transparent;
             border: 0;
-            color: white;
+            color: #FFFFFF;
             font-size: 36px;
             cursor: pointer;
         }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
 
         @media (max-width: 950px) {
             .film-page .film-gallery {
@@ -224,6 +270,7 @@
                 height: 205px;
             }
         }
+
     </style>
 </head>
 
@@ -232,13 +279,16 @@
     <!-- NAVIGATION -->
 
     <header class="navbar">
-        <a href="index.html" class="logo">Bianca's Portfolio<span>.</span></a>
+
+        <a href="index.html" class="logo">
+            Bianca's Portfolio<span>.</span>
+        </a>
 
         <nav class="nav-links" id="navLinks">
             <a href="index.html">Home</a>
-            <a href="index.html#about">About Me</a>
+            <a href="about.html">About Me</a>
             <a href="index.html#work">My Work</a>
-            <a href="biancaamandangobeni1802@gmail.com">Contact</a>
+            <a href="mailto:biancaamandangobeni1802@gmail.com">Contact</a>
         </nav>
 
         <button
@@ -249,6 +299,7 @@
             aria-expanded="false">
             ☰
         </button>
+
     </header>
 
     <main>
@@ -262,7 +313,9 @@
                     FILM / TELEVISION / STORYTELLING
                 </p>
 
-                <h1>Film & <span>Television Studies.</span></h1>
+                <h1>
+                    Film & <span>Television Studies.</span>
+                </h1>
 
                 <p class="ba-intro">
                     I've always been interested in how stories
@@ -278,6 +331,7 @@
                 </p>
 
                 <div class="ba-hero-skills">
+
                     <h2>Skills & Competencies</h2>
 
                     <div class="ba-skill-list">
@@ -292,6 +346,7 @@
                         <span>Creative Writing</span>
                         <span>Production Assistance</span>
                     </div>
+
                 </div>
 
                 <a href="#projects" class="primary-btn">
@@ -307,19 +362,24 @@
             <div class="ba-container">
 
                 <div class="ba-section-heading">
-                    <p class="eyebrow">SELECTED CREATIVE & ACADEMIC WORK</p>
+
+                    <p class="eyebrow">
+                        SELECTED CREATIVE & ACADEMIC WORK
+                    </p>
+
                     <h2>Featured Work<span>.</span></h2>
 
                     <p>
-                        One short film, two scripts and five academic
+                        One short film, three scripts and four academic
                         writing and research pieces. Select a category
                         to explore the work.
                     </p>
+
                 </div>
 
-                <!-- CATEGORY FILTERS -->
-
                 <div class="film-gallery-wrap">
+
+                    <!-- FILTERS -->
 
                     <div class="film-filters" aria-label="Filter film work">
 
@@ -344,7 +404,7 @@
                             type="button"
                             data-filter="script"
                             aria-pressed="false">
-                            Scripts (2)
+                            Scripts (3)
                         </button>
 
                         <button
@@ -352,10 +412,12 @@
                             type="button"
                             data-filter="research"
                             aria-pressed="false">
-                            Writing & Research (5)
+                            Writing & Research (4)
                         </button>
 
                     </div>
+
+                    <!-- CARDS GENERATED BY JAVASCRIPT -->
 
                     <div class="film-gallery" id="filmGallery"></div>
 
@@ -382,6 +444,7 @@
                     </div>
 
                     <div class="film-experience-details">
+
                         <h3>Production Assistant</h3>
 
                         <p>
@@ -398,6 +461,7 @@
                             <span>Lighting Support</span>
                             <span>On-Set Coordination</span>
                         </div>
+
                     </div>
 
                 </div>
@@ -411,19 +475,25 @@
             <div class="ba-container">
 
                 <div class="ba-section-heading">
+
                     <p class="eyebrow">ACADEMIC BACKGROUND</p>
+
                     <h2>Education & Coursework<span>.</span></h2>
 
                     <p>
                         My academic journey in film,
                         television, media and storytelling.
                     </p>
+
                 </div>
 
                 <div class="degree-card">
+
                     <div>
                         <p class="eyebrow">2024 - 2026</p>
+
                         <h3>University of Cape Town</h3>
+
                         <p>Bachelor of Arts</p>
 
                         <p class="degree-majors">
@@ -433,6 +503,7 @@
                     </div>
 
                     <span class="degree-label">Final Year</span>
+
                 </div>
 
                 <h3 class="coursework-title">
@@ -507,7 +578,10 @@
                         <span class="course-code">FAM3003S</span>
                     </article>
 
+                    <!-- KEEP DEAN'S MERIT LIST PINK -->
+
                     <div class="academic-highlight">
+
                         <div class="highlight-icon">✦</div>
 
                         <div>
@@ -517,14 +591,13 @@
                                 by the University of Cape Town.
                             </p>
                         </div>
+
                     </div>
 
                 </div>
 
             </div>
         </section>
-
-       
 
     </main>
 
@@ -537,7 +610,10 @@
         </p>
 
         <div class="footer-links">
-            <a href="biancaamandangobeni1802@gmail.com">Email</a>
+
+            <a href="mailto:biancaamandangobeni1802@gmail.com">
+                Email
+            </a>
 
             <a href="https://www.linkedin.com/"
                target="_blank"
@@ -550,6 +626,7 @@
                rel="noopener noreferrer">
                 GitHub
             </a>
+
         </div>
 
     </footer>
@@ -561,7 +638,8 @@
         id="filmViewer"
         role="dialog"
         aria-modal="true"
-        aria-label="Image preview">
+        aria-label="Image preview"
+        aria-hidden="true">
 
         <button
             type="button"
@@ -572,6 +650,7 @@
         </button>
 
         <img id="filmViewerImage" alt="">
+
         <p id="filmViewerCaption"></p>
 
     </div>
@@ -579,98 +658,88 @@
     <script src="script.js"></script>
 
     <script>
+
         /* =========================================
-           EDIT YOUR PORTFOLIO ITEMS HERE
-
-           For the short film:
-           Paste your unlisted YouTube URL into url.
-
-           For scripts and essays:
-           Use a PDF path such as:
-           documents/film/script-1.pdf
-
-           For images:
-           Add them to images/film/
+           FILM PORTFOLIO ITEMS
         ========================================= */
 
-const filmItems = [
-    {
-        title: "A Collection",
-        category: "film",
-        type: "Academic Work",
-        description: "A short film exploring visual storytelling and narrative development.",
-        image: "images/collect.png",
-        url: "https://youtu.be/ika6vzgnI4g",
-        action: "Watch Short Film ↗"
-    },
-    {
-        title: "What The Fire Saw",
-        category: "script",
-        type: "Independent Project",
-        description: "An original screenplay developed independently.",
-        image: "images/what-the-firesaw.png",
-        url: "documents/WhatTheFireSaw.pdf",
-        action: "Read Script ↗"
-    },
-    {
-        title: "Lacuna",
-        category: "script",
-        type: "Academic Work",
-        description: "A screenplay developed for Film and Television Studies coursework.",
-        image: "images/lacuna.png",
-        url: "documents/NGBBIA002.FAM100S.Script.pdf",
-        action: "Read Script ↗"
-    },
-    {
-        title: "I'm Not Angry",
-        category: "script",
-        type: "Independent Script",
-        description: "An original screenplay developed independently.",
-        image: "images/notAngry.png",
-        url: "documents/I AM NOT ANGRY_NGBBIA002.pdf",
-        action: "Read Script ↗"
-    },
-    {
-        title: "Afro-Pessimism and Speculative Fiction in Get Out (2017)",
-        category: "research",
-        type: "Academic Work",
-        description: "A film studies essay.",
-        image: "images/getout.jpeg",
-        url: "documents/get-out.pdf",
-        action: "Read Paper ↗"
-    },
-    {
-        title: "Scene Analysis of Charles Burnett's Killer of Sheep",
-        category: "research",
-        type: "Academic Work",
-        description: "A film studies essay.",
-        image: "images/killer.jpeg",
-        url: "documents/killer.pdf",
-        action: "Read Paper ↗"
-    },
-    {
-        title: "Patrice Lumumba’s Death and the Possibilities and Failures of African Decolonisation in the Cold War Era",
-        category: "research",
-        type: "Academic Work",
-        description: "Research paper.",
-        image: "images/patrice.jpeg",
-        url: "documents/patrice.pdf",
-        action: "Read Paper ↗"
-    },
-    {
-        title: "The Gangster Anti-Hero as a Cue for Public Critical Engagement in Mapantsula",
-        category: "research",
-        type: "Academic Work",
-        description: "A film studies essay.",
-        image: "images/Mapantsula.jpeg",
-        url: "documents/FAM3005F.ESSAY_NGBBIA002.pdf",
-        action: "Read Paper ↗"
-    }
-];
-
+        const filmItems = [
+            {
+                title: "A Collection",
+                category: "film",
+                type: "Academic Work",
+                description: "A short film exploring visual storytelling and narrative development.",
+                image: "images/collect.png",
+                url: "https://youtu.be/ika6vzgnI4g",
+                action: "Watch Short Film ↗"
+            },
+            {
+                title: "What The Fire Saw",
+                category: "script",
+                type: "Independent Project",
+                description: "An original screenplay developed independently.",
+                image: "images/what-the-firesaw.png",
+                url: "documents/WhatTheFireSaw.pdf",
+                action: "Read Script ↗"
+            },
+            {
+                title: "Lacuna",
+                category: "script",
+                type: "Academic Work",
+                description: "A screenplay developed for Film and Television Studies coursework.",
+                image: "images/lacuna.png",
+                url: "documents/NGBBIA002.FAM100S.Script.pdf",
+                action: "Read Script ↗"
+            },
+            {
+                title: "I'm Not Angry",
+                category: "script",
+                type: "Independent Script",
+                description: "An original screenplay developed independently.",
+                image: "images/notAngry.png",
+                url: "documents/I AM NOT ANGRY_NGBBIA002.pdf",
+                action: "Read Script ↗"
+            },
+            {
+                title: "Afro-Pessimism and Speculative Fiction in Get Out (2017)",
+                category: "research",
+                type: "Academic Work",
+                description: "A film studies essay.",
+                image: "images/getout.jpeg",
+                url: "documents/get-out.pdf",
+                action: "Read Paper ↗"
+            },
+            {
+                title: "Scene Analysis of Charles Burnett's Killer of Sheep",
+                category: "research",
+                type: "Academic Work",
+                description: "A film studies essay.",
+                image: "images/killer.jpeg",
+                url: "documents/killer.pdf",
+                action: "Read Paper ↗"
+            },
+            {
+                title: "Patrice Lumumba’s Death and the Possibilities and Failures of African Decolonisation in the Cold War Era",
+                category: "research",
+                type: "Academic Work",
+                description: "Research paper.",
+                image: "images/patrice.jpeg",
+                url: "documents/patrice.pdf",
+                action: "Read Paper ↗"
+            },
+            {
+                title: "The Gangster Anti-Hero as a Cue for Public Critical Engagement in Mapantsula",
+                category: "research",
+                type: "Academic Work",
+                description: "A film studies essay.",
+                image: "images/Mapantsula.jpeg",
+                url: "documents/FAM3005F.ESSAY_NGBBIA002.pdf",
+                action: "Read Paper ↗"
+            }
+        ];
 
         /* =========================================
-           IMAGE VIEWER
+           ELEMENTS
         ========================================= */
 
         const gallery = document.getElementById("filmGallery");
@@ -682,25 +751,37 @@ const filmItems = [
 
         let previousFocus = null;
 
+        /* =========================================
+           IMAGE VIEWER
+        ========================================= */
+
         function closeViewer() {
+
             viewer.classList.remove("open");
+            viewer.setAttribute("aria-hidden", "true");
+
             viewerImage.removeAttribute("src");
+
             document.body.style.overflow = "";
 
             if (previousFocus) {
                 previousFocus.focus();
             }
+
         }
 
         viewerClose.addEventListener("click", closeViewer);
 
         viewer.addEventListener("click", event => {
+
             if (event.target === viewer) {
                 closeViewer();
             }
+
         });
 
         document.addEventListener("keydown", event => {
+
             if (!viewer.classList.contains("open")) return;
 
             if (event.key === "Escape") {
@@ -711,6 +792,7 @@ const filmItems = [
                 event.preventDefault();
                 viewerClose.focus();
             }
+
         });
 
         /* =========================================
@@ -720,12 +802,14 @@ const filmItems = [
         filmItems.forEach(item => {
 
             const card = document.createElement("article");
+
             card.className = "film-gallery-card";
             card.dataset.category = item.category;
 
-            /* Image area */
+            /* IMAGE AREA */
 
             const preview = document.createElement("button");
+
             preview.className = "film-card-image";
             preview.type = "button";
 
@@ -734,66 +818,75 @@ const filmItems = [
                 "Enlarge image for " + item.title
             );
 
-            /* Image placeholder */
-
-            const fallback = document.createElement("div");
-            fallback.className = "film-placeholder";
-
-            const fallbackTitle = document.createElement("strong");
-            fallbackTitle.textContent = item.title;
-
-            const fallbackNote = document.createElement("small");
-            fallbackNote.textContent = "Image preview";
-
-            fallback.append(fallbackTitle, fallbackNote);
-
-            /* Actual image */
+            /* CREATE ACTUAL IMAGE DIRECTLY */
 
             const img = document.createElement("img");
 
             img.alt = item.title;
-            img.loading = "lazy";
+            img.loading = "eager";
+            img.decoding = "async";
 
+            img.style.display = "block";
             img.style.width = "100%";
             img.style.height = "100%";
             img.style.objectFit = "cover";
 
-            img.addEventListener("load", () => {
-                img.style.display = "block";
-                fallback.style.display = "none";
-            });
+            /* FALLBACK ONLY ON LOAD ERROR */
 
             img.addEventListener("error", () => {
-                console.error("Failed to load:", img.src);
-                img.style.display = "none";
-                fallback.style.display = "flex";
+
+                console.error(
+                    "Film preview failed to load:",
+                    img.src
+                );
+
+                img.remove();
+
+                const fallback = document.createElement("div");
+                fallback.className = "film-placeholder";
+
+                const fallbackTitle = document.createElement("strong");
+                fallbackTitle.textContent = item.title;
+
+                const fallbackNote = document.createElement("small");
+                fallbackNote.textContent = "Image unavailable";
+
+                fallback.append(fallbackTitle, fallbackNote);
+                preview.appendChild(fallback);
+
             });
 
-            img.style.display = "none";
+            preview.appendChild(img);
 
-            preview.append(fallback, img);
+            /* Assign source after adding image */
 
             img.src = item.image;
 
-
-            /* Enlarge image when clicked */
+            /* ENLARGE IMAGE */
 
             preview.addEventListener("click", () => {
 
-                if (!img.naturalWidth) return;
+                if (!img.complete || !img.naturalWidth) {
+                    return;
+                }
 
                 previousFocus = document.activeElement;
 
-                viewerImage.src = item.image;
+                viewerImage.src = img.src;
                 viewerImage.alt = item.title;
+
                 viewerCaption.textContent = item.title;
 
                 viewer.classList.add("open");
+                viewer.setAttribute("aria-hidden", "false");
+
                 document.body.style.overflow = "hidden";
+
                 viewerClose.focus();
+
             });
 
-            /* Card information */
+            /* CARD INFORMATION */
 
             const body = document.createElement("div");
             body.className = "film-card-body";
@@ -802,11 +895,17 @@ const filmItems = [
             kind.className = "film-card-type";
 
             if (item.category === "film") {
+
                 kind.textContent = "Short Film";
+
             } else if (item.category === "script") {
+
                 kind.textContent = "Screenwriting";
+
             } else {
+
                 kind.textContent = "Writing & Research";
+
             }
 
             const title = document.createElement("h3");
@@ -818,47 +917,66 @@ const filmItems = [
             const bottom = document.createElement("div");
             bottom.className = "film-card-bottom";
 
-            /* Academic or independent label */
+            /* CATEGORY LABEL */
 
             const badge = document.createElement("span");
 
             badge.className =
                 "film-card-badge" +
-                (item.type === "Independent Project" ? " independent" : "");
+                (
+                    item.type === "Independent Project" ||
+                    item.type === "Independent Script"
+                        ? " independent"
+                        : ""
+                );
 
             badge.textContent = item.type;
 
-            /* Link to video or PDF */
+            /* VIDEO OR DOCUMENT LINK */
 
             const link = document.createElement("a");
+
             link.className = "film-card-link";
             link.textContent = item.action;
 
             if (item.url) {
+
                 link.href = item.url;
                 link.target = "_blank";
                 link.rel = "noopener noreferrer";
+
             } else {
+
                 link.setAttribute("aria-disabled", "true");
-                link.title = "Add the URL or PDF path in filmItems";
+                link.title = "Document not available";
 
                 link.addEventListener("click", event => {
                     event.preventDefault();
                 });
+
             }
 
             bottom.append(badge, link);
-            body.append(kind, title, description, bottom);
+
+            body.append(
+                kind,
+                title,
+                description,
+                bottom
+            );
+
             card.append(preview, body);
 
             gallery.appendChild(card);
+
         });
 
         /* =========================================
-           WORKING CATEGORY FILTERS
+           CATEGORY FILTERS
         ========================================= */
 
-        const filterButtons = document.querySelectorAll(".film-filter");
+        const filterButtons =
+            document.querySelectorAll(".film-filter");
 
         filterButtons.forEach(button => {
 
@@ -879,6 +997,7 @@ const filmItems = [
                         "aria-pressed",
                         String(isActive)
                     );
+
                 });
 
                 document.querySelectorAll(".film-gallery-card")
@@ -887,12 +1006,15 @@ const filmItems = [
                         card.hidden =
                             selectedFilter !== "all" &&
                             card.dataset.category !== selectedFilter;
+
                     });
+
             });
+
         });
 
         /* =========================================
-           FOOTER YEAR
+           COPYRIGHT YEAR
         ========================================= */
 
         const year = document.getElementById("year");
