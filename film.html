@@ -593,80 +593,81 @@
            Add them to images/film/
         ========================================= */
 
-        const filmItems = [
-            {
-                title: "A Collection",
-                category: "film",
-                type: "Academic Work",
-                description: "A short film exploring visual storytelling and narrative development.",
-                image: "images/collect.png",
-                url: "https://youtu.be/ika6vzgnI4g",
-                action: "Watch Short Film ↗"
-            },
-            {
-                title: "What The Fire Saw",
-                category: "script",
-                type: "Independent Project",
-                description: "An original screenplay developed independently.",
-                image: "images/what-the-firesaw.png",
-                url: "documents/WhatTheFireSaw.pdf",
-                action: "Read Script ↗"
-            },
-            {
-                title: "Lacuna",
-                category: "script",
-                type: "Academic Work",
-                description: "A screenplay developed for Film and Television Studies coursework.",
-                image: "images/lacuna.png",
-                url: "",
-                action: "Read Script ↗"
-            },
-            {
-                title: "I'm Not Angry",
-                category: "script",
-                type: "Independent Script",
-                description: "An original screenplay developed independently.",
-                image: "images/notAngry.png",
-                url: "I AM NOT ANGRY_NGBBIA002.pdf",
-                action: "Read Script ↗"
-            },
-            {
-                title: "Afro-Pessimism and Speculative Fiction in Get Out (2017)",
-                category: "research",
-                type: "Academic Work",
-                description: "A film studies essay ",
-                image: "images/getout.jpeg",
-                url: "get-out.pdf",
-                action: "Read Paper ↗"
-            },
-            {
-                title: "Scene Analysis of Charles Burnett's Killer of Sheep ",
-                category: "research",
-                type: "Academic Work",
-                description: "A film studies essay",
-                image: "images/killer.jpeg",
-                url: "killer.pdf",
-                action: "Read Paper ↗"
-            },
-            {
-                title: "Patrice Lumumba’s Death and the Possibilities and Failures of African Decolonisation in the Cold War Era",
-                category: "research",
-                type: "Academic Work",
-                description: "Research paper.",
-                image: "images/patrice.jpeg",
-                url: "patrice.pdf",
-                action: "Read Paper ↗"
-            },
-            {
-                title: "The Gangster Anti-Hero as a Cue for Public Critical Engagement in Mapantsula ",
-                category: "research",
-                type: "Academic Work",
-                description: "A film studies essay",
-                image: "images/Mapantsula.jpeg",
-                url: "FAM3005F.ESSAY_NGBBIA002.pdf",
-                action: "Read Paper ↗"
-            }
-        ];
+const filmItems = [
+    {
+        title: "A Collection",
+        category: "film",
+        type: "Academic Work",
+        description: "A short film exploring visual storytelling and narrative development.",
+        image: "images/collect.png",
+        url: "https://youtu.be/ika6vzgnI4g",
+        action: "Watch Short Film ↗"
+    },
+    {
+        title: "What The Fire Saw",
+        category: "script",
+        type: "Independent Project",
+        description: "An original screenplay developed independently.",
+        image: "images/what-the-firesaw.png",
+        url: "documents/WhatTheFireSaw.pdf",
+        action: "Read Script ↗"
+    },
+    {
+        title: "Lacuna",
+        category: "script",
+        type: "Academic Work",
+        description: "A screenplay developed for Film and Television Studies coursework.",
+        image: "images/lacuna.png",
+        url: "documents/NGBBIA002.FAM100S.Script.pdf",
+        action: "Read Script ↗"
+    },
+    {
+        title: "I'm Not Angry",
+        category: "script",
+        type: "Independent Script",
+        description: "An original screenplay developed independently.",
+        image: "images/notAngry.png",
+        url: "documents/I AM NOT ANGRY_NGBBIA002.pdf",
+        action: "Read Script ↗"
+    },
+    {
+        title: "Afro-Pessimism and Speculative Fiction in Get Out (2017)",
+        category: "research",
+        type: "Academic Work",
+        description: "A film studies essay.",
+        image: "images/getout.jpeg",
+        url: "documents/get-out.pdf",
+        action: "Read Paper ↗"
+    },
+    {
+        title: "Scene Analysis of Charles Burnett's Killer of Sheep",
+        category: "research",
+        type: "Academic Work",
+        description: "A film studies essay.",
+        image: "images/killer.jpeg",
+        url: "documents/killer.pdf",
+        action: "Read Paper ↗"
+    },
+    {
+        title: "Patrice Lumumba’s Death and the Possibilities and Failures of African Decolonisation in the Cold War Era",
+        category: "research",
+        type: "Academic Work",
+        description: "Research paper.",
+        image: "images/patrice.jpeg",
+        url: "documents/patrice.pdf",
+        action: "Read Paper ↗"
+    },
+    {
+        title: "The Gangster Anti-Hero as a Cue for Public Critical Engagement in Mapantsula",
+        category: "research",
+        type: "Academic Work",
+        description: "A film studies essay.",
+        image: "images/Mapantsula.jpeg",
+        url: "documents/FAM3005F.ESSAY_NGBBIA002.pdf",
+        action: "Read Paper ↗"
+    }
+];
+
 
         /* =========================================
            IMAGE VIEWER
@@ -749,22 +750,31 @@
             /* Actual image */
 
             const img = document.createElement("img");
+
             img.alt = item.title;
             img.loading = "lazy";
-            img.hidden = true;
+
+            img.style.width = "100%";
+            img.style.height = "100%";
+            img.style.objectFit = "cover";
 
             img.addEventListener("load", () => {
-                img.hidden = false;
-                fallback.hidden = true;
+                img.style.display = "block";
+                fallback.style.display = "none";
             });
 
             img.addEventListener("error", () => {
-                img.hidden = true;
-                fallback.hidden = false;
+                console.error("Failed to load:", img.src);
+                img.style.display = "none";
+                fallback.style.display = "flex";
             });
 
+            img.style.display = "none";
+
             preview.append(fallback, img);
+
             img.src = item.image;
+
 
             /* Enlarge image when clicked */
 
