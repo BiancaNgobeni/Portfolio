@@ -808,7 +808,20 @@
         left: 0;
     }
 }
+        /* Two portfolio disciplines currently available */
 
+        .home-work-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 650px) {
+            .home-work-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
     </style>
 </head>
@@ -1004,7 +1017,7 @@
                     </a>
 
                     <!-- DATA ANALYSIS -->
-
+<!-- 
                     <a href="data-analysis.html"
                        class="home-work-card">
 
@@ -1026,9 +1039,9 @@
                         </div>
 
                     </a>
-
+ -->
                     <!-- UI/UX DESIGN -->
-
+<!--  
                     <a href="ui-ux.html"
                        class="home-work-card">
 
@@ -1050,7 +1063,7 @@
                         </div>
 
                     </a>
-
+ -->
                     <!-- FILM & TELEVISION -->
 
                     <a href="film.html"
