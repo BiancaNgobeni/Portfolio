@@ -804,24 +804,30 @@ h1, h2, h3 {
     transform: translateY(-4px);
 }
 
+
+/* Featured project image container */
 .ba-project-image {
     position: relative;
-    min-height: 390px;
+    min-height: 180px;
     background: #DEE8F4;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    padding: 20px;
 }
 
+/* Display full logos without cropping */
 .ba-project-image img {
-    position: absolute;
-    inset: 0;
+    position: relative;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    max-height: 140px;
+    object-fit: contain;
+    object-position: center;
     z-index: 1;
 }
+
 
 .ba-image-label {
     font-family: 'Playfair Display', serif;
