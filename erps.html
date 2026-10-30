@@ -2,26 +2,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Educational Reporting System case study by Bianca Ngobeni, featuring business analysis, project planning, system modelling, UI/UX design and development.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Educational Reporting System case study by Bianca Ngobeni, featuring business analysis, system modelling, UI/UX design and development.">
+<title>Educational Reporting System | Bianca Ngobeni</title>
 
-    <title>Educational Reporting System | Bianca Ngobeni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-    <!-- Same fonts as the rest of the portfolio -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Main portfolio stylesheet -->
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-       
-/* =========================================
-   ERPS PAGE — MIDNIGHT & POWDER THEME
-   Pink sections and accents preserved
-========================================= */
+<style>
+/* ==========================================
+   ERPS CASE STUDY
+   Midnight blue, powder blue and pink
+========================================== */
 
 body.erps-page {
     margin: 0;
@@ -43,19 +38,11 @@ body.erps-page {
 .erps-page h3,
 .erps-page h4 {
     font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 700;
     line-height: 1.3;
+    color: #253653;
 }
 
-.erps-page p {
-    margin-top: 0;
-}
-
-.erps-page a {
-    color: inherit;
-}
-
-/* NAVIGATION */
+.erps-page p { margin-top: 0; }
 
 .erps-page .navbar {
     position: sticky;
@@ -74,16 +61,11 @@ body.erps-page {
 
 .erps-page .navbar .logo {
     color: #253653;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 27px;
-    font-weight: 700;
+    font: 700 27px 'Playfair Display', serif;
     text-decoration: none;
-    white-space: nowrap;
 }
 
-.erps-page .navbar .logo span {
-    color: #496990;
-}
+.erps-page .navbar .logo span { color: #496990; }
 
 .erps-page .nav-links {
     display: flex;
@@ -98,58 +80,40 @@ body.erps-page {
     text-decoration: none;
 }
 
-.erps-page .nav-links a:hover {
-    color: #496990;
-}
+.erps-page .nav-links a:hover { color: #496990; }
 
 .erps-page .menu-toggle {
     display: none;
     border: 0;
     background: transparent;
     color: #253653;
-    font-size: 24px;
+    font-size: 25px;
     cursor: pointer;
 }
 
-/* GENERAL LAYOUT */
-
 .erps-container {
     width: min(92%, 1400px);
-    margin: 0 auto;
+    margin: auto;
 }
 
-.erps-section {
-    padding: 64px 0;
-}
+.erps-section { padding: 64px 0; }
+.erps-light { background: #F8F8F5; }
+.erps-blue { background: #EEF3F9; }
 
-.erps-light {
-    background: #F8F8F5;
-}
-
-.erps-blue {
-    background: #EEF3F9;
-}
-
-/* KEEP THE PINK SECTION */
-
-.erps-pink {
-    background: #F2E1E7;
-}
+/* Keep the original pink reflection section */
+.erps-pink { background: #F2E1E7; }
 
 .erps-eyebrow {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
+    color: #496990;
+    font: 700 11px 'DM Sans', sans-serif;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #496990;
     margin-bottom: 15px;
 }
 
 .erps-heading {
     font-size: clamp(30px, 3.2vw, 43px);
     margin: 0 0 18px;
-    color: #253653;
 }
 
 .erps-heading span,
@@ -165,47 +129,34 @@ body.erps-page {
     margin-bottom: 28px;
 }
 
-.erps-intro p {
-    margin-bottom: 13px;
-}
-
-/* GRID LAYOUTS */
-
-.erps-grid-2 {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-}
-
-.erps-grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-}
-
+.erps-grid-2,
+.erps-grid-3,
 .erps-grid-4 {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
+    gap: 22px;
 }
 
-/* GENERAL CARDS */
+.erps-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.erps-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.erps-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
-.erps-card {
+.erps-card,
+.erps-skill {
     min-width: 0;
-    padding: 24px;
-    background: #FFFFFF;
+    background: white;
     border: 1px solid #D8E2EE;
     border-radius: 16px;
+    padding: 24px;
 }
 
-.erps-card h3 {
+.erps-card h3,
+.erps-skill h3 {
     font-size: 21px;
     margin: 0 0 12px;
-    color: #253653;
 }
 
-.erps-card p {
+.erps-card p,
+.erps-skill p {
     font-size: 13px;
     line-height: 1.8;
     color: #667080;
@@ -222,29 +173,25 @@ body.erps-page {
 .erps-back {
     display: inline-block;
     margin-bottom: 35px;
-    color: #496990 !important;
+    color: #496990;
     font-size: 13px;
     text-decoration: none;
 }
 
-.erps-back:hover {
-    text-decoration: underline;
-}
+.erps-back:hover { text-decoration: underline; }
 
 .erps-hero h1 {
     font-size: clamp(40px, 4.8vw, 68px);
     line-height: 1.14;
     letter-spacing: -1px;
     margin: 14px 0 22px;
-    max-width: 1250px;
-    color: #253653;
 }
 
 .erps-hero-description {
     max-width: 1050px;
+    color: #667080;
     font-size: 16px;
     line-height: 1.85;
-    color: #667080;
     margin-bottom: 30px;
 }
 
@@ -266,47 +213,35 @@ body.erps-page {
 }
 
 .erps-meta strong {
-    display: block;
     font-size: 13px;
     font-weight: 600;
 }
 
-/* MAIN SYSTEM PREVIEW */
+/* SYSTEM PREVIEW */
 
 .erps-main-preview {
-    min-height: 350px;
+    min-height: 280px;
     background: #DEE8F4;
-    border: 1px dashed #BFD0E5;
+    border: 1px solid #BFD0E5;
     border-radius: 18px;
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    padding: 22px;
     overflow: hidden;
-}
-
-.erps-main-preview h2 {
-    font-size: 65px;
-    color: #496990;
-    margin: 0 0 12px;
-}
-
-.erps-main-preview p {
-    color: #496990;
-    font-size: 13px;
+    text-align: center;
 }
 
 .erps-main-preview img {
     display: block;
-    max-width: 100%;
-    max-height: 550px;
+    width: 100%;
+    max-height: 560px;
     object-fit: contain;
     border-radius: 10px;
 }
 
-/* MY ROLE */
+.erps-main-preview .erps-eyebrow {
+    margin-bottom: 15px;
+}
+
+/* ROLES */
 
 .erps-primary-role {
     background: #DEE8F4;
@@ -322,29 +257,23 @@ body.erps-page {
 }
 
 .erps-primary-role p {
-    color: #496990;
-    font-size: 14px;
-    line-height: 1.85;
     max-width: 1050px;
-    margin: 0;
+    color: #496990;
+    line-height: 1.85;
 }
-
-/* CONTRIBUTION LABELS */
 
 .erps-credit {
     display: inline-block;
-    padding: 6px 12px;
-    border-radius: 20px;
     background: #EEF3F9;
     color: #496990;
+    border-radius: 20px;
+    padding: 6px 12px;
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: 0.4px;
     margin-bottom: 14px;
 }
 
-/* KEEP TEAM CONTRIBUTIONS PINK */
-
+/* Keep team contribution labels pink */
 .erps-credit.team {
     background: #F5E6ED;
     color: #8B7282;
@@ -355,11 +284,7 @@ body.erps-page {
     color: #786C91;
 }
 
-/* PROCESS CARDS */
-
-.erps-step {
-    border-top: 3px solid #6D89B2;
-}
+.erps-step { border-top: 3px solid #6D89B2; }
 
 .erps-step-number {
     color: #496990;
@@ -369,7 +294,7 @@ body.erps-page {
     margin-bottom: 15px;
 }
 
-/* DOCUMENTATION FILTERS */
+/* DOCUMENT FILTERS */
 
 .erps-tabs {
     display: flex;
@@ -380,28 +305,24 @@ body.erps-page {
 
 .erps-tab {
     border: 1px solid #BFD0E5;
-    background: #FFFFFF;
+    background: white;
     color: #496990;
     padding: 11px 18px;
     border-radius: 30px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
+    font: 600 12px 'DM Sans', sans-serif;
     cursor: pointer;
     transition: background 0.2s, border-color 0.2s;
 }
 
-.erps-tab:hover {
-    background: #EEF3F9;
-}
+.erps-tab:hover { background: #DEE8F4; }
 
 .erps-tab.active {
     background: #253653;
-    color: #FFFFFF;
     border-color: #253653;
+    color: white;
 }
 
-/* DOCUMENTATION GRID */
+/* DOCUMENT CARDS */
 
 .erps-doc-grid {
     display: grid;
@@ -411,69 +332,68 @@ body.erps-page {
 
 .erps-doc-card {
     min-width: 0;
-    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    background: white;
     border: 1px solid #D8E2EE;
     border-radius: 16px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
 }
 
-.erps-doc-card[hidden] {
-    display: none !important;
-}
+.erps-doc-card[hidden] { display: none !important; }
 
-/* DOCUMENT PREVIEWS */
-
+/* Actual image is displayed immediately */
 .erps-doc-image {
+    display: block;
+    position: relative;
     width: 100%;
     height: 220px;
-    background: #DEE8F4;
     border: 0;
-    padding: 18px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 16px;
+    background: #DEE8F4;
     overflow: hidden;
+    cursor: zoom-in;
 }
-
-/* KEEP ALTERNATING PINK PREVIEWS */
 
 .erps-doc-card:nth-child(even) .erps-doc-image {
     background: #F1E5EC;
 }
 
 .erps-doc-image img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
-    display: block;
+    transition: transform 0.25s ease;
+}
+
+.erps-doc-image:hover img {
+    transform: scale(1.03);
 }
 
 .erps-image-placeholder {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: #496990;
 }
 
-.erps-image-placeholder span {
-    display: block;
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
+.erps-image-placeholder strong {
+    font: 600 22px 'Playfair Display', serif;
     margin-bottom: 7px;
 }
 
-.erps-image-placeholder small {
-    font-size: 11px;
-}
-
-/* DOCUMENT CONTENT */
+.erps-image-placeholder small { font-size: 11px; }
 
 .erps-doc-content {
-    padding: 22px;
-    flex: 1;
     display: flex;
     flex-direction: column;
+    flex: 1;
+    padding: 22px;
 }
 
 .erps-doc-category {
@@ -497,14 +417,12 @@ body.erps-page {
     margin-bottom: 18px;
 }
 
-.erps-doc-bottom {
-    margin-top: auto;
-}
+.erps-doc-bottom { margin-top: auto; }
 
 .erps-doc-actions {
     display: flex;
-    gap: 18px;
     flex-wrap: wrap;
+    gap: 18px;
     margin-top: 12px;
 }
 
@@ -514,34 +432,19 @@ body.erps-page {
     padding: 0;
     background: transparent;
     color: #496990;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
+    font: 600 12px 'DM Sans', sans-serif;
     text-decoration: underline;
     text-underline-offset: 3px;
     cursor: pointer;
 }
 
+.erps-doc-actions .disabled-link {
+    opacity: 0.5;
+    cursor: default;
+    text-decoration: none;
+}
+
 /* SKILLS */
-
-.erps-skill {
-    background: #FFFFFF;
-    border: 1px solid #D8E2EE;
-    border-radius: 16px;
-    padding: 23px;
-}
-
-.erps-skill h3 {
-    font-size: 20px;
-    margin: 0 0 10px;
-}
-
-.erps-skill p {
-    font-size: 12px;
-    color: #667080;
-    line-height: 1.85;
-    margin: 0;
-}
 
 .erps-tags {
     display: flex;
@@ -552,17 +455,17 @@ body.erps-page {
 
 .erps-tags span {
     padding: 9px 14px;
-    background: #FFFFFF;
+    background: white;
     border: 1px solid #D8E2EE;
     border-radius: 30px;
-    font-size: 12px;
     color: #496990;
+    font-size: 12px;
 }
 
 /* SYSTEM FEATURES */
 
 .erps-feature {
-    background: #FFFFFF;
+    background: white;
     border: 1px solid #D8E2EE;
     border-radius: 16px;
     overflow: hidden;
@@ -571,29 +474,19 @@ body.erps-page {
 .erps-feature-image {
     height: 215px;
     background: #DEE8F4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 18px;
+    padding: 16px;
     overflow: hidden;
 }
 
 .erps-feature-image img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
+    cursor: zoom-in;
 }
 
-.erps-feature-image span {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: #496990;
-    text-align: center;
-}
-
-.erps-feature-content {
-    padding: 22px;
-}
+.erps-feature-content { padding: 22px; }
 
 .erps-feature-content h3 {
     font-size: 20px;
@@ -612,11 +505,7 @@ body.erps-page {
     margin: 35px 0 20px;
 }
 
-/* REFLECTION */
-
-.erps-reflection {
-    max-width: 950px;
-}
+.erps-reflection { max-width: 950px; }
 
 .erps-reflection p {
     color: #667080;
@@ -625,21 +514,21 @@ body.erps-page {
     margin-bottom: 16px;
 }
 
-/* FULL-WIDTH NAVY FOOTER */
+/* FOOTER */
 
 .erps-page .erps-footer {
     width: 100%;
     max-width: none;
     margin: 0;
-    background: #253653;
     padding: 28px 0;
+    background: #253653;
     border: 0;
 }
 
 .erps-footer-inner {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     gap: 20px;
 }
 
@@ -648,13 +537,12 @@ body.erps-page {
     color: #E3EBF5;
     font-size: 12px;
     margin: 0;
+    text-decoration: none;
 }
 
-.erps-page .erps-footer a:hover {
-    color: #F2E1E7;
-}
+.erps-page .erps-footer a:hover { color: #F2E1E7; }
 
-/* IMAGE LIGHTBOX */
+/* IMAGE VIEWER */
 
 .erps-lightbox {
     display: none;
@@ -668,11 +556,10 @@ body.erps-page {
     flex-direction: column;
 }
 
-.erps-lightbox.open {
-    display: flex;
-}
+.erps-lightbox.open { display: flex; }
 
 .erps-lightbox img {
+    display: block;
     max-width: 95vw;
     max-height: 80vh;
     object-fit: contain;
@@ -680,7 +567,7 @@ body.erps-page {
 
 .erps-lightbox-caption {
     margin-top: 15px;
-    color: #FFFFFF;
+    color: white;
     font-size: 13px;
     text-align: center;
 }
@@ -691,12 +578,10 @@ body.erps-page {
     top: 15px;
     border: 0;
     background: transparent;
-    color: #FFFFFF;
+    color: white;
     font-size: 34px;
     cursor: pointer;
 }
-
-/* ACCESSIBILITY */
 
 .erps-page a:focus-visible,
 .erps-page button:focus-visible {
@@ -704,35 +589,23 @@ body.erps-page {
     outline-offset: 3px;
 }
 
-/* RESPONSIVE — TABLET */
+/* RESPONSIVE */
 
 @media (max-width: 1050px) {
-
-    .erps-grid-4 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
+    .erps-grid-4,
     .erps-doc-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-/* RESPONSIVE — MOBILE */
-
 @media (max-width: 750px) {
-
     .erps-page .navbar {
         min-height: 76px;
         padding: 17px 5%;
     }
 
-    .erps-page .navbar .logo {
-        font-size: 22px;
-    }
-
-    .erps-page .menu-toggle {
-        display: block;
-    }
+    .erps-page .navbar .logo { font-size: 22px; }
+    .erps-page .menu-toggle { display: block; }
 
     .erps-page .nav-links {
         display: none;
@@ -748,30 +621,12 @@ body.erps-page {
         border-bottom: 1px solid #D8E2EE;
     }
 
-    .erps-page .nav-links.active {
-        display: flex;
-    }
-
-    .erps-container {
-        width: 90%;
-    }
-
-    .erps-section {
-        padding: 43px 0;
-    }
-
-    .erps-hero {
-        padding: 30px 0;
-    }
-
-    .erps-hero h1 {
-        font-size: clamp(36px, 7.5vw, 47px);
-        letter-spacing: -0.5px;
-    }
-
-    .erps-hero-description {
-        font-size: 14px;
-    }
+    .erps-page .nav-links.active { display: flex; }
+    .erps-container { width: 90%; }
+    .erps-section { padding: 43px 0; }
+    .erps-hero { padding: 30px 0; }
+    .erps-hero h1 { font-size: clamp(36px, 7.5vw, 47px); }
+    .erps-hero-description { font-size: 14px; }
 
     .erps-meta,
     .erps-grid-2,
@@ -781,1111 +636,1092 @@ body.erps-page {
         grid-template-columns: 1fr;
     }
 
-    .erps-meta {
-        gap: 16px;
-    }
-
-    .erps-heading {
-        font-size: 31px;
-    }
-
-    .erps-main-preview {
-        min-height: 240px;
-    }
-
-    .erps-main-preview h2 {
-        font-size: 48px;
-    }
-
-    .erps-tabs {
-        gap: 8px;
-    }
-
-    .erps-tab {
-        padding: 9px 13px;
-        font-size: 11px;
-    }
+    .erps-meta { gap: 16px; }
+    .erps-heading { font-size: 31px; }
+    .erps-main-preview { min-height: 220px; }
+    .erps-tab { padding: 9px 13px; font-size: 11px; }
 
     .erps-footer-inner {
         flex-direction: column;
         text-align: center;
     }
 }
-
-    </style>
+</style>
 </head>
 
 <body class="erps-page">
 
-    <!-- ========================================
-         NAVIGATION
-    ======================================== -->
-
-    <nav class="navbar">
-        <a href="index.html" class="logo">
-            Bianca's Portfolio<span>.</span>
-        </a>
-
-        <div class="nav-links" id="navLinks">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Me</a>
-            <a href="index.html#work">My Work</a>
-            <a href="contact.html">Contact</a>
-        </div>
-
-        <button class="menu-toggle"
-                id="menuToggle"
-                type="button"
-                aria-label="Toggle navigation"
-                aria-expanded="false"
-                aria-controls="navLinks">
-            ☰
-        </button>
-    </nav>
-
-    <main>
-
-        <!-- ========================================
-             01. INTRODUCTION
-        ======================================== -->
-
-        <section class="erps-hero">
-            <div class="erps-container">
-
-                <a href="business-analysis.html" class="erps-back">
-                    ← Back to Business Analysis
-                </a>
-
-                <p class="erps-eyebrow">
-                    Business Analysis / Systems Design / University Capstone
-                </p>
-
-                <h1>
-                    Educational Reporting <span>System.</span>
-                </h1>
-
-                <p class="erps-hero-description">
-                    A web-based system designed to simplify how educational
-                    information is captured, managed and reported across
-                    juvenile facilities in the Western Cape.
-                </p>
-
-                <div class="erps-meta">
-
-                    <div>
-                        <span>PROJECT</span>
-                        <strong>ERPS</strong>
-                    </div>
-
-                    <div>
-                        <span>YEAR</span>
-                        <strong>2026</strong>
-                    </div>
-
-                    <div>
-                        <span>PRIMARY ROLE</span>
-                        <strong>Business Analyst</strong>
-                    </div>
-
-                    <div>
-                        <span>TEAM / SPONSOR</span>
-                        <strong>4 Members / Western Cape DSD</strong>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================
-             02. SYSTEM PREVIEW
-        ======================================== -->
-
-        <section class="erps-section erps-blue">
-            <div class="erps-container">
-
-                <div class="erps-main-preview" id="mainPreview">
-                    <p class="erps-eyebrow">01 / System Preview</p>
-                    <h2>ERPS</h2>
-                    <p><img src="images/eprs.png" alt="EPRS"></p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ========================================
-             03. PROJECT CONTEXT
-        ======================================== -->
-
-        <section class="erps-section erps-light" id="overview">
-            <div class="erps-container">
-
-                <p class="erps-eyebrow">02 / Project Context</p>
-
-                <h2 class="erps-heading">
-                    Understanding the <span>Problem.</span>
-                </h2>
-
-                <div class="erps-intro">
-                    <p>
-                        Educational reporting across juvenile facilities
-                        relied heavily on spreadsheets and manually
-                        prepared documents. Educators needed to capture
-                        assessment results, calculate marks, compile
-                        schedules and prepare student reports.
-                    </p>
-
-                    <p>
-                        These activities were repetitive and could lead
-                        to inconsistencies in the management of academic
-                        information. Our team developed the Educational
-                        Reporting System for the Western Cape Government
-                        Department of Social Development to centralise
-                        educational information and simplify reporting.
-                    </p>
-                </div>
-
-                <div class="erps-grid-2">
-
-                    <article class="erps-card">
-                        <h3>The Challenge</h3>
-                        <p>
-                            Disconnected records, repetitive manual
-                            processes, inconsistent reporting and
-                            difficulties managing educational information.
-                        </p>
-                    </article>
-
-                    <article class="erps-card">
-                        <h3>The Proposed Solution</h3>
-                        <p>
-                            A centralised platform for student information,
-                            mark capture, academic setup, reporting
-                            and role-based access.
-                        </p>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================
-             04. MY ROLE
-        ======================================== -->
-
-        <section class="erps-section erps-blue" id="my-role">
-            <div class="erps-container">
-
-                <p class="erps-eyebrow">03 / My Contribution</p>
-
-                <h2 class="erps-heading">
-                    My Role in the <span>Project.</span>
-                </h2>
-
-                <p class="erps-intro">
-                    My primary role in the four-member team was Business
-                    Analyst. I was also responsible for the system's
-                    UI design and contributed to development, project
-                    planning, documentation and team coordination.
-                </p>
-
-                <div class="erps-primary-role">
-                    <span class="erps-credit">PRIMARY ROLE</span>
-
-                    <h3>Business Analyst</h3>
-
-                    <p>
-                        I contributed to understanding the reporting
-                        problem, analysing requirements, modelling
-                        system processes and translating business
-                        needs into proposed functionality.
-                        I worked with the team on requirements
-                        documentation, use cases, workflows
-                        and system design decisions.
-                    </p>
-                </div>
-
-                <div class="erps-grid-3">
-
-                    <article class="erps-card">
-                        <span class="erps-credit">INDIVIDUAL CONTRIBUTION</span>
-                        <h3>UI/UX Design</h3>
-                        <p>
-                            I designed the user interface, created
-                            wireframes and developed the website
-                            navigation structure. I also helped
-                            implement parts of the interface.
-                        </p>
-                    </article>
-
-                    <article class="erps-card">
-                        <span class="erps-credit">INDIVIDUAL & TEAM</span>
-                        <h3>Project Planning</h3>
-                        <p>
-                            I created the Work Breakdown Structure
-                            and contributed to collaborative
-                            planning activities, including
-                            the project charter and risk matrix.
-                        </p>
-                    </article>
-
-                    <article class="erps-card">
-                        <span class="erps-credit team">COLLABORATIVE CONTRIBUTION</span>
-                        <h3>Development & Coordination</h3>
-                        <p>
-                            I supported interface development,
-                            communicated design decisions,
-                            contributed to documentation
-                            and helped coordinate project work.
-                        </p>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================
-             05. PROJECT JOURNEY
-        ======================================== -->
-
-        <section class="erps-section erps-light" id="journey">
-            <div class="erps-container">
-
-                <p class="erps-eyebrow">04 / Project Journey</p>
-
-                <h2 class="erps-heading">
-                    From Analysis to <span>Implementation.</span>
-                </h2>
-
-                <p class="erps-intro">
-                    The project involved understanding the problem,
-                    defining requirements, planning deliverables,
-                    designing the system and working collaboratively
-                    to develop the final solution.
-                </p>
-
-                <div class="erps-grid-4">
-
-                    <article class="erps-card erps-step">
-                        <div class="erps-step-number">01 / DISCOVERY</div>
-                        <h3>Problem Analysis</h3>
-                        <p>
-                            Understanding existing reporting
-                            processes and identifying what
-                            the system needed to address.
-                        </p>
-                    </article>
-
-                    <article class="erps-card erps-step">
-                        <div class="erps-step-number">02 / PLANNING</div>
-                        <h3>Project Organisation</h3>
-                        <p>
-                            Defining scope, deliverables,
-                            responsibilities and project risks.
-                        </p>
-                    </article>
-
-                    <article class="erps-card erps-step">
-                        <div class="erps-step-number">03 / DESIGN</div>
-                        <h3>System Modelling</h3>
-                        <p>
-                            Creating diagrams, wireframes
-                            and other documentation
-                            to guide development.
-                        </p>
-                    </article>
-
-                    <article class="erps-card erps-step">
-                        <div class="erps-step-number">04 / DELIVERY</div>
-                        <h3>Development</h3>
-                        <p>
-                            Implementing, reviewing and refining
-                            the system as a team.
-                        </p>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================
-             06. DOCUMENTATION
-        ======================================== -->
-
-        <section class="erps-section erps-blue" id="documentation">
-            <div class="erps-container">
-
-                <p class="erps-eyebrow">05 / Business Analysis Portfolio</p>
-
-                <h2 class="erps-heading">
-                    Analysis & Design <span>Documentation.</span>
-                </h2>
-
-                <p class="erps-intro">
-                    These artefacts demonstrate the planning,
-                    requirements analysis, system modelling
-                    and interface design completed during ERPS.
-                    Each document identifies whether it was
-                    an individual or team contribution.
-                </p>
-
-                <!-- WORKING CATEGORY TABS -->
-                <div class="erps-tabs" role="group"
-                     aria-label="Filter documentation">
-
-                    <button class="erps-tab active"
-                            type="button"
-                            data-filter="all"
-                            aria-pressed="true">
-                        All Documents
-                    </button>
-
-                    <button class="erps-tab"
-                            type="button"
-                            data-filter="planning"
-                            aria-pressed="false">
-                        Project Planning
-                    </button>
-
-                    <button class="erps-tab"
-                            type="button"
-                            data-filter="requirements"
-                            aria-pressed="false">
-                        Requirements & Analysis
-                    </button>
-
-                    <button class="erps-tab"
-                            type="button"
-                            data-filter="modelling"
-                            aria-pressed="false">
-                        System Modelling
-                    </button>
-
-                    <button class="erps-tab"
-                            type="button"
-                            data-filter="design"
-                            aria-pressed="false">
-                        UI/UX Design
-                    </button>
-
-                </div>
-
-                <!-- ALL CARDS ARE GENERATED BELOW -->
-                <div class="erps-doc-grid" id="documentationGrid"></div>
-
-            </div>
-        </section>
-
-        <!-- ========================================
-             07. BUSINESS ANALYSIS SKILLS
-        ======================================== -->
-
-        <section class="erps-section erps-light" id="skills">
-            <div class="erps-container">
-
-                <p class="erps-eyebrow">06 / Applied Skills</p>
-
-                <h2 class="erps-heading">
-                    Beyond the <span>Documentation.</span>
-                </h2>
-
-                <p class="erps-intro">
-                    The project allowed me to apply Business Analysis
-                    skills beyond creating diagrams. It required
-                    planning, communication, prioritisation
-                    and understanding how requirements
-                    translate into working software.
-                </p>
-
-                <div class="erps-grid-3">
-
-                    <article class="erps-skill">
-                        <h3>Requirements Analysis</h3>
-                        <p>
-                            Understanding business needs
-                            and translating them into
-                            system requirements.
-                        </p>
-                    </article>
-
-                    <article class="erps-skill">
-                        <h3>Project Planning</h3>
-                        <p>
-                            Breaking down deliverables,
-                            organising responsibilities
-                            and coordinating work.
-                        </p>
-                    </article>
-
-                    <article class="erps-skill">
-                        <h3>Scope Management</h3>
-                        <p>
-                            Understanding project boundaries,
-                            priorities and constraints.
-                        </p>
-                    </article>
-
-                    <article class="erps-skill">
-                        <h3>Scheduling & Time Management</h3>
-                        <p>
-                            Working towards deadlines,
-                            tracking progress and
-                            adjusting priorities.
-                        </p>
-                    </article>
-
-                    <article class="erps-skill">
-                        <h3>Risk Management</h3>
-                        <p>
-                            Identifying project risks,
-                            considering their impact
-                            and discussing mitigation.
-                        </p>
-                    </article>
-
-                    <article class="erps-skill">
-                        <h3>Communication & Teamwork</h3>
-                        <p>
-                            Explaining requirements,
-                            discussing design decisions
-                            and collaborating across roles.
-                        </p>
-                    </article>
-
-                    <article class="erps-skill">
-                        <h3>Agile Methodologies</h3>
-                        <p>
-                            Working iteratively, responding
-                            to feedback and refining
-                            the system during development.
-                        </p>
-                    </article>
-
-                    <article class="erps-skill">
-                        <h3>Problem Solving</h3>
-                        <p>
-                            Identifying implementation challenges
-                            and working towards practical solutions.
-                        </p>
-                    </article>
-
-                    <article class="erps-skill">
-                        <h3>Stakeholder-Focused Thinking</h3>
-                        <p>
-                            Considering the needs and technical
-                            abilities of the system's intended users.
-                        </p>
-                    </article>
-
-                </div>
-
-                <div class="erps-tags">
-                    <span>Business Analysis</span>
-                    <span>Requirements Analysis</span>
-                    <span>UML Modelling</span>
-                    <span>Project Planning</span>
-                    <span>Scope Management</span>
-                    <span>Risk Management</span>
-                    <span>Agile</span>
-                    <span>UI/UX Design</span>
-                    <span>Communication</span>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ========================================
-             08. FINAL SYSTEM
-        ======================================== -->
-
-        <section class="erps-section erps-blue" id="system">
-            <div class="erps-container">
-
-                <p class="erps-eyebrow">07 / The Final Product</p>
-
-                <h2 class="erps-heading">
-                    The Educational Reporting <span>System.</span>
-                </h2>
-
-                <p class="erps-intro">
-                    ERPS brings together educational administration,
-                    mark capture and reporting within one web-based
-                    platform. The following screens demonstrate
-                    some of the system's main functions.
-                </p>
-
-                <div class="erps-grid-3" id="systemGrid"></div>
-
-                <h3 class="erps-subheading">Additional Features</h3>
-
-                <div class="erps-grid-3">
-
-                    <article class="erps-card">
-                        <h3>Predictive Watchlist</h3>
-                        <p>
-                            A feature designed to help identify
-                            students who may need additional
-                            academic attention.
-                        </p>
-                    </article>
-
-                    <article class="erps-card">
-                        <h3>Teacher's Pet</h3>
-                        <p>
-                            An integrated help assistant
-                            intended to support users
-                            as they navigate the system.
-                        </p>
-                    </article>
-
-                    <article class="erps-card">
-                        <h3>IT Support Requests</h3>
-                        <p>
-                            A support feature allowing users
-                            to report technical issues
-                            requiring assistance.
-                        </p>
-                    </article>
-
-                </div>
-
-                <h3 class="erps-subheading">Technology Used</h3>
-
-                <div class="erps-tags">
-                    <span>Blazor Server</span>
-                    <span>C#</span>
-                    <span>.NET 8</span>
-                    <span>SQL Server</span>
-                    <span>Entity Framework Core</span>
-                    <span>Microsoft Entra ID</span>
-                    <span>HTML & CSS</span>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ========================================
-             09. REFLECTION
-        ======================================== -->
-
-        <section class="erps-section erps-pink" id="reflection">
-            <div class="erps-container">
-
-                <p class="erps-eyebrow">08 / Reflection</p>
-
-                <h2 class="erps-heading">
-                    What I Took from the <span>Experience.</span>
-                </h2>
-
-                <div class="erps-reflection">
-
-                    <p>
-                        Working on ERPS strengthened my understanding
-                        of how Business Analysis connects requirements,
-                        planning, system design and software development.
-                        It gave me experience contributing to a solution
-                        addressing an existing organisational problem.
-                    </p>
-
-                    <p>
-                        Designing the interface also reinforced
-                        the importance of creating systems that are
-                        practical and accessible for their intended
-                        users. Working with a team required clear
-                        communication, flexibility and shared
-                        responsibility for delivering the project.
-                    </p>
-
-                    <p>
-                        More importantly, the experience reminded me
-                        that developing a system is not only about
-                        making something work. It is about understanding
-                        the people who will use it and building
-                        something that addresses a real need.
-                    </p>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ========================================
-         FOOTER
-    ======================================== -->
-
-    <footer class="erps-footer">
-        <div class="erps-container erps-footer-inner">
-
-            <p>© 2026 Bianca Ngobeni</p>
-
-            <a href="business-analysis.html">
-                ← Back to Business Analysis
-            </a>
-
-        </div>
-    </footer>
-
-    <!-- ========================================
-         FULL-SIZE IMAGE VIEWER
-    ======================================== -->
-
-    <div class="erps-lightbox"
-         id="imageLightbox"
-         role="dialog"
-         aria-modal="true"
-         aria-label="Document image preview">
-
-        <button class="erps-lightbox-close"
-                id="closeLightbox"
-                type="button"
-                aria-label="Close image">
-            &times;
-        </button>
-
-        <img id="lightboxImage" src="" alt="">
-
-        <div class="erps-lightbox-caption"
-             id="lightboxCaption"></div>
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        Bianca's Portfolio<span>.</span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="index.html#work">My Work</a>
+        <a href="mailto:biancaamandangobeni1802@gmail.com">Contact</a>
     </div>
 
-    <script>
-        /* ========================================
-           MOBILE NAVIGATION
-        ======================================== */
+    <button class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="navLinks"
+            aria-expanded="false">
+        ☰
+    </button>
+</nav>
 
-        const menuToggle = document.getElementById("menuToggle");
-        const navLinks = document.getElementById("navLinks");
+<main>
 
-        menuToggle.addEventListener("click", () => {
-            const isOpen = navLinks.classList.toggle("active");
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
-        });
+<!-- 01. INTRODUCTION -->
 
-        /* ========================================
-           IMAGE VIEWER
-        ======================================== */
+<section class="erps-hero">
+    <div class="erps-container">
 
-        const lightbox = document.getElementById("imageLightbox");
-        const lightboxImage = document.getElementById("lightboxImage");
-        const lightboxCaption = document.getElementById("lightboxCaption");
-        const closeLightboxButton = document.getElementById("closeLightbox");
+        <a href="business-analysis.html" class="erps-back">
+            ← Back to Business Analysis
+        </a>
 
-        let previousFocus = null;
+        <p class="erps-eyebrow">
+            Business Analysis / Systems Design / University Capstone
+        </p>
 
-        function openLightbox(src, title) {
-            previousFocus = document.activeElement;
-            lightboxImage.src = src;
-            lightboxImage.alt = title;
-            lightboxCaption.textContent = title;
-            lightbox.classList.add("open");
-            document.body.style.overflow = "hidden";
-            closeLightboxButton.focus();
+        <h1>
+            Educational Reporting <span>System.</span>
+        </h1>
+
+        <p class="erps-hero-description">
+            A web-based system designed to simplify how educational
+            information is captured, managed and reported across
+            juvenile facilities in the Western Cape.
+        </p>
+
+        <div class="erps-meta">
+            <div>
+                <span>PROJECT</span>
+                <strong>ERPS</strong>
+            </div>
+            <div>
+                <span>YEAR</span>
+                <strong>2026</strong>
+            </div>
+            <div>
+                <span>PRIMARY ROLE</span>
+                <strong>Business Analyst</strong>
+            </div>
+            <div>
+                <span>TEAM / SPONSOR</span>
+                <strong>4 Members / Western Cape DSD</strong>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 02. SYSTEM PREVIEW -->
+
+<section class="erps-section erps-blue">
+    <div class="erps-container">
+
+        <div class="erps-main-preview">
+            <p class="erps-eyebrow">01 / System Preview</p>
+
+            <img src="images/eprs.png"
+                 alt="Educational Reporting System preview"
+                 id="mainSystemImage">
+
+        </div>
+
+    </div>
+</section>
+
+<!-- 03. PROJECT CONTEXT -->
+
+<section class="erps-section erps-light" id="overview">
+    <div class="erps-container">
+
+        <p class="erps-eyebrow">02 / Project Context</p>
+
+        <h2 class="erps-heading">
+            Understanding the <span>Problem.</span>
+        </h2>
+
+        <div class="erps-intro">
+            <p>
+                Educational reporting across juvenile facilities
+                relied heavily on spreadsheets and manually prepared
+                documents. Educators needed to capture assessment
+                results, calculate marks, compile schedules and
+                prepare student reports.
+            </p>
+
+            <p>
+                These activities were repetitive and could lead
+                to inconsistencies in the management of academic
+                information. Our team developed the Educational
+                Reporting System for the Western Cape Government
+                Department of Social Development to centralise
+                educational information and simplify reporting.
+            </p>
+        </div>
+
+        <div class="erps-grid-2">
+            <article class="erps-card">
+                <h3>The Challenge</h3>
+                <p>
+                    Disconnected records, repetitive manual
+                    processes, inconsistent reporting and
+                    difficulties managing educational information.
+                </p>
+            </article>
+
+            <article class="erps-card">
+                <h3>The Proposed Solution</h3>
+                <p>
+                    A centralised platform for student information,
+                    mark capture, academic setup, reporting and
+                    role-based access.
+                </p>
+            </article>
+        </div>
+
+    </div>
+</section>
+
+<!-- 04. MY ROLE -->
+
+<section class="erps-section erps-blue" id="my-role">
+    <div class="erps-container">
+
+        <p class="erps-eyebrow">03 / My Contribution</p>
+
+        <h2 class="erps-heading">
+            My Role in the <span>Project.</span>
+        </h2>
+
+        <p class="erps-intro">
+            My primary role in the four-member team was Business
+            Analyst. I was also responsible for the system's UI
+            design and contributed to development, project
+            planning, documentation and team coordination.
+        </p>
+
+        <div class="erps-primary-role">
+            <span class="erps-credit">PRIMARY ROLE</span>
+            <h3>Business Analyst</h3>
+            <p>
+                I contributed to understanding the reporting problem,
+                analysing requirements, modelling system processes
+                and translating business needs into proposed
+                functionality. I worked with the team on requirements
+                documentation, use cases, workflows and system
+                design decisions.
+            </p>
+        </div>
+
+        <div class="erps-grid-3">
+
+            <article class="erps-card">
+                <span class="erps-credit">INDIVIDUAL CONTRIBUTION</span>
+                <h3>UI/UX Design</h3>
+                <p>
+                    I designed the user interface, created
+                    wireframes and developed the website navigation
+                    structure. I also helped implement parts
+                    of the interface.
+                </p>
+            </article>
+
+            <article class="erps-card">
+                <span class="erps-credit both">INDIVIDUAL & TEAM</span>
+                <h3>Project Planning</h3>
+                <p>
+                    I created the Work Breakdown Structure and
+                    contributed to collaborative planning activities,
+                    including the project charter and risk matrix.
+                </p>
+            </article>
+
+            <article class="erps-card">
+                <span class="erps-credit team">COLLABORATIVE CONTRIBUTION</span>
+                <h3>Development & Coordination</h3>
+                <p>
+                    I supported interface development, communicated
+                    design decisions, contributed to documentation
+                    and helped coordinate project work.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- 05. PROJECT JOURNEY -->
+
+<section class="erps-section erps-light" id="journey">
+    <div class="erps-container">
+
+        <p class="erps-eyebrow">04 / Project Journey</p>
+
+        <h2 class="erps-heading">
+            From Analysis to <span>Implementation.</span>
+        </h2>
+
+        <p class="erps-intro">
+            The project involved understanding the problem,
+            defining requirements, planning deliverables,
+            designing the system and working collaboratively
+            to develop the final solution.
+        </p>
+
+        <div class="erps-grid-4">
+
+            <article class="erps-card erps-step">
+                <div class="erps-step-number">01 / DISCOVERY</div>
+                <h3>Problem Analysis</h3>
+                <p>
+                    Understanding existing reporting processes
+                    and identifying what the system needed
+                    to address.
+                </p>
+            </article>
+
+            <article class="erps-card erps-step">
+                <div class="erps-step-number">02 / PLANNING</div>
+                <h3>Project Organisation</h3>
+                <p>
+                    Defining scope, deliverables,
+                    responsibilities and project risks.
+                </p>
+            </article>
+
+            <article class="erps-card erps-step">
+                <div class="erps-step-number">03 / DESIGN</div>
+                <h3>System Modelling</h3>
+                <p>
+                    Creating diagrams, wireframes and
+                    documentation to guide development.
+                </p>
+            </article>
+
+            <article class="erps-card erps-step">
+                <div class="erps-step-number">04 / DELIVERY</div>
+                <h3>Development</h3>
+                <p>
+                    Implementing, reviewing and refining
+                    the system as a team.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- 06. DOCUMENTATION -->
+
+<section class="erps-section erps-blue" id="documentation">
+    <div class="erps-container">
+
+        <p class="erps-eyebrow">05 / Business Analysis Portfolio</p>
+
+        <h2 class="erps-heading">
+            Analysis & Design <span>Documentation.</span>
+        </h2>
+
+        <p class="erps-intro">
+            These artefacts demonstrate the planning,
+            requirements analysis, system modelling and
+            interface design completed during ERPS.
+            Each document identifies whether it was
+            an individual or team contribution.
+        </p>
+
+        <div class="erps-tabs" role="group"
+             aria-label="Filter documentation">
+
+            <button class="erps-tab active"
+                    type="button"
+                    data-filter="all"
+                    aria-pressed="true">
+                All Documents
+            </button>
+
+            <button class="erps-tab"
+                    type="button"
+                    data-filter="planning"
+                    aria-pressed="false">
+                Project Planning
+            </button>
+
+            <button class="erps-tab"
+                    type="button"
+                    data-filter="requirements"
+                    aria-pressed="false">
+                Requirements & Analysis
+            </button>
+
+            <button class="erps-tab"
+                    type="button"
+                    data-filter="modelling"
+                    aria-pressed="false">
+                System Modelling
+            </button>
+
+            <button class="erps-tab"
+                    type="button"
+                    data-filter="design"
+                    aria-pressed="false">
+                UI/UX Design
+            </button>
+
+        </div>
+
+        <div class="erps-doc-grid" id="documentationGrid"></div>
+
+    </div>
+</section>
+
+<!-- 07. BUSINESS ANALYSIS SKILLS -->
+
+<section class="erps-section erps-light" id="skills">
+    <div class="erps-container">
+
+        <p class="erps-eyebrow">06 / Applied Skills</p>
+
+        <h2 class="erps-heading">
+            Beyond the <span>Documentation.</span>
+        </h2>
+
+        <p class="erps-intro">
+            The project allowed me to apply Business Analysis
+            skills beyond creating diagrams. It required
+            planning, communication, prioritisation and
+            understanding how requirements translate into
+            working software.
+        </p>
+
+        <div class="erps-grid-3">
+
+            <article class="erps-skill">
+                <h3>Requirements Analysis</h3>
+                <p>
+                    Understanding business needs and translating
+                    them into system requirements.
+                </p>
+            </article>
+
+            <article class="erps-skill">
+                <h3>Project Planning</h3>
+                <p>
+                    Breaking down deliverables, organising
+                    responsibilities and coordinating work.
+                </p>
+            </article>
+
+            <article class="erps-skill">
+                <h3>Scope Management</h3>
+                <p>
+                    Understanding project boundaries,
+                    priorities and constraints.
+                </p>
+            </article>
+
+            <article class="erps-skill">
+                <h3>Scheduling & Time Management</h3>
+                <p>
+                    Working towards deadlines, tracking
+                    progress and adjusting priorities.
+                </p>
+            </article>
+
+            <article class="erps-skill">
+                <h3>Risk Management</h3>
+                <p>
+                    Identifying project risks, considering
+                    their impact and discussing mitigation.
+                </p>
+            </article>
+
+            <article class="erps-skill">
+                <h3>Communication & Teamwork</h3>
+                <p>
+                    Explaining requirements, discussing design
+                    decisions and collaborating across roles.
+                </p>
+            </article>
+
+            <article class="erps-skill">
+                <h3>Agile Methodologies</h3>
+                <p>
+                    Working iteratively, responding to feedback
+                    and refining the system during development.
+                </p>
+            </article>
+
+            <article class="erps-skill">
+                <h3>Problem Solving</h3>
+                <p>
+                    Identifying implementation challenges
+                    and working towards practical solutions.
+                </p>
+            </article>
+
+            <article class="erps-skill">
+                <h3>Stakeholder-Focused Thinking</h3>
+                <p>
+                    Considering the needs and technical abilities
+                    of the system's intended users.
+                </p>
+            </article>
+
+        </div>
+
+        <div class="erps-tags">
+            <span>Business Analysis</span>
+            <span>Requirements Analysis</span>
+            <span>UML Modelling</span>
+            <span>Project Planning</span>
+            <span>Scope Management</span>
+            <span>Risk Management</span>
+            <span>Agile</span>
+            <span>UI/UX Design</span>
+            <span>Communication</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- 08. FINAL SYSTEM -->
+
+<section class="erps-section erps-blue" id="system">
+    <div class="erps-container">
+
+        <p class="erps-eyebrow">07 / The Final Product</p>
+
+        <h2 class="erps-heading">
+            The Educational Reporting <span>System.</span>
+        </h2>
+
+        <p class="erps-intro">
+            ERPS brings together educational administration,
+            mark capture and reporting within one web-based
+            platform. The following screens demonstrate
+            some of the system's main functions.
+        </p>
+
+        <div class="erps-grid-3" id="systemGrid"></div>
+
+        <h3 class="erps-subheading">Additional Features</h3>
+
+        <div class="erps-grid-3">
+
+            <article class="erps-card">
+                <h3>Predictive Watchlist</h3>
+                <p>
+                    A feature designed to help identify
+                    students who may need additional
+                    academic attention.
+                </p>
+            </article>
+
+            <article class="erps-card">
+                <h3>Teacher's Pet</h3>
+                <p>
+                    An integrated help assistant intended
+                    to support users as they navigate
+                    the system.
+                </p>
+            </article>
+
+            <article class="erps-card">
+                <h3>IT Support Requests</h3>
+                <p>
+                    A support feature allowing users to
+                    report technical issues requiring
+                    assistance.
+                </p>
+            </article>
+
+        </div>
+
+        <h3 class="erps-subheading">Technology Used</h3>
+
+        <div class="erps-tags">
+            <span>Blazor Server</span>
+            <span>C#</span>
+            <span>.NET 8</span>
+            <span>SQL Server</span>
+            <span>Entity Framework Core</span>
+            <span>Microsoft Entra ID</span>
+            <span>HTML & CSS</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- 09. REFLECTION: KEEP PINK -->
+
+<section class="erps-section erps-pink" id="reflection">
+    <div class="erps-container">
+
+        <p class="erps-eyebrow">08 / Reflection</p>
+
+        <h2 class="erps-heading">
+            What I Took from the <span>Experience.</span>
+        </h2>
+
+        <div class="erps-reflection">
+
+            <p>
+                Working on ERPS strengthened my understanding
+                of how Business Analysis connects requirements,
+                planning, system design and software development.
+                It gave me experience contributing to a solution
+                addressing an existing organisational problem.
+            </p>
+
+            <p>
+                Designing the interface also reinforced the
+                importance of creating systems that are practical
+                and accessible for their intended users.
+                Working with a team required clear communication,
+                flexibility and shared responsibility for
+                delivering the project.
+            </p>
+
+            <p>
+                More importantly, the experience reminded me
+                that developing a system is not only about
+                making something work. It is about understanding
+                the people who will use it and building something
+                that addresses a real need.
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="erps-footer">
+    <div class="erps-container erps-footer-inner">
+
+        <p>© <span id="year"></span> Bianca Ngobeni</p>
+
+        <a href="business-analysis.html">
+            ← Back to Business Analysis
+        </a>
+
+    </div>
+</footer>
+
+<!-- IMAGE LIGHTBOX -->
+
+<div class="erps-lightbox"
+     id="imageLightbox"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Image preview"
+     aria-hidden="true">
+
+    <button class="erps-lightbox-close"
+            id="closeLightbox"
+            type="button"
+            aria-label="Close image">
+        &times;
+    </button>
+
+    <img id="lightboxImage" alt="">
+
+    <div class="erps-lightbox-caption"
+         id="lightboxCaption"></div>
+</div>
+
+<script>
+/* ==========================================
+   MOBILE NAVIGATION
+========================================== */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+/* ==========================================
+   IMAGE VIEWER
+========================================== */
+
+const lightbox = document.getElementById("imageLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCaption = document.getElementById("lightboxCaption");
+const closeLightboxButton = document.getElementById("closeLightbox");
+
+let previousFocus = null;
+
+function openLightbox(src, title) {
+    previousFocus = document.activeElement;
+
+    lightboxImage.src = src;
+    lightboxImage.alt = title;
+    lightboxCaption.textContent = title;
+
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+    closeLightboxButton.focus();
+}
+
+function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    lightboxImage.removeAttribute("src");
+
+    document.body.style.overflow = "";
+
+    if (previousFocus) previousFocus.focus();
+}
+
+closeLightboxButton.addEventListener("click", closeLightbox);
+
+lightbox.addEventListener("click", event => {
+    if (event.target === lightbox) closeLightbox();
+});
+
+document.addEventListener("keydown", event => {
+    if (!lightbox.classList.contains("open")) return;
+
+    if (event.key === "Escape") closeLightbox();
+
+    if (event.key === "Tab") {
+        event.preventDefault();
+        closeLightboxButton.focus();
+    }
+});
+
+/* ==========================================
+   IMAGE HELPER
+
+   Important: Images are NOT hidden initially.
+   A placeholder appears only on a real error.
+========================================== */
+
+function createPreviewImage(src, title, className = "") {
+    const img = document.createElement("img");
+
+    img.src = src;
+    img.alt = title;
+    img.loading = "eager";
+    img.decoding = "async";
+
+    if (className) img.className = className;
+
+    img.addEventListener("error", () => {
+        console.error("ERPS image failed to load:", img.src);
+
+        const fallback = document.createElement("div");
+        fallback.className = "erps-image-placeholder";
+
+        const heading = document.createElement("strong");
+        heading.textContent = title;
+
+        const note = document.createElement("small");
+        note.textContent = "Image unavailable";
+
+        fallback.append(heading, note);
+        img.replaceWith(fallback);
+    });
+
+    return img;
+}
+
+/* ==========================================
+   DOCUMENTATION DATA
+
+   Keep filenames identical to GitHub.
+========================================== */
+
+const documents = [
+    {
+        title: "Project Charter",
+        category: "planning",
+        categoryLabel: "Project Planning",
+        description: "Defines project objectives, scope, stakeholders and deliverables.",
+        contribution: "Team Contribution",
+        creditType: "team",
+        image: "images/presentation.png",
+        pdf: "documents/charter.pdf"
+    },
+    {
+        title: "Sequence Diagrams",
+        category: "modelling",
+        categoryLabel: "System Modelling",
+        description: "Show interactions between system components and the order in which messages are exchanged.",
+        contribution: "Team Contribution",
+        creditType: "team",
+        image: "images/sequencediagram.png",
+        pdf: "documents/sequence.pdf"
+    },
+    {
+        title: "Risk Matrix",
+        category: "planning",
+        categoryLabel: "Project Planning",
+        description: "Identifies project risks and assesses their likelihood and potential impact.",
+        contribution: "Team Contribution",
+        creditType: "team",
+        image: "images/riskmatrix.png",
+        pdf: "documents/Risk.pdf"
+    },
+    {
+        title: "Case Study & Problem Analysis",
+        category: "requirements",
+        categoryLabel: "Requirements & Analysis",
+        description: "Examines the existing reporting process, its challenges and the need for ERPS.",
+        contribution: "Team Contribution",
+        creditType: "team",
+        image: "images/presentation.png",
+        pdf: "documents/erps/problem-analysis.pdf"
+    },
+    {
+        title: "Use Case Diagrams",
+        category: "requirements",
+        categoryLabel: "Requirements & Analysis",
+        description: "Show the system actors and their interactions with different functions.",
+        contribution: "Team Contribution",
+        creditType: "team",
+        image: "images/usecaseimg.png",
+        pdf: "documents/usecase.pdf"
+    },
+    {
+        title: "Use Case Narratives",
+        category: "requirements",
+        categoryLabel: "Requirements & Analysis",
+        description: "Describe user interactions, preconditions, main flows and alternative scenarios.",
+        contribution: "Team Contribution",
+        creditType: "team",
+        image: "images/narr.png",
+        pdf: "documents/narr.pdf"
+    },
+    {
+        title: "Activity Diagrams",
+        category: "modelling",
+        categoryLabel: "System Modelling",
+        description: "Illustrate workflows, decisions and the sequence of activities in system processes.",
+        contribution: "Team Contribution",
+        creditType: "team",
+        image: "images/activitydiagram.png",
+        pdf: "documents/ActivityDiagram.pdf"
+    },
+    {
+        title: "State Machine Diagrams",
+        category: "modelling",
+        categoryLabel: "System Modelling",
+        description: "Show system states, transitions and the events that trigger changes.",
+        contribution: "Team Contribution",
+        creditType: "team",
+        image: "images/statemachines.png",
+        pdf: "documents/state.pdf"
+    },
+    {
+        title: "Class Diagrams",
+        category: "modelling",
+        categoryLabel: "System Modelling",
+        description: "Illustrate classes, attributes and relationships within the system.",
+        contribution: "Team Contribution",
+        creditType: "team",
+        image: "images/classdiagram.png",
+        pdf: "documents/class.pdf"
+    },
+    {
+        title: "Package Diagrams",
+        category: "modelling",
+        categoryLabel: "System Modelling",
+        description: "Show how related components are organised into logical packages.",
+        contribution: "Team Contribution",
+        creditType: "team",
+        image: "images/packagediagram.png",
+        pdf: "documents/Package.pdf"
+    },
+    {
+        title: "Interface Wireframes",
+        category: "design",
+        categoryLabel: "UI/UX Design",
+        description: "Early designs showing screen layouts, page structure and information hierarchy.",
+        contribution: "Designed by Me",
+        creditType: "",
+        image: "images/wireframe.png",
+        pdf: "documents/wire.pdf"
+    },
+    {
+        title: "Website Navigation",
+        category: "design",
+        categoryLabel: "UI/UX Design",
+        description: "Maps the system's page hierarchy and navigation paths between functions.",
+        contribution: "Designed by Me",
+        creditType: "",
+        image: "images/websitenav.png",
+        pdf: "documents/website.pdf"
+    },
+    {
+        title: "Documentation Presentation",
+        category: "planning",
+        categoryLabel: "Documentation & Communication",
+        description: "Communicating the project's analysis, design decisions and progress.",
+        contribution: "Individual & Team Contribution",
+        creditType: "both",
+        image: "images/presentation.png",
+        pdf: "documents/URS.pdf"
+    }
+];
+
+/* ==========================================
+   GENERATE DOCUMENTATION CARDS
+========================================== */
+
+const documentationGrid =
+    document.getElementById("documentationGrid");
+
+documents.forEach(doc => {
+
+    const card = document.createElement("article");
+    card.className = "erps-doc-card";
+    card.dataset.category = doc.category;
+
+    /* IMAGE PREVIEW */
+
+    const imageButton = document.createElement("button");
+    imageButton.type = "button";
+    imageButton.className = "erps-doc-image";
+    imageButton.setAttribute(
+        "aria-label",
+        "Enlarge image for " + doc.title
+    );
+
+    const img = createPreviewImage(doc.image, doc.title);
+
+    imageButton.appendChild(img);
+
+    imageButton.addEventListener("click", () => {
+        if (img.complete && img.naturalWidth > 0) {
+            openLightbox(img.src, doc.title);
         }
+    });
 
-        function closeLightbox() {
-            lightbox.classList.remove("open");
-            lightboxImage.removeAttribute("src");
-            document.body.style.overflow = "";
+    /* CONTENT */
 
-            if (previousFocus) {
-                previousFocus.focus();
-            }
+    const content = document.createElement("div");
+    content.className = "erps-doc-content";
+
+    const category = document.createElement("div");
+    category.className = "erps-doc-category";
+    category.textContent = doc.categoryLabel;
+
+    const title = document.createElement("h3");
+    title.textContent = doc.title;
+
+    const description = document.createElement("p");
+    description.textContent = doc.description;
+
+    const bottom = document.createElement("div");
+    bottom.className = "erps-doc-bottom";
+
+    const credit = document.createElement("span");
+    credit.className = "erps-credit";
+
+    if (doc.creditType) {
+        credit.classList.add(doc.creditType);
+    }
+
+    credit.textContent = doc.contribution;
+
+    const actions = document.createElement("div");
+    actions.className = "erps-doc-actions";
+
+    const enlargeButton = document.createElement("button");
+    enlargeButton.type = "button";
+    enlargeButton.textContent = "View Image ↗";
+
+    enlargeButton.addEventListener("click", () => {
+        if (img.complete && img.naturalWidth > 0) {
+            openLightbox(img.src, doc.title);
         }
+    });
 
-        closeLightboxButton.addEventListener("click", closeLightbox);
+    actions.appendChild(enlargeButton);
 
-        lightbox.addEventListener("click", (event) => {
-            if (event.target === lightbox) {
-                closeLightbox();
-            }
+    if (doc.pdf) {
+        const pdfLink = document.createElement("a");
+        pdfLink.href = doc.pdf;
+        pdfLink.target = "_blank";
+        pdfLink.rel = "noopener noreferrer";
+        pdfLink.textContent = "View Document ↗";
+
+        actions.appendChild(pdfLink);
+    } else {
+        const unavailable = document.createElement("span");
+        unavailable.className = "disabled-link";
+        unavailable.textContent = "Document coming soon";
+        actions.appendChild(unavailable);
+    }
+
+    bottom.append(credit, actions);
+
+    content.append(category, title, description, bottom);
+
+    card.append(imageButton, content);
+
+    documentationGrid.appendChild(card);
+});
+
+/* ==========================================
+   DOCUMENTATION FILTERS
+========================================== */
+
+const tabs = document.querySelectorAll(".erps-tab");
+
+tabs.forEach(tab => {
+
+    tab.addEventListener("click", () => {
+
+        const selected = tab.dataset.filter;
+
+        tabs.forEach(button => {
+            const active = button === tab;
+
+            button.classList.toggle("active", active);
+            button.setAttribute("aria-pressed", String(active));
         });
 
-        document.addEventListener("keydown", (event) => {
-            if (!lightbox.classList.contains("open")) return;
-
-            if (event.key === "Escape") {
-                closeLightbox();
-            }
-
-            if (event.key === "Tab") {
-                event.preventDefault();
-                closeLightboxButton.focus();
-            }
-        });
-
-        /* ========================================
-           IMAGE HELPER
-           Shows a placeholder if image is missing
-        ======================================== */
-
-        function createImageWithFallback(src, alt, title) {
-            const fragment = document.createDocumentFragment();
-
-            const placeholder = document.createElement("div");
-            placeholder.className = "erps-image-placeholder";
-
-            const placeholderTitle = document.createElement("span");
-            placeholderTitle.textContent = title;
-
-            const placeholderNote = document.createElement("small");
-            placeholderNote.textContent = "Image preview";
-
-            placeholder.append(placeholderTitle, placeholderNote);
-
-            const image = document.createElement("img");
-            image.src = src;
-            image.alt = alt;
-            image.loading = "lazy";
-            image.style.display = "none";
-
-            image.addEventListener("load", () => {
-                image.style.display = "block";
-                placeholder.style.display = "none";
+        document.querySelectorAll(".erps-doc-card")
+            .forEach(card => {
+                card.hidden =
+                    selected !== "all" &&
+                    card.dataset.category !== selected;
             });
 
-            image.addEventListener("error", () => {
-                image.style.display = "none";
-                placeholder.style.display = "block";
-            });
+    });
 
-            fragment.append(placeholder, image);
+});
 
-            return { fragment, image };
+/* ==========================================
+   SYSTEM SCREENSHOTS
+
+   Replace filenames here if necessary.
+========================================== */
+
+const systemScreens = [
+    {
+        title: "Academic Setup",
+        description: "Managing academic terms, levels, subjects, assessments and educator allocations.",
+        image: "images/eprs.png"
+    },
+    {
+        title: "Mark Capture",
+        description: "Capturing and managing student assessment results within the system.",
+        image: "images/eprs.png"
+    },
+    {
+        title: "Academic Reports",
+        description: "Generating academic reports and mark schedules using captured information.",
+        image: "images/eprs.png"
+    }
+];
+
+const systemGrid = document.getElementById("systemGrid");
+
+systemScreens.forEach(screen => {
+
+    const card = document.createElement("article");
+    card.className = "erps-feature";
+
+    const imageWrap = document.createElement("div");
+    imageWrap.className = "erps-feature-image";
+
+    const img = createPreviewImage(
+        screen.image,
+        screen.title
+    );
+
+    img.tabIndex = 0;
+    img.setAttribute("role", "button");
+    img.setAttribute(
+        "aria-label",
+        "Enlarge " + screen.title
+    );
+
+    const enlarge = () => {
+        if (img.complete && img.naturalWidth > 0) {
+            openLightbox(img.src, screen.title);
         }
+    };
 
-        /* ========================================
-           DOCUMENTATION DATA
-           Change only the image filenames later
-        ======================================== */
+    img.addEventListener("click", enlarge);
 
-        const documents = [
-            {
-                title: "Project Charter",
-                category: "planning",
-                categoryLabel: "Project Planning",
-                description: "Defines project objectives, scope, stakeholders and deliverables.",
-                contribution: "Team Contribution",
-                creditType: "team",
-                image: "images/erps/project-charter.png",
-                pdf: "documents/erps/project-charter.pdf"
-            },
-            {
-                title: "Work Breakdown Structure",
-                category: "planning",
-                categoryLabel: "Project Planning",
-                description: "Organises project deliverables into manageable work packages and tasks.",
-                contribution: "My Individual Contribution",
-                creditType: "",
-                image: "images/erps/wbs.png",
-                pdf: "documents/erps/wbs.pdf"
-            },
-            {
-                title: "Risk Matrix",
-                category: "planning",
-                categoryLabel: "Project Planning",
-                description: "Identifies project risks and assesses their likelihood and potential impact.",
-                contribution: "Team Contribution",
-                creditType: "team",
-                image: "images/erps/risk-matrix.png",
-                pdf: "documents/Risk.pdf"
-            },
-            {
-                title: "Case Study & Problem Analysis",
-                category: "requirements",
-                categoryLabel: "Requirements & Analysis",
-                description: "Examines the existing reporting process, its challenges and the need for ERPS.",
-                contribution: "Team Contribution",
-                creditType: "team",
-                image: "images/erps/problem-analysis.png",
-                pdf: "documents/erps/problem-analysis.pdf"
-            },
-            {
-                title: "Use Case Diagrams",
-                category: "requirements",
-                categoryLabel: "Requirements & Analysis",
-                description: "Show the system actors and their interactions with different functions.",
-                contribution: "Team Contribution",
-                creditType: "team",
-                image: "images/erps/use-cases.png",
-                pdf: "documents/erps/use-cases.pdf"
-            },
-            {
-                title: "Use Case Narratives",
-                category: "requirements",
-                categoryLabel: "Requirements & Analysis",
-                description: "Describe user interactions, preconditions, main flows and alternative scenarios.",
-                contribution: "Team Contribution",
-                creditType: "team",
-                image: "images/erps/use-case-narratives.png",
-                pdf: "documents/erps/use-case-narratives.pdf"
-            },
-            {
-                title: "Activity Diagrams",
-                category: "modelling",
-                categoryLabel: "System Modelling",
-                description: "Illustrate workflows, decisions and the sequence of activities in system processes.",
-                contribution: "Team Contribution",
-                creditType: "team",
-                image: "images/erps/activity-diagrams.png",
-                pdf: "documents/ActivityDiagram.pdf"
-            },
-            {
-                title: "State Machine Diagrams",
-                category: "modelling",
-                categoryLabel: "System Modelling",
-                description: "Show system states, transitions and the events that trigger changes.",
-                contribution: "Team Contribution",
-                creditType: "team",
-                image: "images/erps/state-machines.png",
-                pdf: "documents/erps/state-machines.pdf"
-            },
-            {
-                title: "Class Diagrams",
-                category: "modelling",
-                categoryLabel: "System Modelling",
-                description: "Illustrate classes, attributes and relationships within the system.",
-                contribution: "Team Contribution",
-                creditType: "team",
-                image: "images/erps/class-diagrams.png",
-                pdf: "documents/erps/class-diagrams.pdf"
-            },
-            {
-                title: "Package Diagrams",
-                category: "modelling",
-                categoryLabel: "System Modelling",
-                description: "Show how related components are organised into logical packages.",
-                contribution: "Team Contribution",
-                creditType: "team",
-                image: "images/erps/package-diagrams.png",
-                pdf: "documents/Package.pdf"
-            },
-            {
-                title: "Interface Wireframes",
-                category: "design",
-                categoryLabel: "UI/UX Design",
-                description: "Early designs showing screen layouts, page structure and information hierarchy.",
-                contribution: "Designed by Me",
-                creditType: "",
-                image: "images/erps/wireframes.png",
-                pdf: "documents/erps/wireframes.pdf"
-            },
-            {
-                title: "Website Navigation",
-                category: "design",
-                categoryLabel: "UI/UX Design",
-                description: "Maps the system's page hierarchy and navigation paths between functions.",
-                contribution: "Designed by Me",
-                creditType: "",
-                image: "images/erps/navigation.png",
-                pdf: "documents/erps/navigation.pdf"
-            },
-            {
-                title: "Documentation Presentation",
-                category: "planning",
-                categoryLabel: "Documentation & Communication",
-                description: "Communicating the project's analysis, design decisions and progress.",
-                contribution: "Individual & Team Contribution",
-                creditType: "both",
-                image: "images/erps/documentation-presentation.png",
-                pdf: "documents/erps/documentation-presentation.pdf"
-            }
-        ];
+    img.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            enlarge();
+        }
+    });
 
-        /* ========================================
-           RENDER DOCUMENTATION CARDS
-        ======================================== */
+    imageWrap.appendChild(img);
 
-        const documentationGrid =
-            document.getElementById("documentationGrid");
+    const content = document.createElement("div");
+    content.className = "erps-feature-content";
 
-        documents.forEach((doc) => {
-            const card = document.createElement("article");
-            card.className = "erps-doc-card";
-            card.dataset.category = doc.category;
+    const title = document.createElement("h3");
+    title.textContent = screen.title;
 
-            const imageButton = document.createElement("button");
-            imageButton.className = "erps-doc-image";
-            imageButton.type = "button";
-            imageButton.setAttribute(
-                "aria-label",
-                "View " + doc.title + " image"
-            );
+    const description = document.createElement("p");
+    description.textContent = screen.description;
 
-            const preview = createImageWithFallback(
-                doc.image,
-                doc.title + " preview",
-                doc.title
-            );
+    content.append(title, description);
+    card.append(imageWrap, content);
+    systemGrid.appendChild(card);
+});
 
-            imageButton.appendChild(preview.fragment);
+/* ==========================================
+   MAIN PREVIEW ERROR HANDLING
+========================================== */
 
-            imageButton.addEventListener("click", () => {
-                if (preview.image.naturalWidth > 0) {
-                    openLightbox(doc.image, doc.title);
-                }
-            });
+const mainImage = document.getElementById("mainSystemImage");
 
-            const content = document.createElement("div");
-            content.className = "erps-doc-content";
+mainImage.addEventListener("error", () => {
+    console.error("Main ERPS image failed:", mainImage.src);
 
-            const category = document.createElement("div");
-            category.className = "erps-doc-category";
-            category.textContent = doc.categoryLabel;
+    const fallback = document.createElement("div");
+    fallback.className = "erps-image-placeholder";
 
-            const title = document.createElement("h3");
-            title.textContent = doc.title;
+    const title = document.createElement("strong");
+    title.textContent = "Educational Reporting System";
 
-            const description = document.createElement("p");
-            description.textContent = doc.description;
+    const note = document.createElement("small");
+    note.textContent = "Image unavailable";
 
-            const bottom = document.createElement("div");
-            bottom.className = "erps-doc-bottom";
+    fallback.append(title, note);
+    mainImage.replaceWith(fallback);
+});
 
-            const credit = document.createElement("span");
-            credit.className =
-                "erps-credit" +
-                (doc.creditType ? " " + doc.creditType : "");
-            credit.textContent = doc.contribution;
+/* ==========================================
+   COPYRIGHT YEAR
+========================================== */
 
-            const actions = document.createElement("div");
-            actions.className = "erps-doc-actions";
+document.getElementById("year").textContent =
+    new Date().getFullYear();
 
-            const viewButton = document.createElement("button");
-            viewButton.type = "button";
-            viewButton.textContent = "View Image";
-
-            viewButton.addEventListener("click", () => {
-                if (preview.image.naturalWidth > 0) {
-                    openLightbox(doc.image, doc.title);
-                } else {
-                    alert("Add the image first: " + doc.image);
-                }
-            });
-
-            const pdfLink = document.createElement("a");
-            pdfLink.href = doc.pdf;
-            pdfLink.target = "_blank";
-            pdfLink.rel = "noopener";
-            pdfLink.textContent = "View PDF";
-
-            actions.append(viewButton, pdfLink);
-            bottom.append(credit, actions);
-            content.append(category, title, description, bottom);
-            card.append(imageButton, content);
-            documentationGrid.appendChild(card);
-        });
-
-        /* ========================================
-           WORKING DOCUMENTATION TABS
-        ======================================== */
-
-        const tabs = document.querySelectorAll(".erps-tab");
-        const documentCards =
-            document.querySelectorAll(".erps-doc-card");
-
-        tabs.forEach((tab) => {
-            tab.addEventListener("click", () => {
-                const filter = tab.dataset.filter;
-
-                tabs.forEach((button) => {
-                    button.classList.remove("active");
-                    button.setAttribute("aria-pressed", "false");
-                });
-
-                tab.classList.add("active");
-                tab.setAttribute("aria-pressed", "true");
-
-                documentCards.forEach((card) => {
-                    card.hidden =
-                        filter !== "all" &&
-                        card.dataset.category !== filter;
-                });
-            });
-        });
-
-        /* ========================================
-           FINAL SYSTEM SCREENSHOTS
-           Change only the filenames later
-        ======================================== */
-
-        const systemScreens = [
-            {
-                title: "Mark Capture",
-                description: "Educators can capture and manage student assessment results, including internal and moderated marks.",
-                image: "images/erps/mark-capture.png"
-            },
-            {
-                title: "Mark Schedules",
-                description: "Captured assessment results can be organised into schedules for reviewing academic performance.",
-                image: "images/erps/mark-schedules.png"
-            },
-            {
-                title: "Student Reports",
-                description: "The system supports the generation and export of student academic reports.",
-                image: "images/erps/student-reports.png"
-            },
-            {
-                title: "Academic Setup",
-                description: "Authorised users can configure terms, subjects, assessments and other academic settings.",
-                image: "images/erps/academic-setup.png"
-            },
-            {
-                title: "Role-Based Access",
-                description: "Users can access the functions relevant to their roles and responsibilities.",
-                image: "images/erps/role-based-access.png"
-            },
-            {
-                title: "Profile Management",
-                description: "Student and staff information can be managed through centralised records.",
-                image: "images/erps/profile-management.png"
-            }
-        ];
-
-        const systemGrid = document.getElementById("systemGrid");
-
-        systemScreens.forEach((item) => {
-            const card = document.createElement("article");
-            card.className = "erps-feature";
-
-            const imageArea = document.createElement("div");
-            imageArea.className = "erps-feature-image";
-
-            const preview = createImageWithFallback(
-                item.image,
-                item.title + " screenshot",
-                item.title
-            );
-
-            imageArea.appendChild(preview.fragment);
-
-            const content = document.createElement("div");
-            content.className = "erps-feature-content";
-
-            const title = document.createElement("h3");
-            title.textContent = item.title;
-
-            const description = document.createElement("p");
-            description.textContent = item.description;
-
-            content.append(title, description);
-            card.append(imageArea, content);
-            systemGrid.appendChild(card);
-        });
-
-        /* ========================================
-           MAIN DASHBOARD PREVIEW
-        ======================================== */
-
-        const mainPreview = document.getElementById("mainPreview");
-
-        const dashboardImage = new Image();
-        dashboardImage.src = "images/erps/dashboard.png";
-        dashboardImage.alt = "Educational Reporting System dashboard";
-
-        dashboardImage.addEventListener("load", () => {
-            mainPreview.replaceChildren(dashboardImage);
-        });
-    </script>
+</script>
 
 </body>
 </html>
